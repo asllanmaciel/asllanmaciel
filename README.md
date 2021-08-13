@@ -21,6 +21,10 @@ Acabei criando diversas formas de compartilhar conteúdo sobre WordPress - Pesqu
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-e4405f?style=flat-square&logo=Instagram&logoColor=white)](https://www.instagram.com/asllan.maciel/)
 [![Facebook Badge](https://img.shields.io/badge/-Facebook-1877f2?style=flat-square&logo=Facebook&logoColor=white)](https://www.facebook.com/asllan.maciel)
 
+[![JSFiddle Badge](https://img.shields.io/badge/-JSFiddle-2E71FF?style=flat-square&logo=JSFiddle&logoColor=white)](https://www.facebook.com/asllan.maciel)
+[![DEV Badge](https://img.shields.io/badge/-DEV-222222?style=flat-square&logo=DEV.to&logoColor=white)](https://www.facebook.com/asllan.maciel)
+
+
 ### Fale comigo!
 
 [![Website Badge](https://img.shields.io/badge/Website-3b5998?style=flat-square&logo=google-chrome&logoColor=white)](https://asllanmaciel.com.br/)
