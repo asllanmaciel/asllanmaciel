@@ -4,7 +4,7 @@
 
 ### Estou contente de ver você aqui! &nbsp; ![](https://visitor-badge.glitch.me/badge?page_id=asllanmaciel.asllanmaciel)
 
-<img align="right" alt="GIF" src="https://user-images.githubusercontent.com/397983/129120889-057b0a08-2d81-4bc7-813d-7dd710c886d8.gif?raw=true" width="400" height="400" />
+<img align="right" alt="GIF" src="https://user-images.githubusercontent.com/397983/134727154-fb953c2f-676c-4a4d-b4c5-97dadd26913d.gif" width="400" height="400" />
 
 Sou um desenvolvedor Full-Stack há +20 anos. Adoro novas tecnologias, amo programar, produdizir e compartilhar conteúdo... 
 
@@ -58,3 +58,4 @@ ___(Estou aqui há +10y mas assumo que por anos não contribuí - Então, é um 
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=asllanmaciel&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asllanmaciel&exclude_repo=KNN-Image-Classification&show_icons=true&hide_border=true&layout=compact&langs_count=8"/>
 </p>
+
