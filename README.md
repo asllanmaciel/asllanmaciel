@@ -1,61 +1,68 @@
-![Cover-Site-AsllanMaciel_3-github_2021](https://user-images.githubusercontent.com/397983/129118225-572ae579-2623-4318-9b38-cf0e946264e0.png)
+# 🚀 Olá, eu sou o [Asllan Maciel](https://asllanmaciel.com.br/) 👨‍💻
 
-## Olá Mundo! Tudo bem? Sou o <a href="https://asllanmaciel.com.br" target="_blank">Asllan Maciel</a> <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">
+![Cover](https://github.com/asllanmaciel/asllanmaciel/blob/main/perfil-asllanmaciel-github.jpg)
+imagem
 
-### Estou contente de ver você aqui! &nbsp; ![](https://visitor-badge.glitch.me/badge?page_id=asllanmaciel.asllanmaciel)
+## 👋 Seja bem-vindo ao meu universo tech!
 
-<img align="right" alt="GIF" src="https://user-images.githubusercontent.com/397983/134727154-fb953c2f-676c-4a4d-b4c5-97dadd26913d.gif" width="400" height="400" />
+Sou um **desenvolvedor Full-Stack** com mais de **20 anos de experiência**, apaixonado por tecnologia, inovação e empreendedorismo digital. Minha jornada começou no mundo do **PHP e WordPress**, mas ao longo dos anos me tornei um entusiasta de diversas tecnologias.
 
-Sou um desenvolvedor Full-Stack há +20 anos. Adoro novas tecnologias, amo programar, produdizir e compartilhar conteúdo... 
+### 🔥 O que eu faço?
+✅ Crio **soluções personalizadas** para web, **plugins e sistemas completos**.<br>
+✅ Sou especialista em **WordPress**, com diversas contribuições para a comunidade.<br>
+✅ **Empreendedor digital** – Transformo ideias em projetos escaláveis.<br>
+✅ Sempre em busca de **novas tecnologias** e maneiras de otimizar processos.<br>
+✅ **Compartilho conhecimento** através de artigos, vídeos e redes sociais.
 
-Entusiasta e empreendedor digital, com alguns projetos online, desde ferramentas e plataformas à cursos online.
+---
 
-Tenho uma paixão especial por uma das primeiras linguagens que aprendi (PHP) e por um CMS que uso há +10 anos - WordPress.
+## 🛠️ Tecnologias & Ferramentas
 
-Acabei criando diversas formas de compartilhar conteúdo sobre WordPress - Pesquise por [WP24Horas](https://wp24horas.com.br) no Google/Youtube/Facebook/etc.
+💻 **Back-end:** PHP, Laravel, CodeIgniter, Node.js<br>
+🎨 **Front-end:** JavaScript (Vue.js, React), Tailwind CSS, Bootstrap<br>
+📦 **Banco de Dados:** MySQL, PostgreSQL, MongoDB<br>
+☁️ **Cloud & DevOps:** AWS, Serverless, Docker<br>
+🔌 **WordPress:** Desenvolvimento de plugins, temas e otimização.<br>
+📈 **Empreendedorismo & Marketing:** SEO, Monetização, Growth Hacking.
 
-### Me siga nas redes sociais...
+---
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/asllanmaciel/)
-[![Twitter Badge](https://img.shields.io/badge/-Twitter-00acee?style=flat-square&logo=Twitter&logoColor=white)](http://twitter.com/asllanmaciel)
-[![Instagram Badge](https://img.shields.io/badge/-Instagram-e4405f?style=flat-square&logo=Instagram&logoColor=white)](https://www.instagram.com/asllan.maciel/)
-[![Facebook Badge](https://img.shields.io/badge/-Facebook-1877f2?style=flat-square&logo=Facebook&logoColor=white)](https://www.facebook.com/asllan.maciel)
+## 🌍 Onde me encontrar?
 
-[![JSFiddle Badge](https://img.shields.io/badge/-JSFiddle-2E71FF?style=flat-square&logo=JSFiddle&logoColor=white)](https://jsfiddle.net/user/asllanmaciel/fiddles/)
-[![DEV Badge](https://img.shields.io/badge/-DEV-222222?style=flat-square&logo=DEV.to&logoColor=white)](https://dev.to/asllanmaciel)
+💬 Quer trocar uma ideia sobre desenvolvimento, WordPress ou negócios digitais? Me chama! 👇
 
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0e76a8?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/asllanmaciel/)
+[![Twitter](https://img.shields.io/badge/-Twitter-00acee?style=for-the-badge&logo=Twitter&logoColor=white)](http://twitter.com/asllanmaciel)
+[![Instagram](https://img.shields.io/badge/-Instagram-e4405f?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/asllan.maciel/)
+[![Facebook](https://img.shields.io/badge/-Facebook-1877f2?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/asllan.maciel)
 
-### Fale comigo!
+📝 **Blog:** [asllanmaciel.com.br](https://asllanmaciel.com.br/)  
+📩 **E-mail:** contato@asllanmaciel.com.br  
+📞 **WhatsApp:** [Clique aqui](https://wa.me/+5521998367363)  
+📡 **Telegram:** [@asllanmaciel](https://t.me/asllanmaciel)  
 
-[![Website Badge](https://img.shields.io/badge/Website-3b5998?style=flat-square&logo=google-chrome&logoColor=white)](https://asllanmaciel.com.br/)
-[![Telegram Badge](https://img.shields.io/badge/-Telegram-0088cc?style=flat-square&logo=Telegram&logoColor=white)](https://t.me/asllanmaciel)
-[![WhatsApp Badge](https://img.shields.io/badge/-Whatsapp-00af9c?style=flat-square&logo=WhatsApp&logoColor=white)](https://wa.me/+5521998367363)
+---
 
+## 📊 O que estou fazendo agora?
 
-**Sobre coisas pessoais: :flushed:**
+🔹 Trabalhando em novos **projetos open-source** e **plugins para WordPress**.<br>
+🔹 Criando conteúdo sobre **tecnologia, marketing digital e monetização**.<br>
+🔹 Aprofundando conhecimento em **JavaScript (Node, Vue, Angular) e Serverless**.<br>
+🔹 Construindo **novos negócios e explorando novas oportunidades online**.<br>
+🔹 Compartilhando dicas e tutoriais para a comunidade **dev e empreendedora**.<br>
 
-- 👨🏻‍💻 Atualmente estou trabalhando em diversos projetos pessoais e de clientes - coisas bem legais!;
-- 🚀 Atualmente aprofundando sobre JS (Node, Vue, Angular) e Serverless - Vou compartilhar em [leetcode](https://leetcode.com/asllanmaciel/);
-- 💬 Pergunte-me sobre qualquer coisa, vou tentar ajudar;
-- 📝 Escrevo algumas coisas no [meu site](https://asllanmaciel.com.br);
-- 📫 Quer enviar um e-mail? contato@asllanmaciel.com.br;
+---
 
-</br>
+## 🚀 Estatísticas do GitHub
 
-📊 **Esta semana estou trabalhando em:**
-<!--START_SECTION:waka-->
-```text
-No Activity tracked this Week
-```
-<!--END_SECTION:waka-->
+*(Apesar de estar aqui há mais de 10 anos, só recentemente comecei a contribuir ativamente! 😉)*
 
-
-📈 **Minhas Estatísticas no Github :**
-
-___(Estou aqui há +10y mas assumo que por anos não contribuí - Então, é um recomeço)___
-
-<p>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=asllanmaciel&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asllanmaciel&exclude_repo=KNN-Image-Classification&show_icons=true&hide_border=true&layout=compact&langs_count=8"/>
+<p align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=asllanmaciel&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asllanmaciel&theme=radical&exclude_repo=KNN-Image-Classification&show_icons=true&hide_border=true&layout=compact&langs_count=8"/>
 </p>
 
+---
+
+💡 **Se você chegou até aqui, que tal se conectar comigo?**  
+Vamos construir algo incrível juntos! **Me chama! 🚀🔥**
