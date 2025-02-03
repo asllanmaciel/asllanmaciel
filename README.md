@@ -1,9 +1,7 @@
-# 🚀 Olá, eu sou o [Asllan Maciel](https://asllanmaciel.com.br/) 👨‍💻
-
 ![Cover](https://github.com/asllanmaciel/asllanmaciel/blob/main/perfil-asllanmaciel-github.jpg)
-imagem
 
-## 👋 Seja bem-vindo ao meu universo tech!
+
+# 🚀 Olá, eu sou o [Asllan Maciel](https://asllanmaciel.com.br/) 👨‍💻
 
 Sou um **desenvolvedor Full-Stack** com mais de **20 anos de experiência**, apaixonado por tecnologia, inovação e empreendedorismo digital. Minha jornada começou no mundo do **PHP e WordPress**, mas ao longo dos anos me tornei um entusiasta de diversas tecnologias.
 
