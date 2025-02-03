@@ -1,5 +1,4 @@
-![Cover](https://github.com/asllanmaciel/asllanmaciel/blob/main/perfil-asllanmaciel-github.jpg)
-
+![perfil-asllanmaciel-github](https://github.com/user-attachments/assets/00cb4169-a18d-40a0-9071-d036ece657c4)
 
 # 🚀 Olá, eu sou o [Asllan Maciel](https://asllanmaciel.com.br/) 👨‍💻
 
