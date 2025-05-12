@@ -1,29 +1,29 @@
 ![perfil-asllanmaciel-github](https://github.com/user-attachments/assets/00cb4169-a18d-40a0-9071-d036ece657c4)
 
-# 🚀 Olá, eu sou o Asllan Maciel 👨‍💻  #
+# 🚀 Olá, eu sou o Asllan Maciel 👨‍💻  
 Desenvolvedor Full-Stack com +20 anos de experiência, apaixonado por tecnologia, inovação e inteligência aplicada.  
 
 Minha jornada começou com PHP e WordPress, onde construí uma base sólida e ajudei a escalar projetos de todos os tamanhos. Hoje, mergulho fundo em novas frentes como **Python, Inteligência Artificial e Automação de Processos**, sempre com foco em criar soluções práticas, escaláveis e impactantes.
 
-## 🧠 Atualmente focado em:  ## 
+## 🧠 Atualmente focado em:   
 - **Python + IA**: Projetos de automação, análise de dados e machine learning.  
 - **WordPress Extremo**: Arquitetura moderna com Composer, PSR-4, REST API e Gutenberg com React.  
 - **SaaS e Sistemas Personalizados**: De MVPs a soluções empresariais completas.  
 - **Comunicação Automatizada**: Integrações com APIs como WhatsApp, e-mail marketing e CRMs.  
 
-## 💼 O que eu entrego:  ## 
+## 💼 O que eu entrego:   
 ✅ Soluções Web sob medida – de plugins a plataformas robustas  
 ✅ Integrações complexas com APIs e serviços externos  
 ✅ Otimização de processos para negócios digitais  
 ✅ Conteúdo técnico educativo (dev, IA, negócios)  
 
-## 🧑‍🏫 **Cursos & Mentorias** ##  
+## 🧑‍🏫 **Cursos & Mentorias**   
 Quer aprender WordPress avançado, automações com IA ou escalar seu projeto digital?  
 👉 Confira em:  
 - [asllanmaciel.com.br](https://asllanmaciel.com.br) – Mentorias e soluções personalizadas  
 - [wp24horas.com.br](https://wp24horas.com.br) – Cursos práticos de WordPress extremo  
 
-## 🛠️ Tecnologias que domino:  ## 
+## 🛠️ Tecnologias que domino:   
 **Back-end**: PHP (Laravel, CodeIgniter), Python, Node.js  
 **Front-end**: React, Vue.js, Tailwind CSS, Bootstrap  
 **Bancos de Dados**: MySQL, PostgreSQL, MongoDB  
@@ -53,11 +53,12 @@ Quer aprender WordPress avançado, automações com IA ou escalar seu projeto di
 
 ## 📊 O que estou fazendo agora?
 
-🔹 Trabalhando em novos **projetos open-source** e **plugins para WordPress**.<br>
-🔹 Criando conteúdo sobre **tecnologia, marketing digital e monetização**.<br>
-🔹 Aprofundando conhecimento em **JavaScript (Node, Vue, Angular) e Serverless**.<br>
-🔹 Construindo **novos negócios e explorando novas oportunidades online**.<br>
-🔹 Compartilhando dicas e tutoriais para a comunidade **dev e empreendedora**.<br>
+🔹 Desenvolvendo **projetos open-source** com foco em automações, produtividade e WordPress extremo.  
+🔹 Criando **plugins avançados para WordPress** com arquitetura moderna e integração via REST API.  
+🔹 Aprofundando práticas em **Python para automação, IA aplicada e análise de dados**.  
+🔹 Produzindo conteúdo prático sobre **tecnologia, marketing digital e monetização de conhecimento**.  
+🔹 Oferecendo **mentorias e cursos** para desenvolvedores, freelancers e empreendedores digitais.  
+🔹 Explorando novas ideias de **SaaS e produtos digitais escaláveis**.
 
 ---
 
