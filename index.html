@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asllan Maciel | Dev Portfolio</title>
+    <meta
+      name="description"
+      content="Portfólio interativo de Asllan Maciel com foco em IA, automação e engenharia de software."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+    <header class="hero container">
+      <nav class="nav">
+        <span class="brand">asllan.dev</span>
+        <a class="btn ghost" href="#contato">Vamos conversar</a>
+      </nav>
+
+      <div class="hero__grid">
+        <div>
+          <p class="badge">FULL-STACK • IA • AUTOMAÇÃO</p>
+          <h1>
+            Transformo ideias em
+            <span class="gradient">produtos digitais inteligentes</span>
+          </h1>
+          <p class="lead">
+            Portfólio conceito com narrativa visual, foco em impacto e uma
+            experiência viva — como um painel de missão para projetos de alto
+            valor.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#projetos">Ver projetos</a>
+            <a class="btn ghost" href="#stack">Explorar stack</a>
+          </div>
+        </div>
+
+        <aside class="mission-card" aria-label="Painel de missão">
+          <h2>Mission Control</h2>
+          <ul>
+            <li><span>Automação em produção</span><strong>42+</strong></li>
+            <li><span>Produtos entregues</span><strong>120+</strong></li>
+            <li><span>Tempo de experiência</span><strong>20 anos</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="projetos" class="container section">
+        <h2>Projetos em destaque</h2>
+        <div class="cards" id="project-grid"></div>
+      </section>
+
+      <section id="stack" class="container section">
+        <h2>Stack em tempo real</h2>
+        <p>
+          Um radar visual das tecnologias que sustentam projetos SaaS, integrações
+          e soluções orientadas por IA.
+        </p>
+        <div class="chips" id="tech-chips"></div>
+      </section>
+
+      <section id="contato" class="container section contact">
+        <h2>Vamos construir algo inovador?</h2>
+        <p>
+          Se você tem uma ideia e quer tirar do papel com velocidade e visão de
+          produto, bora conversar.
+        </p>
+        <a class="btn" href="mailto:contato@asllanmaciel.com.br">Enviar e-mail</a>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>© <span id="year"></span> Asllan Maciel • Crafted with code & vision.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
