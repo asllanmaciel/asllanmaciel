@@ -72,13 +72,6 @@ Abaixo estão alguns projetos representativos que mostram meu estilo e áreas de
 - **Colaboração:** atuo com metodologias ágeis (SCRUM), pull requests e code reviews frequentes.
 - **Melhoria contínua:** estudo diariamente novas tecnologias e compartilho aprendizados em artigos, lives e mentorias.
 
-## 📊 Métricas de Código / Coding metrics
-
-Para dar um toque visual e demonstrar minha produtividade e diversidade de linguagens, incluí alguns cards dinâmicos que apresentam minhas contribuições recentes no GitHub. Esses gráficos, gerados pela API do GitHub‑Readme‑Stats, mostram meus commits, principais linguagens e outros indicadores de atividade.
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=asllanmaciel&show_icons=true&theme=default&locale=pt_BR)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=asllanmaciel&layout=compact&theme=default&locale=pt_BR)
-
 ## 📝 Fale comigo / Get in touch
 
 Se você acredita em grandes ideias e quer colocá‑las em prática, **não espere**: agende uma conversa sem compromisso e descubra como podemos **multiplicar seus resultados**. Há várias maneiras de me encontrar:
