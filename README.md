@@ -6,13 +6,13 @@ Há mais de 20 anos transformo necessidades de negócio em produtos digitais, in
 
 > Full-stack developer and digital strategist building SaaS products, APIs and business automations.
 
-## Projetos em destaque
+## Áreas de atuação
 
-| Projeto | O que demonstra | Stack |
-|---|---|---|
-| [GitHub DevLog AI](https://github.com/asllanmaciel/githubdevlog) · [Produto](https://ghdevlog.com) | Recepção e auditoria de webhooks, validação HMAC, workspaces, billing e diagnóstico assistido por IA | Laravel, Filament, MySQL, Docker, GitHub Actions |
-| [Mania de Preço](https://github.com/asllanmaciel/mania-de-preco) | Arquitetura de um SaaS multiempresa com catálogo, comparação de preços e gestão financeira | Laravel, PHP 8.3, MySQL, Redis, Docker |
-| [M3 Growth Tech](https://github.com/asllanmaciel/M3GrowthTech-Site) · [Site](https://m3growthtech.com.br) | Site institucional com geração de leads, privacidade, SEO técnico, deploy e monitoramento automatizados | HTML, CSS, JavaScript, PHP, Docker, GitHub Actions |
+- Arquitetura e desenvolvimento de produtos SaaS.
+- Sistemas web, APIs e integrações de pagamento.
+- Automação de processos e aplicações com IA.
+- WordPress, e-commerce e plataformas de conteúdo.
+- SEO técnico, analytics e infraestrutura de marketing.
 
 ## Competências
 
@@ -30,7 +30,7 @@ Há mais de 20 anos transformo necessidades de negócio em produtos digitais, in
 
 ## Como trabalho
 
-Valorizo documentação objetiva, código legível, testes para fluxos críticos, automação de deploy e decisões técnicas conectadas ao resultado do produto. Projetos de clientes permanecem privados; os repositórios acima representam trabalhos que posso demonstrar publicamente.
+Valorizo documentação objetiva, código legível, testes para fluxos críticos, automação de deploy e decisões técnicas conectadas ao resultado do produto. **Projetos de clientes e produtos pessoais permanecem privados**; estudos de caso e demonstrações são compartilhados apenas quando apropriado.
 
 ## Contato
 
