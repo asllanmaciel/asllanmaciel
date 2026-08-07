@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Asllan Maciel — Tecnologia, IA, Automação e Produtos Digitais</title>
+  <desc id="desc">Banner profissional de Asllan Maciel, desenvolvedor e empreendedor digital.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.52" stop-color="#102a43"/>
+      <stop offset="1" stop-color="#17113d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.52" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glowCyan">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#93c5fd" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#020617" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="28" fill="url(#grid)"/>
+  <circle cx="170" cy="70" r="280" fill="url(#glowCyan)"/>
+  <circle cx="1120" cy="310" r="350" fill="url(#glowViolet)"/>
+  <path d="M0 300 C250 230 380 390 650 315 S1050 225 1280 285 V360 H0Z" fill="#020617" opacity=".22"/>
+
+  <g transform="translate(74 72)" filter="url(#shadow)">
+    <rect width="154" height="154" rx="36" fill="#0b1729" stroke="url(#accent)" stroke-width="3"/>
+    <rect x="16" y="16" width="122" height="122" rx="27" fill="none" stroke="#e0f2fe" stroke-opacity=".12"/>
+    <text x="77" y="93" text-anchor="middle" fill="url(#accent)" font-family="Consolas, Menlo, monospace" font-size="39" font-weight="700">&lt;AM/&gt;</text>
+  </g>
+
+  <g transform="translate(270 76)">
+    <text x="0" y="50" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="1.5">ASLLAN MACIEL</text>
+    <rect x="0" y="70" width="615" height="4" rx="2" fill="url(#accent)"/>
+    <text x="0" y="112" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="2">TECNOLOGIA • IA • AUTOMAÇÃO • PRODUTOS DIGITAIS</text>
+    <text x="0" y="151" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Transformando problemas reais em sistemas, produtos e negócios.</text>
+
+    <g transform="translate(0 187)">
+      <rect width="205" height="42" rx="21" fill="#0f2942" stroke="#22d3ee" stroke-opacity=".65"/>
+      <text x="102.5" y="27" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">25+ ANOS PROGRAMANDO</text>
+      <rect x="220" width="170" height="42" rx="21" fill="#17153f" stroke="#a78bfa" stroke-opacity=".65"/>
+      <text x="305" y="27" text-anchor="middle" fill="#ede9fe" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">100+ PROJETOS</text>
+      <rect x="405" width="215" height="42" rx="21" fill="#122b2e" stroke="#34d399" stroke-opacity=".65"/>
+      <text x="512.5" y="27" text-anchor="middle" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">BUILDER &amp; EDUCATOR</text>
+    </g>
+  </g>
+
+  <g transform="translate(995 72)" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <path d="M70 35 L155 85 L70 138 L155 190 L70 240" fill="none" stroke="url(#accent)" stroke-width="3" stroke-opacity=".58"/>
+    <circle cx="70" cy="35" r="32" fill="#082f49" stroke="#22d3ee" stroke-width="2"/>
+    <text x="70" y="41" fill="#cffafe" font-size="16">IA</text>
+    <circle cx="155" cy="85" r="32" fill="#172554" stroke="#60a5fa" stroke-width="2"/>
+    <text x="155" y="91" fill="#dbeafe" font-size="15">API</text>
+    <circle cx="70" cy="138" r="32" fill="#2e1065" stroke="#a78bfa" stroke-width="2"/>
+    <text x="70" y="144" fill="#ede9fe" font-size="14">SaaS</text>
+    <circle cx="155" cy="190" r="32" fill="#052e2b" stroke="#34d399" stroke-width="2"/>
+    <text x="155" y="196" fill="#d1fae5" font-size="14">DEV</text>
+    <circle cx="70" cy="240" r="32" fill="#422006" stroke="#f59e0b" stroke-width="2"/>
+    <text x="70" y="246" fill="#fef3c7" font-size="14">BIZ</text>
+  </g>
+
+  <rect x="1.5" y="1.5" width="1277" height="357" rx="26.5" fill="none" stroke="#bfdbfe" stroke-opacity=".14" stroke-width="3"/>
+</svg>
