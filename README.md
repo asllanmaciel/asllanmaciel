@@ -105,6 +105,14 @@ Produtos comerciais e código de clientes continuam privados. Em público, compa
   </tr>
 </table>
 
+### Quer contribuir?
+
+Os projetos públicos têm tarefas pequenas e bem delimitadas para quem quer colaborar, aprender ou trocar experiência:
+
+- [Integrações da BIBLIAAPI](https://github.com/asllanmaciel/bibliaapi-examples/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22)
+- [Segurança de webhooks](https://github.com/asllanmaciel/github-webhook-security-guide/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
+- [Arquitetura de SaaS em Laravel](https://github.com/asllanmaciel/laravel-saas-blueprint/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
+
 ## Contribuições em outros projetos
 
 Além de manter projetos próprios, colaboro com iniciativas de outras comunidades quando posso contribuir com experiência prática em PHP, WordPress, APIs e segurança.
