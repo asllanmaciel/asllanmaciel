@@ -119,6 +119,7 @@ Os projetos públicos têm tarefas pequenas e bem delimitadas para quem quer col
 - [Integrações da BIBLIAAPI](https://github.com/asllanmaciel/bibliaapi-examples/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22)
 - [Segurança de webhooks](https://github.com/asllanmaciel/github-webhook-security-guide/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
 - [Arquitetura de SaaS em Laravel](https://github.com/asllanmaciel/laravel-saas-blueprint/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
+- [Ferramentas para plugins WordPress](https://github.com/asllanmaciel/wp-plugin-readme-validator/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22)
 
 ## Contribuições em outros projetos
 
