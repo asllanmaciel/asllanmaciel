@@ -1,43 +1,134 @@
-# Asllan Maciel
+<p align="center">
+  <img src="./assets/profile-banner.svg" width="100%" alt="Asllan Maciel — Tecnologia, IA, Automação e Produtos Digitais">
+</p>
 
-**Desenvolvedor Full Stack | SaaS, Laravel, WordPress, APIs, automação e IA**
+<p align="center">
+  <a href="https://asllanmaciel.com.br"><img src="https://img.shields.io/badge/Portfólio-0f766e?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfólio"></a>
+  <a href="https://cursos.asllanmaciel.com.br"><img src="https://img.shields.io/badge/Cursos-7c3aed?style=for-the-badge&logo=bookstack&logoColor=white" alt="Cursos"></a>
+  <a href="https://linkedin.com/in/asllanmaciel"><img src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:contato@asllanmaciel.com.br"><img src="https://img.shields.io/badge/Contato-e11d48?style=for-the-badge&logo=gmail&logoColor=white" alt="Contato"></a>
+</p>
 
-Há mais de 20 anos transformo necessidades de negócio em produtos digitais, integrações e automações. Trabalho na interseção entre **engenharia de software**, **produto** e **marketing**, com foco em soluções sustentáveis, mensuráveis e fáceis de operar.
+<h3 align="center">Programador, empreendedor e construtor de produtos digitais.</h3>
 
-> Full-stack developer and digital strategist building SaaS products, APIs and business automations.
+<p align="center">
+  Uso tecnologia para transformar problemas reais em sistemas, automações, produtos e negócios.<br>
+  Compartilho o que aprendo enquanto continuo construindo.
+</p>
 
-## Áreas de atuação
+<table align="center">
+  <tr>
+    <td align="center"><strong>25+</strong><br>anos programando</td>
+    <td align="center"><strong>15+</strong><br>anos com WordPress</td>
+    <td align="center"><strong>100+</strong><br>projetos desenvolvidos</td>
+    <td align="center"><strong>3</strong><br>empresas em operação</td>
+  </tr>
+</table>
 
-- Arquitetura e desenvolvimento de produtos SaaS.
-- Sistemas web, APIs e integrações de pagamento.
-- Automação de processos e aplicações com IA.
-- WordPress, e-commerce e plataformas de conteúdo.
-- SEO técnico, analytics e infraestrutura de marketing.
+## O que eu construo
 
-## Competências
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>⚙️ Sistemas & SaaS</h3>
+      <p>Plataformas multi-tenant, APIs, billing, CRM, painéis administrativos e integrações para operações reais.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🤖 IA & Automação</h3>
+      <p>Agentes, MCPs, workflows, processamento de conteúdo e integrações de IA aplicadas à produtividade e ao negócio.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🔌 WordPress & E-commerce</h3>
+      <p>Plugins, APIs, pagamentos, automações, performance e soluções para produtos, agências e lojas virtuais.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📈 Produto & Growth</h3>
+      <p>Validação, monetização, analytics, SEO técnico e sistemas que conectam tecnologia a resultados mensuráveis.</p>
+    </td>
+  </tr>
+</table>
 
-- **Back-end:** PHP, Laravel, Python, Node.js, APIs REST/SOAP, pagamentos e integrações SaaS.
-- **Front-end:** JavaScript, React, Vue.js, CSS/SCSS, Bootstrap, Tailwind e design responsivo.
-- **DevOps & Cloud:** Docker, GitHub Actions, AWS, DigitalOcean, observabilidade e performance.
-- **Produto & Growth:** arquitetura de SaaS, SEO, automação de marketing, métricas, copywriting e funis.
+> **Nos bastidores:** trabalho atualmente em plataformas SaaS modulares, produtos educacionais, ferramentas para desenvolvedores, automações com IA e soluções para saúde, conteúdo e WordPress. O código de clientes e dos produtos permanece **privado por design**.
 
-## Experiência
+## Produtos e plataformas públicas
 
-- Mais de **20 anos** desenvolvendo aplicações web e automações.
-- Mais de **100 projetos** entregues no Brasil e no exterior.
-- Experiência com e-commerce, SaaS, sistemas corporativos, WordPress e produtos próprios.
-- Atuação como desenvolvedor, empreendedor digital, autor de conteúdo e mentor.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://ghdevlog.com">⚡ GHDevLog</a></h3>
+      <p>Developer intelligence para receber, validar e investigar webhooks do GitHub com segurança e rastreabilidade.</p>
+      <p><code>GitHub</code> <code>Webhooks</code> <code>Segurança</code> <code>IA</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://bibliaapi.com.br">📖 BibliaAPI</a></h3>
+      <p>Infraestrutura bíblica para aplicações: API, WordPress, app mobile e recursos SaaS.</p>
+      <p><code>API REST</code> <code>Laravel</code> <code>WordPress</code> <code>Mobile</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://claridados.com.br">📊 ClariDados</a></h3>
+      <p>Analytics simples e direto para acompanhar visitas, origens, páginas e conversões sem complexidade desnecessária.</p>
+      <p><code>Analytics</code> <code>Privacidade</code> <code>Relatórios</code> <code>APIs</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://crescanafe.com">🌱 Cresça na Fé</a></h3>
+      <p>Plataforma de conteúdo cristão com estudos, devocionais e recursos para crescimento espiritual.</p>
+      <p><code>Conteúdo</code> <code>Comunidade</code> <code>WordPress</code> <code>SEO</code></p>
+    </td>
+  </tr>
+</table>
 
-## Como trabalho
+## Stack que aparece no meu dia a dia
 
-Valorizo documentação objetiva, código legível, testes para fluxos críticos, automação de deploy e decisões técnicas conectadas ao resultado do produto. **Projetos de clientes e produtos pessoais permanecem privados**; estudos de caso e demonstrações são compartilhados apenas quando apropriado.
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827" alt="JavaScript">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/React-0f172a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions">
+  <img src="https://img.shields.io/badge/IA_Aplicada-412991?style=for-the-badge&logo=openai&logoColor=white" alt="IA aplicada">
+</p>
 
-## Contato
+## Ensino o que uso de verdade
 
-- [Portfólio e artigos](https://asllanmaciel.com.br)
-- [LinkedIn](https://linkedin.com/in/asllanmaciel)
-- [M3 Growth Tech](https://m3growthtech.com.br)
-- [WP24Horas](https://wp24horas.com)
-- [contato@asllanmaciel.com.br](mailto:contato@asllanmaciel.com.br)
+Na [Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br), tecnologia, produto e negócio fazem parte do mesmo caminho: desenvolver uma habilidade real, transformar essa habilidade em renda e ampliar a liberdade de escolha.
 
-Rio de Janeiro, Brasil · Português nativo · Inglês para documentação e suporte
+<p align="center">
+  <img src="https://img.shields.io/badge/718_aulas-conteúdo_prático-0f766e?style=flat-square" alt="718 aulas">
+  <img src="https://img.shields.io/badge/16_cursos-tecnologia_&_negócio-2563eb?style=flat-square" alt="16 cursos">
+  <img src="https://img.shields.io/badge/3_formações-EngStack_·_DataStack_·_AIStack-7c3aed?style=flat-square" alt="3 formações">
+  <img src="https://img.shields.io/badge/4_trilhas-PHP_·_Front_·_WordPress_·_Negócio-e11d48?style=flat-square" alt="4 trilhas">
+</p>
+
+As formações cobrem desenvolvimento full stack, Docker, CI/CD, dados e inteligência artificial. As trilhas práticas conectam código, entrega, oferta e aquisição dos primeiros clientes.
+
+## Como eu trabalho
+
+- **Problema antes da ferramenta:** tecnologia precisa resolver algo concreto.
+- **Construção iterativa:** colocar no ar, observar, aprender e melhorar.
+- **Qualidade operacional:** testes, documentação, segurança, privacidade, observabilidade e planos de recuperação.
+- **Produto completo:** engenharia, experiência, monetização e crescimento pensados juntos.
+- **Conhecimento compartilhado:** cursos, artigos, ferramentas gratuitas e bastidores reais da construção.
+
+---
+
+<p align="center">
+  <strong>Conhecimento sem prática não gera transformação.</strong><br>
+  Construir é meu jeito de aprender, evoluir e criar liberdade.
+</p>
+
+<p align="center">
+  <a href="https://asllanmaciel.com.br">🌐 Site pessoal</a> ·
+  <a href="https://cursos.asllanmaciel.com.br">🎓 Cursos</a> ·
+  <a href="https://linkedin.com/in/asllanmaciel">💼 LinkedIn</a> ·
+  <a href="mailto:contato@asllanmaciel.com.br">✉️ Contato</a>
+</p>
