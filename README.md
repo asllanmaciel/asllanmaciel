@@ -105,6 +105,13 @@ Produtos comerciais e código de clientes continuam privados. Em público, compa
   </tr>
 </table>
 
+## Contribuições em outros projetos
+
+Além de manter projetos próprios, colaboro com iniciativas de outras comunidades quando posso contribuir com experiência prática em PHP, WordPress, APIs e segurança.
+
+- **[WordPress / Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** refatoração da agregação de presença para remover mutações de sessão do MySQL, melhorar a portabilidade e preservar o comportamento com cobertura de testes.
+- **[Ver todas as contribuições públicas](https://github.com/pulls?q=is%3Apr+author%3Aasllanmaciel+-user%3Aasllanmaciel):** pull requests enviados para projetos mantidos por outras pessoas e organizações.
+
 ## Stack que aparece no meu dia a dia
 
 <p align="center">
