@@ -81,6 +81,30 @@
   </tr>
 </table>
 
+## Open source para a comunidade
+
+Produtos comerciais e código de clientes continuam privados. Em público, compartilho exemplos, padrões e decisões que podem acelerar o trabalho de outros desenvolvedores.
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3><a href="https://github.com/asllanmaciel/bibliaapi-examples">📖 BIBLIAAPI Examples</a></h3>
+      <p>Integrações seguras em cURL, PHP e JavaScript usando token e variáveis de ambiente.</p>
+      <p><code>API</code> <code>OpenAPI</code> <code>PHP</code> <code>JavaScript</code></p>
+    </td>
+    <td width="33%" valign="top">
+      <h3><a href="https://github.com/asllanmaciel/github-webhook-security-guide">🔐 Webhook Security</a></h3>
+      <p>Guia e exemplos testados para validar assinaturas de webhooks do GitHub.</p>
+      <p><code>HMAC</code> <code>SHA-256</code> <code>PHP</code> <code>Node.js</code></p>
+    </td>
+    <td width="33%" valign="top">
+      <h3><a href="https://github.com/asllanmaciel/laravel-saas-blueprint">🏗️ Laravel SaaS Blueprint</a></h3>
+      <p>Arquitetura, tenancy, segurança, billing e operação para SaaS em Laravel.</p>
+      <p><code>Laravel</code> <code>SaaS</code> <code>Tenancy</code> <code>DevOps</code></p>
+    </td>
+  </tr>
+</table>
+
 ## Stack que aparece no meu dia a dia
 
 <p align="center">
