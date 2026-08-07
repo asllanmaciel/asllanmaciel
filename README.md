@@ -103,6 +103,13 @@ Produtos comerciais e código de clientes continuam privados. Em público, compa
       <p><code>Laravel</code> <code>SaaS</code> <code>Tenancy</code> <code>DevOps</code></p>
     </td>
   </tr>
+  <tr>
+    <td colspan="3" valign="top">
+      <h3><a href="https://github.com/asllanmaciel/wp-plugin-readme-validator">✅ WP Plugin Readme Validator</a></h3>
+      <p>CLI e GitHub Action sem dependências de runtime para validar versões, requisitos, tags e metadados antes de publicar plugins WordPress.</p>
+      <p><code>WordPress</code> <code>PHP</code> <code>GitHub Actions</code> <code>Developer Tools</code></p>
+    </td>
+  </tr>
 </table>
 
 ### Quer contribuir?
