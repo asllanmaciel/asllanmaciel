@@ -69,8 +69,8 @@
 
 ## Community contributions
 
-- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** contribution improving portability and removing MySQL session mutations while preserving tested behavior.
-- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution to the WooCommerce codebase.
+- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** merged contribution improving database portability by removing MySQL session mutations and replacing GROUP_CONCAT aggregation with deterministic PHP aggregation and regression coverage.
+- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution adding bulk activation and deactivation actions for webhooks with end-to-end coverage.
 
 ## Selected products
 
