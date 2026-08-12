@@ -60,6 +60,8 @@
 
 ## Open-source highlights
 
+I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a developer-focused home for WordPress tooling, architecture references and practical examples.
+
 - **[WP24H Plugin Boilerplate](https://github.com/WP24Horas/wp24h-plugin-boilerplate):** modular WordPress plugin starter with Settings API, REST examples, tests, static analysis and release tooling.
 - **[WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer):** Markdown + front matter importer with taxonomy, SEO metadata, featured images and optional authenticated REST automation.
 - **[Laravel SaaS Blueprint](https://github.com/asllanmaciel/laravel-saas-blueprint):** practical architecture guidance for tenancy, billing, security, jobs, webhooks and observability.
