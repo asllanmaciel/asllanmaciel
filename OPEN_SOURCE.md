@@ -4,6 +4,22 @@ A curated view of the public engineering work I maintain or contribute to across
 
 This page focuses on projects that are intentionally public, independently useful and maintainable outside client or commercial product code.
 
+## Maturity at a glance
+
+| Project / contribution | Current state | Next gate |
+|---|---|---|
+| Laravel SaaS Blueprint | Public release `v0.1.0` | Continue practical architecture documentation |
+| GitHub Webhook Security Guide | Public release `v0.1.0` | Community examples and security guidance |
+| BIBLIAAPI Examples | Public release `v0.1.0` | Additional language examples and resilient-client guidance |
+| WP24H Plugin Boilerplate | Public, pre-release `1.0.0` source | Clean checkout + generator + WordPress runtime + verified ZIP before `v1.0.0` |
+| WP Plugin README Validator | Public, pre-release Action | Clean `composer check`, parser/safety regressions and immutable `v1.0.0` before promoting `@v1` |
+| WP24H MD Importer | Public plugin version `1.2.0`, no GitHub Release yet | Owner decision + runtime + verified ZIP before first GitHub release |
+| WooCommerce PR #67645 | Upstream review | Maintainer review / upstream merge |
+| PHP Modern Patterns | Private incubation | `composer smoke` from a clean checkout before public visibility |
+| WP24H WordPress CRUD Example | Private incubation | Disposable WordPress runtime smoke + visual admin check before public visibility |
+
+A version in source code is not treated as a public release until the repository's release gate is actually completed.
+
 ## WordPress engineering
 
 ### [WP24H Plugin Boilerplate](https://github.com/WP24Horas/wp24h-plugin-boilerplate)
@@ -18,7 +34,7 @@ Highlights:
 - Site Health diagnostics example;
 - PHPCS, PHPStan and PHPUnit/Brain Monkey;
 - local `wp-env` support;
-- reproducible release ZIP tooling;
+- reproducible and structurally verified release ZIP tooling in Bash and PowerShell;
 - safe plugin scaffolder with deterministic identity replacement;
 - generated-project ownership metadata kept neutral;
 - `composer make:module` to generate a module and its unit test;
@@ -32,6 +48,9 @@ Current focus:
 
 - deterministic metadata validation;
 - WordPress/PHP requirement consistency;
+- first-8-KB plugin-header behavior aligned with WordPress;
+- CRLF / UTF-8 BOM resilience;
+- safe composite Action input handling;
 - stable Action versioning and release discipline;
 - local validation without requiring automatic CI on every push.
 
@@ -39,7 +58,7 @@ Current focus:
 
 Markdown + front matter importer for WordPress with taxonomy, featured-image, SEO metadata and optional authenticated REST automation.
 
-The project is also used as a real-world reference for capability checks, media handling, REST permissions and content automation.
+The project is also used as a real-world reference for capability checks, media handling, REST permissions, content automation and verified release packaging.
 
 ## PHP and Laravel
 
@@ -54,6 +73,7 @@ Covered areas include:
 - jobs and webhook processing;
 - security boundaries;
 - observability;
+- backup / restore operations;
 - operations and MVP readiness.
 
 The repository has a public `v0.1.0` release and contribution entry points for practical documentation improvements.
@@ -65,6 +85,7 @@ The repository has a public `v0.1.0` release and contribution entry points for p
 The initial catalog focuses on small executable examples of:
 
 - DTO → application service → domain/value object → ports/adapters;
+- domain invariants enforced by domain objects;
 - explicit ID generation boundaries;
 - deterministic time through a `Clock` port;
 - PHPUnit and PHPStan-backed examples.
@@ -73,11 +94,11 @@ The initial catalog focuses on small executable examples of:
 
 ### [GitHub Webhook Security Guide](https://github.com/asllanmaciel/github-webhook-security-guide)
 
-Practical PHP and Node.js examples for validating GitHub webhook signatures with HMAC SHA-256 and avoiding unsafe request-body transformations.
+Practical PHP and Node.js examples for validating GitHub webhook signatures with HMAC SHA-256 and avoiding unsafe request-body transformations, with idempotency and receiver threat-model guidance.
 
 ### [BIBLIAAPI Examples](https://github.com/asllanmaciel/bibliaapi-examples)
 
-Small integration examples showing token-based API consumption from cURL, PHP and JavaScript with environment-variable handling and reproducible setup.
+Small integration examples showing token-based API consumption from cURL, PHP and JavaScript with environment-variable handling, resilient-client guidance and reproducible setup.
 
 ## Upstream contributions
 
@@ -91,15 +112,17 @@ Merged contribution improving database portability by replacing MySQL session mu
 
 [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645)
 
-Community contribution adding bulk webhook-status management in the WooCommerce admin. The contribution includes admin behavior, status persistence, notices and end-to-end coverage.
+Community contribution adding bulk webhook-status management in the WooCommerce admin.
 
-The linked enhancement explicitly includes WooCommerce's existing webhook states (`active`, `paused`, `disabled`), so the final contribution should cover the requested status transitions rather than invent a new status model.
+The current patch covers the full requested status flow — **Activate, Pause and Deactivate** — preserves list filters, reports update counts, keeps bulk activation aligned with the existing initial-ping behavior, and includes end-to-end coverage for `disabled → active → paused → disabled`.
 
 ## WP24Horas Open Source
 
 [github.com/WP24Horas](https://github.com/WP24Horas)
 
-The organization is being curated as a developer-facing WordPress engineering space. Historical experiments and old forks are archived instead of competing with maintained projects in the active portfolio.
+The organization is curated as a developer-facing WordPress engineering space. Historical experiments and old forks are archived instead of competing with maintained projects in the active portfolio.
+
+The organization-level `.github` repository provides default contribution, security, support, governance, pull-request and issue-template guidance for repositories that do not define project-specific versions.
 
 The flagship project is the WP24H Plugin Boilerplate; new public projects are expected to pass security, documentation, reproducibility and runtime gates before being promoted as maintained references.
 
@@ -124,6 +147,7 @@ The next meaningful milestones are:
 
 1. publish the first validated `v1.0.0` of WP24H Plugin Boilerplate;
 2. publish the first stable `v1.0.0` of WP Plugin README Validator and align the floating `v1` Action ref;
-3. complete runtime checks for the private WordPress CRUD example;
-4. complete clean-checkout smoke validation for `php-modern-patterns` before public visibility;
-5. continue upstream contribution work in WordPress/WooCommerce without opening unnecessary parallel PRs.
+3. decide the final owner and complete runtime/release validation for WP24H MD Importer;
+4. complete runtime checks for the private WordPress CRUD example;
+5. complete clean-checkout `composer smoke` validation for `php-modern-patterns` before public visibility;
+6. continue upstream contribution work in WordPress/WooCommerce without opening unnecessary parallel PRs.
