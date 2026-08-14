@@ -65,9 +65,9 @@ I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a dev
 **[View the dedicated open-source portfolio →](OPEN_SOURCE.md)**
 
 - **[WP24H Plugin Boilerplate v1.0.0](https://github.com/WP24Horas/wp24h-plugin-boilerplate/releases/tag/v1.0.0):** validated stable WordPress plugin starter with safe scaffolding, module generation, REST examples, tests, static analysis and verified release tooling.
+- **[WP Plugin README Validator v1.0.0](https://github.com/asllanmaciel/wp-plugin-readme-validator/releases/tag/v1.0.0):** stable dependency-free CLI and GitHub Action for WordPress plugin metadata validation, with `@v1` consumer alias, PHP 8.1–8.4 validation and WordPress-compatible raw 8192-byte header parsing.
 - **[WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer):** Markdown + front matter importer with taxonomy, SEO metadata, featured images and optional authenticated REST automation.
 - **[Laravel SaaS Blueprint](https://github.com/asllanmaciel/laravel-saas-blueprint):** practical architecture guidance for tenancy, billing, security, jobs, webhooks and observability.
-- **[WP Plugin README Validator](https://github.com/asllanmaciel/wp-plugin-readme-validator):** dependency-free CLI and GitHub Action for validating WordPress plugin metadata.
 - **[GitHub Webhook Security Guide](https://github.com/asllanmaciel/github-webhook-security-guide):** tested PHP and Node.js examples for validating webhook signatures with HMAC SHA-256.
 - **[BIBLIAAPI Examples](https://github.com/asllanmaciel/bibliaapi-examples):** secure cURL, PHP and JavaScript integration examples using tokens and environment variables.
 
