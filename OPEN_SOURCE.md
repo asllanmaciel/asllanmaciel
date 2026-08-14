@@ -9,10 +9,10 @@ This page focuses on projects that are intentionally public, independently usefu
 | Project / contribution | Current state | Next gate |
 |---|---|---|
 | WP24H Plugin Boilerplate | Public release `v1.0.0` | Maintenance, adoption and contributor feedback |
+| WP Plugin README Validator | Public release `v1.0.0`; stable Action alias `v1` | Adoption, contributor feedback and future compatible v1 releases |
 | Laravel SaaS Blueprint | Public release `v0.1.0` | Continue practical architecture documentation |
 | GitHub Webhook Security Guide | Public release `v0.1.0` | Community examples and security guidance |
 | BIBLIAAPI Examples | Public release `v0.1.0` | Additional language examples and resilient-client guidance |
-| WP Plugin README Validator | Public, pre-release Action | Clean `composer check`, parser/safety regressions and immutable `v1.0.0` before promoting `@v1` |
 | WP24H MD Importer | Public plugin version `1.2.0`, no GitHub Release yet | Owner decision + runtime + verified ZIP before first GitHub release |
 | WooCommerce PR #67645 | Upstream review | Maintainer review / upstream merge |
 | PHP Modern Patterns | Private incubation | `composer smoke` from a clean checkout before public visibility |
@@ -49,14 +49,19 @@ Highlights:
 
 Dependency-light CLI and GitHub Action for detecting inconsistencies between a WordPress plugin header and `readme.txt` before distribution.
 
-Current focus:
+**Stable release: [v1.0.0](https://github.com/asllanmaciel/wp-plugin-readme-validator/releases/tag/v1.0.0)** · consumers can use `asllanmaciel/wp-plugin-readme-validator@v1`.
+
+The stable release passed PHP 8.1–8.4 compatibility, PHPStan, PHPUnit, CLI contract, JSON-output, Action command-contract and security gates. Its parser preserves WordPress's raw 8192-byte plugin-header boundary before BOM removal/line-ending normalization, supports LF/CRLF/lone-CR/BOM and preserves first-occurrence semantics for duplicate headers.
+
+Highlights:
 
 - deterministic metadata validation;
 - WordPress/PHP requirement consistency;
-- first-8-KB plugin-header behavior aligned with WordPress;
-- CRLF / UTF-8 BOM resilience;
-- safe composite Action input handling;
-- stable Action versioning and release discipline;
+- first-8-KB raw plugin-header behavior aligned with WordPress;
+- CRLF / lone-CR / UTF-8 BOM resilience;
+- duplicate headers preserve first occurrence;
+- safe composite Action input handling through environment variables;
+- stable `v1` Action alias aligned to the `v1.0.0` release commit;
 - local validation without requiring automatic CI on every push.
 
 ### [WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer)
@@ -129,7 +134,7 @@ The organization is curated as a developer-facing WordPress engineering space. H
 
 The organization-level `.github` repository provides default contribution, security, support, governance, pull-request and issue-template guidance for repositories that do not define project-specific versions.
 
-The flagship WP24H Plugin Boilerplate now has a validated public `v1.0.0` release. New public projects are expected to pass the same kind of security, documentation, reproducibility and runtime gates before being promoted as maintained references.
+The flagship WP24H Plugin Boilerplate has a validated public `v1.0.0` release, and the related WP Plugin README Validator now has its own stable `v1.0.0` release plus `@v1` consumer alias. New public projects are expected to pass the same kind of security, documentation, reproducibility and runtime gates before being promoted as maintained references.
 
 ## Maintenance principles
 
@@ -151,7 +156,7 @@ The working rules are:
 The next meaningful milestones are:
 
 1. maintain and gather adoption feedback for WP24H Plugin Boilerplate `v1.0.0`;
-2. publish the first stable `v1.0.0` of WP Plugin README Validator and align the floating `v1` Action ref;
+2. maintain and gather adoption feedback for WP Plugin README Validator `v1.0.0` / `@v1`;
 3. decide the final owner and complete runtime/release validation for WP24H MD Importer;
 4. complete runtime checks for the private WordPress CRUD example;
 5. complete clean-checkout `composer smoke` validation for `php-modern-patterns` before public visibility;
