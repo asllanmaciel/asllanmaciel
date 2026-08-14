@@ -64,7 +64,7 @@ I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a dev
 
 **[View the dedicated open-source portfolio →](OPEN_SOURCE.md)**
 
-- **[WP24H Plugin Boilerplate](https://github.com/WP24Horas/wp24h-plugin-boilerplate):** modular WordPress plugin starter with Settings API, REST examples, tests, static analysis and release tooling.
+- **[WP24H Plugin Boilerplate](https://github.com/WP24Horas/wp24h-plugin-boilerplate):** modular WordPress plugin starter with safe scaffolding, module generation, REST examples, tests, static analysis and verified release tooling.
 - **[WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer):** Markdown + front matter importer with taxonomy, SEO metadata, featured images and optional authenticated REST automation.
 - **[Laravel SaaS Blueprint](https://github.com/asllanmaciel/laravel-saas-blueprint):** practical architecture guidance for tenancy, billing, security, jobs, webhooks and observability.
 - **[WP Plugin README Validator](https://github.com/asllanmaciel/wp-plugin-readme-validator):** dependency-free CLI and GitHub Action for validating WordPress plugin metadata.
@@ -74,7 +74,7 @@ I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a dev
 ## Community contributions
 
 - **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** merged contribution improving database portability by removing MySQL session mutations and replacing GROUP_CONCAT aggregation with deterministic PHP aggregation and regression coverage.
-- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution adding bulk activation and deactivation actions for webhooks with end-to-end coverage.
+- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution adding bulk Activate, Pause and Deactivate webhook actions with status persistence, notices, initial-ping parity and end-to-end coverage.
 
 ## Selected products
 
