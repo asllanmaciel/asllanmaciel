@@ -8,10 +8,10 @@ This page focuses on projects that are intentionally public, independently usefu
 
 | Project / contribution | Current state | Next gate |
 |---|---|---|
+| WP24H Plugin Boilerplate | Public release `v1.0.0` | Maintenance, adoption and contributor feedback |
 | Laravel SaaS Blueprint | Public release `v0.1.0` | Continue practical architecture documentation |
 | GitHub Webhook Security Guide | Public release `v0.1.0` | Community examples and security guidance |
 | BIBLIAAPI Examples | Public release `v0.1.0` | Additional language examples and resilient-client guidance |
-| WP24H Plugin Boilerplate | Public, pre-release `1.0.0` source | Clean checkout + generator + WordPress runtime + verified ZIP before `v1.0.0` |
 | WP Plugin README Validator | Public, pre-release Action | Clean `composer check`, parser/safety regressions and immutable `v1.0.0` before promoting `@v1` |
 | WP24H MD Importer | Public plugin version `1.2.0`, no GitHub Release yet | Owner decision + runtime + verified ZIP before first GitHub release |
 | WooCommerce PR #67645 | Upstream review | Maintainer review / upstream merge |
@@ -26,6 +26,10 @@ A version in source code is not treated as a public release until the repository
 
 Modern WordPress plugin starter focused on production-minded architecture rather than manual search/replace scaffolding.
 
+**Stable release: [v1.0.0](https://github.com/WP24Horas/wp24h-plugin-boilerplate/releases/tag/v1.0.0)**
+
+The first stable release passed documented clean-checkout, static-analysis, test, scaffold, WordPress runtime, generated-plugin, release-ZIP verification and clean-artifact-installation gates. The full evidence is versioned in `RELEASE_VALIDATION_REPORT.md`.
+
 Highlights:
 
 - modular plugin architecture with explicit module contracts;
@@ -38,7 +42,8 @@ Highlights:
 - safe plugin scaffolder with deterministic identity replacement;
 - generated-project ownership metadata kept neutral;
 - `composer make:module` to generate a module and its unit test;
-- smoke coverage for boilerplate → generated plugin → generated module.
+- smoke coverage for boilerplate → generated plugin → generated module;
+- lifecycle-safe translation handling that preserves early module registration.
 
 ### [WP Plugin README Validator](https://github.com/asllanmaciel/wp-plugin-readme-validator)
 
@@ -124,7 +129,7 @@ The organization is curated as a developer-facing WordPress engineering space. H
 
 The organization-level `.github` repository provides default contribution, security, support, governance, pull-request and issue-template guidance for repositories that do not define project-specific versions.
 
-The flagship project is the WP24H Plugin Boilerplate; new public projects are expected to pass security, documentation, reproducibility and runtime gates before being promoted as maintained references.
+The flagship WP24H Plugin Boilerplate now has a validated public `v1.0.0` release. New public projects are expected to pass the same kind of security, documentation, reproducibility and runtime gates before being promoted as maintained references.
 
 ## Maintenance principles
 
@@ -145,7 +150,7 @@ The working rules are:
 
 The next meaningful milestones are:
 
-1. publish the first validated `v1.0.0` of WP24H Plugin Boilerplate;
+1. maintain and gather adoption feedback for WP24H Plugin Boilerplate `v1.0.0`;
 2. publish the first stable `v1.0.0` of WP Plugin README Validator and align the floating `v1` Action ref;
 3. decide the final owner and complete runtime/release validation for WP24H MD Importer;
 4. complete runtime checks for the private WordPress CRUD example;
