@@ -4,6 +4,8 @@ A curated view of the public engineering work I maintain or contribute to across
 
 This page focuses on projects that are intentionally public, independently useful and maintainable outside client or commercial product code.
 
+For a dedicated, verifiable record of contributions to projects maintained by third-party organizations, see **[Upstream Open Source Contributions →](CONTRIBUTIONS.md)**.
+
 ## Maturity at a glance
 
 | Project / contribution | Current state | Next gate |
@@ -14,7 +16,6 @@ This page focuses on projects that are intentionally public, independently usefu
 | GitHub Webhook Security Guide | Public release `v0.1.0` | Community examples and security guidance |
 | BIBLIAAPI Examples | Public release `v0.1.0` | Additional language examples and resilient-client guidance |
 | WP24H MD Importer | Public plugin version `1.2.0`, no GitHub Release yet | Owner decision + runtime + verified ZIP before first GitHub release |
-| WooCommerce PR #67645 | Upstream review | Maintainer review / upstream merge |
 | PHP Modern Patterns | Private incubation | `composer smoke` from a clean checkout before public visibility |
 | WP24H WordPress CRUD Example | Private incubation | Disposable WordPress runtime smoke + visual admin check before public visibility |
 
@@ -112,19 +113,11 @@ Small integration examples showing token-based API consumption from cURL, PHP an
 
 ## Upstream contributions
 
-### WordPress Presence API — merged
+Upstream work is maintained separately so contribution status stays explicit and verifiable instead of being mixed with repositories I own.
 
-[PR #193](https://github.com/WordPress/presence-api/pull/193)
+**[View the complete contribution record →](CONTRIBUTIONS.md)**
 
-Merged contribution improving database portability by replacing MySQL session mutation / `GROUP_CONCAT` aggregation with deterministic PHP aggregation and regression coverage.
-
-### WooCommerce — active review
-
-[PR #67645](https://github.com/woocommerce/woocommerce/pull/67645)
-
-Community contribution adding bulk webhook-status management in the WooCommerce admin.
-
-The current patch covers the full requested status flow — **Activate, Pause and Deactivate** — preserves list filters, reports update counts, keeps bulk activation aligned with the existing initial-ping behavior, and includes end-to-end coverage for `disabled → active → paused → disabled`.
+Current highlights include a merged contribution to the WordPress Presence API and active WooCommerce contributions under upstream review.
 
 ## WP24Horas Open Source
 
