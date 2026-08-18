@@ -10,7 +10,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 |---|---|---|---|
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / changes in progress** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Draft / changes requested** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Draft** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 
@@ -63,17 +63,17 @@ Automated review feedback about sending the initial webhook ping during bulk act
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
-**Status:** **Open / changes in progress after review**  
+**Status:** **Draft / changes requested after review**  
 **Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
 
 Addresses an assumption in `WC_Abstract_Order::apply_coupon()` that every descendant exposes `get_customer_id()`.
 
-The original proposal prevents custom customerless order types from failing on an undefined method call and adds regression coverage. Review identified two important follow-up requirements that are being addressed before requesting final upstream review:
+The original proposal prevents custom customerless order types from failing on an undefined method call and adds regression coverage. Review identified two important follow-up requirements that must be addressed before requesting final upstream review:
 
 - customerless orders must still execute the existing billing-email `usage_limit_per_user` validation, so absence of `get_customer_id()` should behave like a guest customer ID of `0` rather than skipping the check;
 - capability detection should use `is_callable()` instead of `method_exists()` so an inaccessible/private descendant method cannot pass the guard and then trigger a fatal call.
 
-This review feedback improves both backwards compatibility and coupon usage-limit correctness without changing a public signature or hook.
+The PR was intentionally returned to draft while these review findings remain unresolved. This keeps the upstream state honest and avoids presenting a known-incomplete implementation as ready for maintainer review.
 
 ### WooCommerce — reusable product-name CSS class
 
