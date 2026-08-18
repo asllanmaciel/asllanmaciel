@@ -71,9 +71,13 @@ I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a dev
 - **[GitHub Webhook Security Guide](https://github.com/asllanmaciel/github-webhook-security-guide):** tested PHP and Node.js examples for validating webhook signatures with HMAC SHA-256.
 - **[BIBLIAAPI Examples](https://github.com/asllanmaciel/bibliaapi-examples):** secure cURL, PHP and JavaScript integration examples using tokens and environment variables.
 
-## Community contributions
+## Upstream open-source contributions
 
-- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** merged contribution improving database portability by removing MySQL session mutations and replacing GROUP_CONCAT aggregation with deterministic PHP aggregation and regression coverage.
+**Merged contributor to WordPress projects · active WooCommerce contributor.**
+
+**[View the full upstream contribution record →](CONTRIBUTIONS.md)**
+
+- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** merged contribution improving database portability by removing MySQL session mutations and replacing `GROUP_CONCAT` aggregation with deterministic PHP aggregation and regression coverage.
 - **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution adding bulk Activate, Pause and Deactivate webhook actions with status persistence, notices, initial-ping parity and end-to-end coverage.
 
 ## Selected products
