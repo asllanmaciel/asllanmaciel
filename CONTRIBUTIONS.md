@@ -10,8 +10,9 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 |---|---|---|---|
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / review** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / changes in progress** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Draft** |
+| WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 
 ## Merged contributions
 
@@ -56,22 +57,23 @@ The contribution covers:
 - initial-ping behavior when activating eligible webhooks;
 - end-to-end coverage for `disabled → active → paused → disabled`.
 
+Automated review feedback about sending the initial webhook ping during bulk activation was addressed in the branch, and the corresponding review thread is resolved. The PR remains open for upstream review.
+
 ### WooCommerce — coupon handling for customerless order types
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
-**Status:** **Open / upstream review**  
+**Status:** **Open / changes in progress after review**  
 **Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
 
 Addresses an assumption in `WC_Abstract_Order::apply_coupon()` that every descendant exposes `get_customer_id()`.
 
-The proposed fix:
+The original proposal prevents custom customerless order types from failing on an undefined method call and adds regression coverage. Review identified two important follow-up requirements that are being addressed before requesting final upstream review:
 
-- guards the guest-specific coupon check for order types that actually have a customer concept;
-- preserves existing `WC_Order` behavior;
-- prevents custom customerless order types from failing on an undefined method call;
-- adds regression coverage for applying a valid coupon to an order type without `get_customer_id()`;
-- was validated with focused PHPUnit coverage, PHPCS and PHPStan.
+- customerless orders must still execute the existing billing-email `usage_limit_per_user` validation, so absence of `get_customer_id()` should behave like a guest customer ID of `0` rather than skipping the check;
+- capability detection should use `is_callable()` instead of `method_exists()` so an inaccessible/private descendant method cannot pass the guard and then trigger a fatal call.
+
+This review feedback improves both backwards compatibility and coupon usage-limit correctness without changing a public signature or hook.
 
 ### WooCommerce — reusable product-name CSS class
 
@@ -83,6 +85,20 @@ The proposed fix:
 Adds a consistent `wc-product-name` CSS class to product-name markup in the classic checkout and WooCommerce order emails.
 
 The proposal is intentionally additive and keeps existing hooks and filter arguments unchanged while giving themes and integrations a stable selector for styling product names independently from quantity and item metadata.
+
+### Easy Author Avatar Image — publish minimum platform requirements
+
+**Repository:** [`mukeshpanchal27/easy-author-avatar-image`](https://github.com/mukeshpanchal27/easy-author-avatar-image)  
+**Pull request:** [#51 — Add WordPress and PHP requirements to readme](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51)  
+**Status:** **Open / upstream review**  
+**Related issue:** [#42](https://github.com/mukeshpanchal27/easy-author-avatar-image/issues/42)
+
+Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself:
+
+- `Requires at least: 6.8`;
+- `Requires PHP: 7.4`.
+
+The patch intentionally changes only two metadata lines so WordPress.org can expose accurate installation requirements without changing plugin behavior.
 
 ## Contribution standards
 
