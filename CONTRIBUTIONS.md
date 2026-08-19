@@ -13,6 +13,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Draft / changes requested** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Draft** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
+| Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
 ## Merged contributions
 
@@ -99,6 +100,20 @@ Synchronizes the WordPress.org `readme.txt` compatibility headers with the minim
 - `Requires PHP: 7.4`.
 
 The patch intentionally changes only two metadata lines so WordPress.org can expose accurate installation requirements without changing plugin behavior.
+
+## Closed without merge
+
+### ECU Docs — validated AI-assisted manufacturer content pipeline
+
+**Repository:** [`laravelcompany/ecudocs.com`](https://github.com/laravelcompany/ecudocs.com)  
+**Pull request:** [#4 — Improve manufacturer content with validated AI-assisted enrichment](https://github.com/laravelcompany/ecudocs.com/pull/4)  
+**Status:** **Closed without merge**
+
+Explored a safer manufacturer-content workflow for the Astro-based ECU Docs project, separating AI generation from reviewed production data and adding validation, provenance, staged promotion, SEO metadata and safe internal-link checks.
+
+Maintainer feedback correctly identified that the first implementation introduced a parallel AI integration instead of extending the project's existing `fetch-autoevolution.mjs` workflow. The fork was subsequently corrected to reuse the existing generation endpoint and project context, and the updated flow was validated against the real endpoint and production build. The upstream effort was nevertheless ended by the maintainer and was not resubmitted.
+
+**Why it matters:** this is intentionally recorded as **closed without merge**, not as an accepted contribution. The main engineering lesson was to preserve and extend an established project workflow before introducing a parallel abstraction, even when the parallel design has stronger validation or safety properties.
 
 ## Upstream investigations
 
