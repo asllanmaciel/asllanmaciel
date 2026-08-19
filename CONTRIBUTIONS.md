@@ -100,6 +100,30 @@ Synchronizes the WordPress.org `readme.txt` compatibility headers with the minim
 
 The patch intentionally changes only two metadata lines so WordPress.org can expose accurate installation requirements without changing plugin behavior.
 
+## Upstream investigations
+
+### Superpowers — Hermes delegation/runtime contract drift
+
+**Repository:** [`obra/superpowers`](https://github.com/obra/superpowers)  
+**Issue:** [#2157 — Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)  
+**Status:** **Issue investigation / patch prepared; no PR submitted**  
+**Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)
+
+Investigated the Hermes-specific tool mapping against both the exact Hermes v0.20.1 commit reported by the issue (`165c889e`) and current Hermes `main`.
+
+The investigation found an important version-contract distinction:
+
+- the pinned v0.20.1 runtime explicitly states that `delegate_task` has no model-facing toolset-selection argument and that subagents inherit the parent's enabled capabilities;
+- `enabled_toolsets` belongs to Hermes runtime/agent configuration rather than that delegation-tool schema;
+- newer Hermes builds have since exposed optional `toolsets` again, so hard-coding `enabled_toolsets` would not be a robust compatibility fix;
+- the safer baseline for the affected runtime is `delegate_task(goal=..., context=..., role="leaf")`, with optional controls taken from the live tool schema;
+- Superpowers' own Hermes bootstrap already documents namespaced skill loading (`skill_view("superpowers:brainstorming")`), while the shipped Hermes mapping still shows an unqualified skill name;
+- web/search guidance should remain capability-aware because those toolsets are not guaranteed in every session.
+
+The findings were posted directly on upstream issue #2157 with permanent links to the pinned Hermes source and current delegation implementation. The fork patch and regression assertions were updated accordingly.
+
+A pull request has intentionally **not** been opened yet because Superpowers' PR template requires a human partner to review the complete proposed diff before submission. Keeping this separate from merged/open-PR entries avoids presenting preparatory work as an accepted code contribution.
+
 ## Contribution standards
 
 I treat upstream contribution as engineering work rather than activity metrics.
