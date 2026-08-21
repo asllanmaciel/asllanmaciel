@@ -11,7 +11,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / review** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Draft** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -80,12 +80,12 @@ Both findings were addressed in commit `87c026729d`: capability detection now us
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67764 — Add product name CSS class to checkout and emails](https://github.com/woocommerce/woocommerce/pull/67764)  
-**Status:** **Draft**  
+**Status:** **Open / upstream review**  
 **Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)
 
 Adds a consistent `wc-product-name` CSS class to product-name markup in the classic checkout and WooCommerce order emails.
 
-The proposal is intentionally additive and keeps existing hooks and filter arguments unchanged while giving themes and integrations a stable selector for styling product names independently from quantity and item metadata.
+The proposal is intentionally additive and keeps existing hooks and filter arguments unchanged while giving themes and integrations a stable selector for styling product names independently from quantity and item metadata. The PR is now ready for upstream review; CodeRabbit's refreshed review reported no actionable comments.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
