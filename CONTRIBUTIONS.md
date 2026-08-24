@@ -121,8 +121,9 @@ Maintainer feedback correctly identified that the first implementation introduce
 
 **Repository:** [`obra/superpowers`](https://github.com/obra/superpowers)  
 **Issue:** [#2157 — Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)  
-**Status:** **Issue investigation / patch prepared; no PR submitted**  
-**Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)
+**Status:** **Upstream investigation; local patch superseded by existing PR #2162; no PR submitted**  
+**Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)  
+**Overlapping upstream PR:** [#2162 — fix(using-superpowers): correct Hermes tool mapping](https://github.com/obra/superpowers/pull/2162)
 
 Investigated the Hermes-specific tool mapping against both the exact Hermes v0.20.1 commit reported by the issue (`165c889e`) and current Hermes `main`.
 
@@ -137,7 +138,7 @@ The investigation found an important version-contract distinction:
 
 The findings were posted directly on upstream issue #2157 with permanent links to the pinned Hermes source and current delegation implementation. The fork patch and regression assertions were updated accordingly.
 
-A pull request has intentionally **not** been opened yet because Superpowers' PR template requires a human partner to review the complete proposed diff before submission. Keeping this separate from merged/open-PR entries avoids presenting preparatory work as an accepted code contribution.
+A duplicate/prior-art check now confirms that upstream PR #2162 was already open and addresses the same issue with substantially the same compatibility-safe approach, including omission of the invalid delegation toolset selector, namespaced skill identifiers, capability-aware web guidance, and regression coverage. The local patch therefore will not be submitted upstream. Keeping this entry under **Upstream investigations** records the technical investigation without presenting duplicate preparatory work as an accepted contribution.
 
 ## Contribution standards
 
