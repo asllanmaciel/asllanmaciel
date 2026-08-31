@@ -2,7 +2,7 @@
 
 A verifiable record of my contributions to open-source projects maintained by third-party organizations.
 
-This page intentionally excludes repositories I own or maintain. It focuses on upstream engineering work: contributions submitted to external projects, their review state, and the technical impact of the work.
+This page intentionally excludes repositories I own or maintain. It focuses on upstream engineering work: contributions submitted to external projects, their review state, and the technical impact and lessons of the work.
 
 ## At a glance
 
@@ -10,7 +10,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 |---|---|---|---|
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / changes requested** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
@@ -24,17 +24,17 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 **Status:** **Merged into `main`**  
 **Related issue:** [#133](https://github.com/WordPress/presence-api/issues/133)
 
-Improved database portability and reliability for the WordPress Presence API by replacing session-level MySQL mutations and `GROUP_CONCAT()` aggregation with deterministic aggregation in PHP.
+Improved database portability and reliability by replacing session-level MySQL mutations and `GROUP_CONCAT()` aggregation with deterministic aggregation in PHP.
 
 Technical work included:
 
 - removing the dependency on `SET SESSION group_concat_max_len`;
 - avoiding silent `GROUP_CONCAT()` truncation for rooms with many users;
 - aggregating entry and distinct-user counts in PHP;
-- preserving active-room ordering by entry count with a deterministic room-name tie-breaker;
-- deduplicating users without relying on SQL string aggregation;
-- adding regression coverage for room ordering and user deduplication;
-- validating the change with WordPress coding standards, PHPStan and PHP syntax checks.
+- preserving active-room ordering with a deterministic tie-breaker;
+- deduplicating users without SQL string aggregation;
+- adding regression coverage;
+- validating with WordPress coding standards, PHPStan and PHP syntax checks.
 
 **Why it matters:** managed databases and database proxies may restrict session mutations or fail to preserve session state consistently. The merged implementation removes that operational dependency while preserving the Presence API behavior.
 
@@ -47,39 +47,9 @@ Technical work included:
 **Status:** **Open / upstream review**  
 **Related issue:** [#66827](https://github.com/woocommerce/woocommerce/issues/66827)
 
-Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration.
+Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
 
-The contribution covers:
-
-- bulk status transitions in the admin UI;
-- persistence through the existing webhook model;
-- preservation of the current list filter;
-- success notices reporting the number of updated webhooks;
-- initial-ping behavior when activating eligible webhooks;
-- end-to-end coverage for `disabled → active → paused → disabled`.
-
-Automated review feedback about sending the initial webhook ping during bulk activation was addressed in the branch, and the corresponding review thread is resolved. The PR remains open for upstream review.
-
-### WooCommerce — coupon handling for customerless order types
-
-**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
-**Status:** **Open / changes requested**  
-**Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
-
-Addresses an assumption in `WC_Abstract_Order::apply_coupon()` that every descendant exposes customer-specific methods.
-
-Earlier automated review identified two important follow-up requirements around preserving billing-email usage limits and checking method callability. Those findings were addressed in commit `87c026729d`, after which CodeRabbit reported no actionable comments and minimal merge risk.
-
-A maintainer review on 31 August requested a further simplification and hardening pass before merge:
-
-- remove the `has_customer_id_method()` helper and use the `is_callable()` capability check inline instead of preserving a one-use abstraction;
-- keep the guest-specific coupon validation explicitly tied to order types that actually expose a callable `get_customer_id()`;
-- guard `get_billing_email()` in `WC_Abstract_Order::apply_coupon()` so genuinely customerless order types do not assume a billing API exists;
-- apply the same billing-email guard in `wc_update_coupon_usage_counts()`;
-- update regression coverage to prove a custom order type without these customer methods can apply a valid coupon without an undefined-method error.
-
-The requested changes are being addressed and validated before the PR is returned for maintainer review. This entry deliberately remains **Open / changes requested** until the updated branch is reviewed upstream.
+Automated review feedback about the activation path was addressed in the branch. The PR remains open for upstream review.
 
 ### WooCommerce — reusable product-name CSS class
 
@@ -88,9 +58,7 @@ The requested changes are being addressed and validated before the PR is returne
 **Status:** **Open / upstream review**  
 **Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)
 
-Adds a consistent `wc-product-name` CSS class to product-name markup in the classic checkout and WooCommerce order emails.
-
-The proposal is intentionally additive and keeps existing hooks and filter arguments unchanged while giving themes and integrations a stable selector for styling product names independently from quantity and item metadata. The PR is now ready for upstream review; CodeRabbit's refreshed review reported no actionable comments.
+Adds a consistent `wc-product-name` CSS class to product-name markup in classic checkout and WooCommerce order emails. The proposal is additive, preserves existing hooks and filter arguments, and gives themes and integrations a stable selector for styling product names independently from quantity and item metadata.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
@@ -99,14 +67,24 @@ The proposal is intentionally additive and keeps existing hooks and filter argum
 **Status:** **Open / upstream review**  
 **Related issue:** [#42](https://github.com/mukeshpanchal27/easy-author-avatar-image/issues/42)
 
-Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself:
-
-- `Requires at least: 6.8`;
-- `Requires PHP: 7.4`.
-
-The patch intentionally changes only two metadata lines so WordPress.org can expose accurate installation requirements without changing plugin behavior.
+Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself: `Requires at least: 6.8` and `Requires PHP: 7.4`.
 
 ## Closed without merge
+
+### WooCommerce — coupon handling for customerless order types
+
+**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
+**Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
+**Status:** **Closed without merge on 31 August 2026**  
+**Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
+
+Investigated an assumption in `WC_Abstract_Order::apply_coupon()` that descendants expose customer-specific methods. The work surfaced several useful compatibility details: billing-email usage limits still need to be preserved for guest-like orders, method capability checks must account for visibility/callability, and downstream coupon-usage accounting can make the persistence path part of the regression surface.
+
+The branch went through automated review and a human maintainer review. The maintainer requested a simpler inline capability check, guards around billing-email access in both `apply_coupon()` and `wc_update_coupon_usage_counts()`, and regression coverage for a genuinely customerless custom order type.
+
+The PR was ultimately closed by the maintainer without merge because the implementation and review-response loop appeared to have been delegated primarily to AI agents. For changes touching extension compatibility and merchant/shopper critical paths, the maintainer explicitly required stronger demonstrated human ownership: the contributor must understand, validate, discuss and defend every submitted change. The maintainer left the underlying issue open and invited a fresh PR if the fix is pursued under that contribution model.
+
+**Why it matters:** beyond the code-level findings, this established an important upstream contribution boundary: AI can assist research and validation, but maintainer-facing implementation and review ownership must remain demonstrably with the contributor, especially on critical compatibility paths.
 
 ### ECU Docs — validated AI-assisted manufacturer content pipeline
 
@@ -116,9 +94,9 @@ The patch intentionally changes only two metadata lines so WordPress.org can exp
 
 Explored a safer manufacturer-content workflow for the Astro-based ECU Docs project, separating AI generation from reviewed production data and adding validation, provenance, staged promotion, SEO metadata and safe internal-link checks.
 
-Maintainer feedback correctly identified that the first implementation introduced a parallel AI integration instead of extending the project's existing `fetch-autoevolution.mjs` workflow. The fork was subsequently corrected to reuse the existing generation endpoint and project context, and the updated flow was validated against the real endpoint and production build. The upstream effort was nevertheless ended by the maintainer and was not resubmitted.
+Maintainer feedback identified that the first implementation introduced a parallel AI integration instead of extending the project's existing `fetch-autoevolution.mjs` workflow. The fork was subsequently corrected to reuse the existing generation endpoint and project context, and the updated flow was validated against the real endpoint and production build. The upstream effort was nevertheless ended by the maintainer and was not resubmitted.
 
-**Why it matters:** this is intentionally recorded as **closed without merge**, not as an accepted contribution. The main engineering lesson was to preserve and extend an established project workflow before introducing a parallel abstraction, even when the parallel design has stronger validation or safety properties.
+**Why it matters:** this is intentionally recorded as **closed without merge**, not as an accepted contribution. The main engineering lesson was to preserve and extend an established project workflow before introducing a parallel abstraction.
 
 ## Upstream investigations
 
@@ -134,16 +112,14 @@ Investigated the Hermes-specific tool mapping against both the exact Hermes v0.2
 
 The investigation found an important version-contract distinction:
 
-- the pinned v0.20.1 runtime explicitly states that `delegate_task` has no model-facing toolset-selection argument and that subagents inherit the parent's enabled capabilities;
+- the pinned v0.20.1 runtime states that `delegate_task` has no model-facing toolset-selection argument and subagents inherit the parent's enabled capabilities;
 - `enabled_toolsets` belongs to Hermes runtime/agent configuration rather than that delegation-tool schema;
 - newer Hermes builds have since exposed optional `toolsets` again, so hard-coding `enabled_toolsets` would not be a robust compatibility fix;
 - the safer baseline for the affected runtime is `delegate_task(goal=..., context=..., role="leaf")`, with optional controls taken from the live tool schema;
-- Superpowers' own Hermes bootstrap already documents namespaced skill loading (`skill_view("superpowers:brainstorming")`), while the shipped Hermes mapping still shows an unqualified skill name;
+- Superpowers' own Hermes bootstrap documents namespaced skill loading while the shipped mapping still showed an unqualified skill name;
 - web/search guidance should remain capability-aware because those toolsets are not guaranteed in every session.
 
-The findings were posted directly on upstream issue #2157 with permanent links to the pinned Hermes source and current delegation implementation. The fork patch and regression assertions were updated accordingly.
-
-A duplicate/prior-art check now confirms that upstream PR #2162 was already open and addresses the same issue with substantially the same compatibility-safe approach, including omission of the invalid delegation toolset selector, namespaced skill identifiers, capability-aware web guidance, and regression coverage. The local patch therefore will not be submitted upstream. Keeping this entry under **Upstream investigations** records the technical investigation without presenting duplicate preparatory work as an accepted contribution.
+A duplicate/prior-art check confirmed upstream PR #2162 already addressed the same issue with substantially the same compatibility-safe approach. The local patch therefore was not submitted upstream.
 
 ## Contribution standards
 
@@ -152,12 +128,13 @@ I treat upstream contribution as engineering work rather than activity metrics.
 My contribution workflow prioritizes:
 
 - an existing issue or clearly reproducible problem;
-- understanding project conventions before changing code;
+- understanding project conventions and contribution rules before changing code;
 - focused patches with limited blast radius;
 - regression tests when behavior changes;
 - static analysis and project-specific quality checks when available;
 - explicit testing instructions for maintainers;
 - transparent disclosure when AI-assisted development tools are used;
+- direct contributor ownership of implementation and maintainer review feedback;
 - maintainer feedback as part of the engineering process;
 - clear separation between **merged**, **open**, **draft**, and **closed without merge** work.
 
