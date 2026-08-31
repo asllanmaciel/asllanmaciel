@@ -10,7 +10,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 |---|---|---|---|
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / review** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Open / changes requested** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
@@ -64,17 +64,22 @@ Automated review feedback about sending the initial webhook ping during bulk act
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
-**Status:** **Open / upstream review**  
+**Status:** **Open / changes requested**  
 **Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
 
-Addresses an assumption in `WC_Abstract_Order::apply_coupon()` that every descendant exposes `get_customer_id()`.
+Addresses an assumption in `WC_Abstract_Order::apply_coupon()` that every descendant exposes customer-specific methods.
 
-The original proposal prevents custom customerless order types from failing on an undefined method call and adds regression coverage. Automated review identified two important follow-up requirements:
+Earlier automated review identified two important follow-up requirements around preserving billing-email usage limits and checking method callability. Those findings were addressed in commit `87c026729d`, after which CodeRabbit reported no actionable comments and minimal merge risk.
 
-- customerless orders must still execute the existing billing-email `usage_limit_per_user` validation, so absence of `get_customer_id()` should behave like a guest customer ID of `0` rather than skipping the check;
-- capability detection should use `is_callable()` instead of `method_exists()` so an inaccessible/private descendant method cannot pass the guard and then trigger a fatal call.
+A maintainer review on 31 August requested a further simplification and hardening pass before merge:
 
-Both findings were addressed in commit `87c026729d`: capability detection now uses `is_callable()`, customerless orders follow the guest path so billing-email limits are preserved, and regression coverage includes both an already-reached email usage limit and a private/inaccessible `get_customer_id()` method. The corresponding review threads are resolved. CodeRabbit's refreshed review reported no actionable comments and minimal merge risk, and the PR is back open for upstream review.
+- remove the `has_customer_id_method()` helper and use the `is_callable()` capability check inline instead of preserving a one-use abstraction;
+- keep the guest-specific coupon validation explicitly tied to order types that actually expose a callable `get_customer_id()`;
+- guard `get_billing_email()` in `WC_Abstract_Order::apply_coupon()` so genuinely customerless order types do not assume a billing API exists;
+- apply the same billing-email guard in `wc_update_coupon_usage_counts()`;
+- update regression coverage to prove a custom order type without these customer methods can apply a valid coupon without an undefined-method error.
+
+The requested changes are being addressed and validated before the PR is returned for maintainer review. This entry deliberately remains **Open / changes requested** until the updated branch is reviewed upstream.
 
 ### WooCommerce — reusable product-name CSS class
 
