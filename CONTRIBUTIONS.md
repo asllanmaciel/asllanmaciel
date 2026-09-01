@@ -11,7 +11,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
-| WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Open / review** |
+| WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Open / approved** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -54,11 +54,17 @@ Automated review feedback about the activation path was addressed in the branch.
 ### WooCommerce — reusable product-name CSS class
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67764 — Add product name CSS class to checkout and emails](https://github.com/woocommerce/woocommerce/pull/67764)  
-**Status:** **Open / upstream review**  
+**Pull request:** [#67764 — Add product name CSS class to improved emails](https://github.com/woocommerce/woocommerce/pull/67764)  
+**Status:** **Open / approved by maintainer; merge announced**  
 **Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)
 
-Adds a consistent `wc-product-name` CSS class to product-name markup in classic checkout and WooCommerce order emails. The proposal is additive, preserves existing hooks and filter arguments, and gives themes and integrations a stable selector for styling product names independently from quantity and item metadata.
+The final scoped change adds a reusable `wc-product-name` class to the existing product-name `h3` in WooCommerce's improved HTML order emails, without changing the rendered content, element hierarchy, hooks, filter arguments, checkout markup or legacy email markup.
+
+The initial proposal was broader and also considered wrappers around product-name filter output. During maintainer review, ecosystem usage showed why that was unsafe: Composite Products can return block-level `<dl>` markup, while Product Bundles can add `<br>`, links and `<small>` elements. A generic core wrapper could therefore alter or invalidate extension output. The maintainer pushed a narrowing commit, approved the resulting additive change on 1 September 2026, and stated that the PR would be merged with the class-name-only scope.
+
+Validation recorded on the PR includes PHP syntax, changed-line PHPCS, `git diff --check`, and an ecosystem compatibility review across WooCommerce/Automattic code. Runtime email rendering was not claimed as locally tested. The final diff was reviewed by a human maintainer.
+
+**Why it matters:** the review turned a seemingly simple markup request into a concrete compatibility lesson: reusable selectors are valuable, but wrappers around extensible filter output can break third-party HTML contracts. The accepted direction minimizes blast radius by attaching the class only to markup core already owns.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
