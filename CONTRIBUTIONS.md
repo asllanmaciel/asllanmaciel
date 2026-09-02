@@ -61,12 +61,12 @@ Validation recorded on the PR includes PHP syntax, changed-line PHPCS, `git diff
 
 **Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
 **Pull request:** [#3750 — Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)  
-**Status:** **Open / upstream review**  
+**Status:** **Open / upstream review — maintainer approved**  
 **Related issue:** [#3747](https://github.com/dompdf/dompdf/issues/3747)
 
 Fixes an undefined-variable warning in the encrypted embedded-file path. The embedded-file creation timestamp is stored in `$created`, but the encryption branch referenced the nonexistent `$creation` variable. The patch encrypts the correct value and adds a focused regression test that captures PHP warnings while rendering an encrypted attachment.
 
-TDD evidence was reproduced against the exact previous upstream `master` head `b14267808b811db092f53830f81f4706f4917c79`: the regression test fails before the fix because `Undefined variable $creation` is emitted, then passes after the one-line correction. The complete PHPUnit suite passed with 1,147 tests and 2,893 assertions, along with PHP syntax, PHPCS and `git diff --check` validation. The upstream Actions run is currently in `action_required` with no jobs started, consistent with a fork-origin workflow awaiting upstream authorization rather than a demonstrated patch failure.
+TDD evidence was reproduced against the exact previous upstream `master` head `b14267808b811db092f53830f81f4706f4917c79`: the regression test fails before the fix because `Undefined variable $creation` is emitted, then passes after the one-line correction. The complete PHPUnit suite passed with 1,147 tests and 2,893 assertions, along with PHP syntax, PHPCS and `git diff --check` validation. On 2 September 2026, maintainer Brian Sweeney (`bsweeney`) approved the pull request and the upstream `Unit Tests` workflow completed successfully. The PR remains open and is recorded as awaiting upstream merge rather than as merged.
 
 **Why it matters:** even a one-character variable mismatch can become a production warning only on a narrow combination of PDF encryption and embedded-file metadata. The regression locks that edge path instead of relying on the obviousness of the source-level typo.
 
@@ -79,7 +79,7 @@ TDD evidence was reproduced against the exact previous upstream `master` head `b
 
 Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
 
-Automated review feedback about the activation path was addressed in the branch. The PR remains open for upstream review.
+Automated review feedback about the activation path was addressed in the branch. A maintainer review about the E2E migration tag was also addressed by removing the tag while keeping the end-to-end coverage; both review threads are resolved. The PR remains open for upstream review.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
