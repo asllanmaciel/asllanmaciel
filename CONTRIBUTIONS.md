@@ -12,6 +12,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Merged** |
+| PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -55,6 +56,19 @@ Validation recorded on the PR includes PHP syntax, changed-line PHPCS, `git diff
 **Why it matters:** the review turned a seemingly simple markup request into a concrete compatibility lesson: reusable selectors are valuable, but wrappers around extensible filter output can break third-party HTML contracts. The accepted direction minimizes blast radius by attaching the class only to markup core already owns.
 
 ## Contributions under review
+
+### Dompdf — encrypted embedded-file creation metadata
+
+**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
+**Pull request:** [#3750 — Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)  
+**Status:** **Open / upstream review**  
+**Related issue:** [#3747](https://github.com/dompdf/dompdf/issues/3747)
+
+Fixes an undefined-variable warning in the encrypted embedded-file path. The embedded-file creation timestamp is stored in `$created`, but the encryption branch referenced the nonexistent `$creation` variable. The patch encrypts the correct value and adds a focused regression test that captures PHP warnings while rendering an encrypted attachment.
+
+TDD evidence was reproduced against the exact previous upstream `master` head `b14267808b811db092f53830f81f4706f4917c79`: the regression test fails before the fix because `Undefined variable $creation` is emitted, then passes after the one-line correction. The complete PHPUnit suite passed with 1,147 tests and 2,893 assertions, along with PHP syntax, PHPCS and `git diff --check` validation. The upstream Actions run is currently in `action_required` with no jobs started, consistent with a fork-origin workflow awaiting upstream authorization rather than a demonstrated patch failure.
+
+**Why it matters:** even a one-character variable mismatch can become a production warning only on a narrow combination of PDF encryption and embedded-file metadata. The regression locks that edge path instead of relying on the obviousness of the source-level typo.
 
 ### WooCommerce — bulk webhook status management
 
