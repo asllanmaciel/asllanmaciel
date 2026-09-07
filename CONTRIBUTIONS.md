@@ -12,7 +12,8 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Merged** |
-| PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review** |
+| PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review — approved** |
+| PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -70,16 +71,31 @@ TDD evidence was reproduced against the exact previous upstream `master` head `b
 
 **Why it matters:** even a one-character variable mismatch can become a production warning only on a narrow combination of PDF encryption and embedded-file metadata. The regression locks that edge path instead of relying on the obviousness of the source-level typo.
 
+### Dompdf — keep DOM processing instructions out of the frame tree
+
+**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
+**Pull request:** [#3757 — Fix handling of DOM processing instructions](https://github.com/dompdf/dompdf/pull/3757)  
+**Status:** **Open / upstream review**  
+**Related issue:** [#3689](https://github.com/dompdf/dompdf/issues/3689)
+
+Fixes a fatal path where a `DOMProcessingInstruction` could enter dompdf's frame tree and later be treated like an HTML element, leading to a call to the nonexistent `getAttribute()` method on that DOM node type. The patch rejects processing instructions at frame creation, before styling, callbacks or rendering, and adds a regression test covering a document that contains a processing instruction.
+
+The focused regression passes after the fix, and the complete local PHPUnit suite passed with 1,147 tests and 2,892 assertions, together with PHP syntax, PHPCS on changed files and `git diff --check`. The pull request was opened upstream on 4 September 2026 and is mergeable. As of 7 September 2026 it has no maintainer review or discussion yet. The upstream `Unit Tests` workflow is marked `action_required` with no executed jobs, so this is recorded as awaiting upstream workflow authorization/review rather than as a test failure.
+
+**Why it matters:** DOM parsers can emit node types that are valid in the DOM but meaningless to a layout engine. Filtering a non-renderable node at the frame-tree boundary is safer than scattering element-capability checks through later rendering paths.
+
 ### WooCommerce — bulk webhook status management
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67645 — Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)  
-**Status:** **Open / upstream review**  
+**Status:** **Open / upstream review — merge conflict reconciled on 7 September 2026**  
 **Related issue:** [#66827](https://github.com/woocommerce/woocommerce/issues/66827)
 
 Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
 
-Automated review feedback about the activation path was addressed in the branch. A maintainer review about the E2E migration tag was also addressed by removing the tag while keeping the end-to-end coverage; both review threads are resolved. The PR remains open for upstream review.
+Automated review feedback about the activation path was addressed in the branch. A maintainer review about the E2E migration tag was also addressed by removing the tag while keeping the end-to-end coverage; both review threads are resolved.
+
+On 7 September 2026, the long-running branch had become non-mergeable against current `trunk`. The conflicting upstream change was isolated to WooCommerce's repository-wide replacement of legacy WPCS suppression comments in `class-wc-admin-webhooks-table-list.php`; the other three files touched by this PR had not changed on `trunk` since its merge base. The branch was reconciled by preserving the bulk-status implementation while adopting the current upstream PHPCS suppression form. Head `d5d84a9f58c75c12593ef2915b6517b58dec48d5` is mergeable again. Newly created upstream workflows are currently `action_required` with zero CI jobs, so no CI pass or failure is claimed for this reconciled head yet.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
