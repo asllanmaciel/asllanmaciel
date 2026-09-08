@@ -17,6 +17,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Open / review** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Open / review** |
+| AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
 ## Merged contributions
@@ -133,6 +134,19 @@ Clarifies the customization documentation after maintainer feedback that equal-p
 This is a documentation-only change. Verification included `git diff --check` plus consistency checks for the priority anchors, tie guidance and event-listener exception; the submitted branch was one commit ahead and zero behind the maintained `2.10` branch at PR creation.
 
 **Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
+
+### Microsoft Skills — remove broken API Management reference
+
+**Repository:** [`microsoft/skills`](https://github.com/microsoft/skills)
+**Pull request:** [#430 — fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/430)
+**Status:** **Open / upstream review**
+**Related issue:** [#422](https://github.com/microsoft/skills/issues/422)
+
+Removes a reference to `references/policies.md` from the Azure API Management .NET skill because that file does not exist in the skill's reference directory. The contribution follows the repository's explicit rule to perform GitHub writes through the `gh` CLI.
+
+Fresh verification against the current upstream `main` confirmed that all remaining relative links in the skill resolve, `git diff --check` passes, and the final patch changes one file by removing one line.
+
+**Why it matters:** agent skills are operational documentation consumed as context by coding agents; a dead reference wastes context and sends the agent toward a resource it cannot load. The contribution is also aligned with the AIStack/agent tooling surface taught and used across the user's projects.
 
 ## Closed without merge
 
