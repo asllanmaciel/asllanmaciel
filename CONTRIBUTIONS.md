@@ -19,6 +19,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
+| Mobile / React Native | `react-native-webview/react-native-webview` | [PR #4029](https://github.com/react-native-webview/react-native-webview/pull/4029) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
 ## Merged contributions
@@ -155,6 +156,20 @@ The patch routes those void commands through the existing `processVoidResponse()
 Preparation included PHP 8.4 syntax validation and an independent reproduction showing that constructing the generator has no side effect while consuming it executes the body. A fresh full Composer matrix was attempted after submission; dependency installation is currently blocked by GitHub authentication in the isolated WSL Composer environment, so no full-suite PASS is claimed from that environment. The upstream Actions run was also created as `action_required` with zero executed jobs, which is treated as workflow authorization rather than a test regression.
 
 **Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
+
+
+### React Native WebView — refresh updated injected JavaScript object on iOS
+
+**Repository:** [`react-native-webview/react-native-webview`](https://github.com/react-native-webview/react-native-webview)  
+**Pull request:** [#4029 — fix(ios): refresh injected JavaScript object](https://github.com/react-native-webview/react-native-webview/pull/4029)  
+**Status:** **Open / upstream review**  
+**Related issue:** [#4028](https://github.com/react-native-webview/react-native-webview/issues/4028)
+
+Fixes an iOS WKWebView lifecycle bug where changing `injectedJavaScriptObject` after mount rebuilt the `WKUserScript` object but did not refresh the scripts registered on the already-created WebView. A later reload could therefore continue exposing the object captured at creation time.
+
+The focused patch mirrors the refresh path already used by adjacent Apple setters: when `_webView` exists, it calls `resetupScripts` with the current configuration. RED/GREEN source-contract verification proved the missing refresh before the patch and its presence afterward, and `git diff --check` passes. No iOS simulator/device run is claimed from the Windows validation host; the upstream issue contains the runtime reproduction. The upstream CI workflows were created as `action_required` with zero iOS jobs executed, so that state is treated as workflow authorization rather than a code-test failure.
+
+**Why it matters:** AMCursos currently ships `react-native-webview` `13.16.1` in its mobile app for the locked provider-specific media player. Correct WebView script lifecycle behavior is directly relevant to reliable native-content and embedded-media boundaries.
 
 ### Microsoft Skills — remove broken API Management reference
 
