@@ -1,4 +1,4 @@
-﻿# Upstream Open Source Contributions
+# Upstream Open Source Contributions
 
 A verifiable record of my contributions to open-source projects maintained by third-party organizations.
 
@@ -12,7 +12,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Merged** |
-| PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review â€” approved** |
+| PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review — approved** |
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Open / review** |
@@ -23,10 +23,10 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 
 ## Merged contributions
 
-### WordPress Presence API â€” remove MySQL session mutation and `GROUP_CONCAT` dependency
+### WordPress Presence API — remove MySQL session mutation and `GROUP_CONCAT` dependency
 
 **Repository:** [`WordPress/presence-api`](https://github.com/WordPress/presence-api)  
-**Pull request:** [#193 â€” replace GROUP_CONCAT session mutations with PHP aggregation](https://github.com/WordPress/presence-api/pull/193)  
+**Pull request:** [#193 — replace GROUP_CONCAT session mutations with PHP aggregation](https://github.com/WordPress/presence-api/pull/193)  
 **Status:** **Merged into `main`**  
 **Related issue:** [#133](https://github.com/WordPress/presence-api/issues/133)
 
@@ -44,10 +44,10 @@ Technical work included:
 
 **Why it matters:** managed databases and database proxies may restrict session mutations or fail to preserve session state consistently. The merged implementation removes that operational dependency while preserving the Presence API behavior.
 
-### WooCommerce â€” reusable product-name CSS class
+### WooCommerce — reusable product-name CSS class
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67764 â€” Add product name CSS class to improved emails](https://github.com/woocommerce/woocommerce/pull/67764)  
+**Pull request:** [#67764 — Add product name CSS class to improved emails](https://github.com/woocommerce/woocommerce/pull/67764)  
 **Status:** **Merged into `trunk` on 1 September 2026**  
 **Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)  
 **Merge commit:** [`4224c255`](https://github.com/woocommerce/woocommerce/commit/4224c2551054c12fb97cfb7bffc1a62c5fdcd207)
@@ -62,11 +62,11 @@ Validation recorded on the PR includes PHP syntax, changed-line PHPCS, `git diff
 
 ## Contributions under review
 
-### Dompdf â€” encrypted embedded-file creation metadata
+### Dompdf — encrypted embedded-file creation metadata
 
 **Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
-**Pull request:** [#3750 â€” Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)  
-**Status:** **Open / upstream review â€” maintainer approved**  
+**Pull request:** [#3750 — Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)  
+**Status:** **Open / upstream review — maintainer approved**  
 **Related issue:** [#3747](https://github.com/dompdf/dompdf/issues/3747)
 
 Fixes an undefined-variable warning in the encrypted embedded-file path. The embedded-file creation timestamp is stored in `$created`, but the encryption branch referenced the nonexistent `$creation` variable. The patch encrypts the correct value and adds a focused regression test that captures PHP warnings while rendering an encrypted attachment.
@@ -75,10 +75,10 @@ TDD evidence was reproduced against the exact previous upstream `master` head `b
 
 **Why it matters:** even a one-character variable mismatch can become a production warning only on a narrow combination of PDF encryption and embedded-file metadata. The regression locks that edge path instead of relying on the obviousness of the source-level typo.
 
-### Dompdf â€” keep DOM processing instructions out of the frame tree
+### Dompdf — keep DOM processing instructions out of the frame tree
 
 **Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
-**Pull request:** [#3757 â€” Fix handling of DOM processing instructions](https://github.com/dompdf/dompdf/pull/3757)  
+**Pull request:** [#3757 — Fix handling of DOM processing instructions](https://github.com/dompdf/dompdf/pull/3757)  
 **Status:** **Open / upstream review**  
 **Related issue:** [#3689](https://github.com/dompdf/dompdf/issues/3689)
 
@@ -88,32 +88,32 @@ The focused regression passes after the fix, and the complete local PHPUnit suit
 
 **Why it matters:** DOM parsers can emit node types that are valid in the DOM but meaningless to a layout engine. Filtering a non-renderable node at the frame-tree boundary is safer than scattering element-capability checks through later rendering paths.
 
-### WooCommerce â€” bulk webhook status management
+### WooCommerce — bulk webhook status management
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67645 â€” Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)  
-**Status:** **Open / upstream review â€” merge conflict reconciled on 7 September 2026**  
+**Pull request:** [#67645 — Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)  
+**Status:** **Open / upstream review — merge conflict reconciled on 7 September 2026**  
 **Related issue:** [#66827](https://github.com/woocommerce/woocommerce/issues/66827)
 
-Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled â†’ active â†’ paused â†’ disabled`.
+Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
 
 Automated review feedback about the activation path was addressed in the branch. A maintainer review about the E2E migration tag was also addressed by removing the tag while keeping the end-to-end coverage; both review threads are resolved.
 
 On 7 September 2026, the long-running branch had become non-mergeable against current `trunk`. The conflicting upstream change was isolated to WooCommerce's repository-wide replacement of legacy WPCS suppression comments in `class-wc-admin-webhooks-table-list.php`; the other three files touched by this PR had not changed on `trunk` since its merge base. The branch was reconciled by preserving the bulk-status implementation while adopting the current upstream PHPCS suppression form. Head `d5d84a9f58c75c12593ef2915b6517b58dec48d5` is mergeable again. Newly created upstream workflows are currently `action_required` with zero CI jobs, so no CI pass or failure is claimed for this reconciled head yet.
 
-### Easy Author Avatar Image â€” publish minimum platform requirements
+### Easy Author Avatar Image — publish minimum platform requirements
 
 **Repository:** [`mukeshpanchal27/easy-author-avatar-image`](https://github.com/mukeshpanchal27/easy-author-avatar-image)  
-**Pull request:** [#51 â€” Add WordPress and PHP requirements to readme](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51)  
+**Pull request:** [#51 — Add WordPress and PHP requirements to readme](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51)  
 **Status:** **Open / upstream review**  
 **Related issue:** [#42](https://github.com/mukeshpanchal27/easy-author-avatar-image/issues/42)
 
 Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself: `Requires at least: 6.8` and `Requires PHP: 7.4`.
 
-### Web Push PHP â€” remove redundant `ext-json` requirement
+### Web Push PHP — remove redundant `ext-json` requirement
 
 **Repository:** [`web-push-libs/web-push-php`](https://github.com/web-push-libs/web-push-php)
-**Pull request:** [#462 â€” Remove redundant ext-json requirement](https://github.com/web-push-libs/web-push-php/pull/462)
+**Pull request:** [#462 — Remove redundant ext-json requirement](https://github.com/web-push-libs/web-push-php/pull/462)
 **Status:** **Open / upstream review**
 **Related issue:** [#461](https://github.com/web-push-libs/web-push-php/issues/461)
 
@@ -123,10 +123,10 @@ Fresh verification before submission included `composer validate --strict --no-c
 
 **Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
 
-### League CommonMark â€” clarify priority ordering and tie behavior
+### League CommonMark — clarify priority ordering and tie behavior
 
 **Repository:** [`thephpleague/commonmark`](https://github.com/thephpleague/commonmark)
-**Pull request:** [#1152 â€” docs: clarify priority ordering behavior](https://github.com/thephpleague/commonmark/pull/1152)
+**Pull request:** [#1152 — docs: clarify priority ordering behavior](https://github.com/thephpleague/commonmark/pull/1152)
 **Status:** **Open / upstream review**
 **Related issue:** [#1023](https://github.com/thephpleague/commonmark/issues/1023)
 
@@ -136,10 +136,10 @@ This is a documentation-only change. Verification included `git diff --check` pl
 
 **Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
 
-### Pest Browser â€” execute Playwright wait commands instead of silently discarding them
+### Pest Browser — execute Playwright wait commands instead of silently discarding them
 
 **Repository:** [`pestphp/pest-plugin-browser`](https://github.com/pestphp/pest-plugin-browser)  
-**Pull request:** [#256 â€” Fix Playwright wait methods not executing commands](https://github.com/pestphp/pest-plugin-browser/pull/256)  
+**Pull request:** [#256 — Fix Playwright wait methods not executing commands](https://github.com/pestphp/pest-plugin-browser/pull/256)  
 **Status:** **Open / upstream review**  
 **Related issue:** [`pestphp/pest#1892`](https://github.com/pestphp/pest/issues/1892)
 
@@ -151,10 +151,10 @@ Preparation included PHP 8.4 syntax validation and an independent reproduction s
 
 **Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
 
-### Microsoft Skills â€” remove broken API Management reference
+### Microsoft Skills — remove broken API Management reference
 
 **Repository:** [`microsoft/skills`](https://github.com/microsoft/skills)
-**Pull request:** [#430 â€” fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/430)
+**Pull request:** [#430 — fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/430)
 **Status:** **Open / upstream review**
 **Related issue:** [#422](https://github.com/microsoft/skills/issues/422)
 
@@ -166,10 +166,10 @@ Fresh verification against the current upstream `main` confirmed that all remain
 
 ## Closed without merge
 
-### WooCommerce â€” coupon handling for customerless order types
+### WooCommerce — coupon handling for customerless order types
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67495 â€” Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
+**Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
 **Status:** **Closed without merge on 31 August 2026**  
 **Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
 
@@ -181,10 +181,10 @@ The PR was ultimately closed by the maintainer without merge because the impleme
 
 **Why it matters:** beyond the code-level findings, this established an important upstream contribution boundary: AI can assist research and validation, but maintainer-facing implementation and review ownership must remain demonstrably with the contributor, especially on critical compatibility paths.
 
-### ECU Docs â€” validated AI-assisted manufacturer content pipeline
+### ECU Docs — validated AI-assisted manufacturer content pipeline
 
 **Repository:** [`laravelcompany/ecudocs.com`](https://github.com/laravelcompany/ecudocs.com)  
-**Pull request:** [#4 â€” Improve manufacturer content with validated AI-assisted enrichment](https://github.com/laravelcompany/ecudocs.com/pull/4)  
+**Pull request:** [#4 — Improve manufacturer content with validated AI-assisted enrichment](https://github.com/laravelcompany/ecudocs.com/pull/4)  
 **Status:** **Closed without merge**
 
 Explored a safer manufacturer-content workflow for the Astro-based ECU Docs project, separating AI generation from reviewed production data and adding validation, provenance, staged promotion, SEO metadata and safe internal-link checks.
@@ -195,13 +195,13 @@ Maintainer feedback identified that the first implementation introduced a parall
 
 ## Upstream investigations
 
-### Superpowers â€” Hermes delegation/runtime contract drift
+### Superpowers — Hermes delegation/runtime contract drift
 
 **Repository:** [`obra/superpowers`](https://github.com/obra/superpowers)  
-**Issue:** [#2157 â€” Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)  
+**Issue:** [#2157 — Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)  
 **Status:** **Upstream investigation; local patch superseded by existing PR #2162; no PR submitted**  
 **Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)  
-**Overlapping upstream PR:** [#2162 â€” fix(using-superpowers): correct Hermes tool mapping](https://github.com/obra/superpowers/pull/2162)
+**Overlapping upstream PR:** [#2162 — fix(using-superpowers): correct Hermes tool mapping](https://github.com/obra/superpowers/pull/2162)
 
 Investigated the Hermes-specific tool mapping against both the exact Hermes v0.20.1 commit reported by the issue (`165c889e`) and current Hermes `main`.
 
