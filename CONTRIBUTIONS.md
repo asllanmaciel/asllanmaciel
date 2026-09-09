@@ -16,7 +16,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Open / review** |
-| PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Open / review** |
+| PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
@@ -59,6 +59,21 @@ The initial proposal was broader and also considered wrappers around product-nam
 Validation recorded on the PR includes PHP syntax, changed-line PHPCS, `git diff --check`, and an ecosystem compatibility review across WooCommerce/Automattic code. Runtime email rendering was not claimed as locally tested. The final diff was reviewed by a human maintainer.
 
 **Why it matters:** the review turned a seemingly simple markup request into a concrete compatibility lesson: reusable selectors are valuable, but wrappers around extensible filter output can break third-party HTML contracts. The accepted direction minimizes blast radius by attaching the class only to markup core already owns.
+
+### League CommonMark — clarify priority ordering and tie behavior
+
+**Repository:** [`thephpleague/commonmark`](https://github.com/thephpleague/commonmark)
+**Pull request:** [#1152 — docs: clarify priority ordering behavior](https://github.com/thephpleague/commonmark/pull/1152)
+**Status:** **Merged into `2.10` on 9 September 2026**
+**Merge commit:** [`276b7ab0`](https://github.com/thephpleague/commonmark/commit/276b7ab04d79062c5c36fad72f56314ff9f8ae0c)
+**Related issue:** [#1023](https://github.com/thephpleague/commonmark/issues/1023)
+
+Clarifies the customization documentation after maintainer feedback that equal-priority renderers should not rely on registration order. The documentation now explains when explicit priorities are needed for block start parsers, inline parsers and renderers, preserves the documented registration-order exception for equal-priority event listeners, and calls out renderer tie behavior in the rendering guide.
+
+This is a documentation-only change. Verification included `git diff --check` plus consistency checks for the priority anchors, tie guidance and event-listener exception; the submitted branch was one commit ahead and zero behind the maintained `2.10` branch at PR creation.
+
+**Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
+
 
 ## Contributions under review
 
@@ -122,19 +137,6 @@ Removes the obsolete Composer requirement on `ext-json`. The package already req
 Fresh verification before submission included `composer validate --strict --no-check-publish`, PHPStan with zero errors, PHP CS Fixer dry runs for source and tests, and `git diff --check`. The offline PHPUnit suite reports one pre-existing data-provider error (`Subscription::__construct()` receiving `false` for the endpoint); the exact same 44 tests / 110 assertions / 1 error / 6 skipped result was reproduced on upstream `master` before the patch, so it is not attributed to this change.
 
 **Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
-
-### League CommonMark — clarify priority ordering and tie behavior
-
-**Repository:** [`thephpleague/commonmark`](https://github.com/thephpleague/commonmark)
-**Pull request:** [#1152 — docs: clarify priority ordering behavior](https://github.com/thephpleague/commonmark/pull/1152)
-**Status:** **Open / upstream review**
-**Related issue:** [#1023](https://github.com/thephpleague/commonmark/issues/1023)
-
-Clarifies the customization documentation after maintainer feedback that equal-priority renderers should not rely on registration order. The documentation now explains when explicit priorities are needed for block start parsers, inline parsers and renderers, preserves the documented registration-order exception for equal-priority event listeners, and calls out renderer tie behavior in the rendering guide.
-
-This is a documentation-only change. Verification included `git diff --check` plus consistency checks for the priority anchors, tie guidance and event-listener exception; the submitted branch was one commit ahead and zero behind the maintained `2.10` branch at PR creation.
-
-**Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
 
 ### Pest Browser — execute Playwright wait commands instead of silently discarding them
 
