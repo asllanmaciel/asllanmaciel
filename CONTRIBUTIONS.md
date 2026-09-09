@@ -26,9 +26,9 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 
 ### WordPress Presence API — remove MySQL session mutation and `GROUP_CONCAT` dependency
 
-**Repository:** [`WordPress/presence-api`](https://github.com/WordPress/presence-api)  
-**Pull request:** [#193 — replace GROUP_CONCAT session mutations with PHP aggregation](https://github.com/WordPress/presence-api/pull/193)  
-**Status:** **Merged into `main`**  
+**Repository:** [`WordPress/presence-api`](https://github.com/WordPress/presence-api)
+**Pull request:** [#193 — replace GROUP_CONCAT session mutations with PHP aggregation](https://github.com/WordPress/presence-api/pull/193)
+**Status:** **Merged into `main`**
 **Related issue:** [#133](https://github.com/WordPress/presence-api/issues/133)
 
 Improved database portability and reliability by replacing session-level MySQL mutations and `GROUP_CONCAT()` aggregation with deterministic aggregation in PHP.
@@ -47,10 +47,10 @@ Technical work included:
 
 ### WooCommerce — reusable product-name CSS class
 
-**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67764 — Add product name CSS class to improved emails](https://github.com/woocommerce/woocommerce/pull/67764)  
-**Status:** **Merged into `trunk` on 1 September 2026**  
-**Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)  
+**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)
+**Pull request:** [#67764 — Add product name CSS class to improved emails](https://github.com/woocommerce/woocommerce/pull/67764)
+**Status:** **Merged into `trunk` on 1 September 2026**
+**Related issue:** [#29386](https://github.com/woocommerce/woocommerce/issues/29386)
 **Merge commit:** [`4224c255`](https://github.com/woocommerce/woocommerce/commit/4224c2551054c12fb97cfb7bffc1a62c5fdcd207)
 
 The final scoped change adds a reusable `wc-product-name` class to the existing product-name `h3` in WooCommerce's improved HTML order emails, without changing the rendered content, element hierarchy, hooks, filter arguments, checkout markup or legacy email markup.
@@ -96,9 +96,9 @@ Fresh verification before submission included `composer validate --strict --no-c
 
 ### Dompdf — encrypted embedded-file creation metadata
 
-**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
-**Pull request:** [#3750 — Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)  
-**Status:** **Open / upstream review — maintainer approved**  
+**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)
+**Pull request:** [#3750 — Fix encrypted embedded file creation date](https://github.com/dompdf/dompdf/pull/3750)
+**Status:** **Open / upstream review — maintainer approved**
 **Related issue:** [#3747](https://github.com/dompdf/dompdf/issues/3747)
 
 Fixes an undefined-variable warning in the encrypted embedded-file path. The embedded-file creation timestamp is stored in `$created`, but the encryption branch referenced the nonexistent `$creation` variable. The patch encrypts the correct value and adds a focused regression test that captures PHP warnings while rendering an encrypted attachment.
@@ -109,9 +109,9 @@ TDD evidence was reproduced against the exact previous upstream `master` head `b
 
 ### Dompdf — keep DOM processing instructions out of the frame tree
 
-**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
-**Pull request:** [#3757 — Fix handling of DOM processing instructions](https://github.com/dompdf/dompdf/pull/3757)  
-**Status:** **Open / upstream review**  
+**Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)
+**Pull request:** [#3757 — Fix handling of DOM processing instructions](https://github.com/dompdf/dompdf/pull/3757)
+**Status:** **Open / upstream review**
 **Related issue:** [#3689](https://github.com/dompdf/dompdf/issues/3689)
 
 Fixes a fatal path where a `DOMProcessingInstruction` could enter dompdf's frame tree and later be treated like an HTML element, leading to a call to the nonexistent `getAttribute()` method on that DOM node type. The patch rejects processing instructions at frame creation, before styling, callbacks or rendering, and adds a regression test covering a document that contains a processing instruction.
@@ -122,9 +122,9 @@ The focused regression passes after the fix, and the complete local PHPUnit suit
 
 ### WooCommerce — bulk webhook status management
 
-**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67645 — Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)  
-**Status:** **Open / upstream review — merge conflict reconciled on 7 September 2026**  
+**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)
+**Pull request:** [#67645 — Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)
+**Status:** **Open / upstream review — merge conflict reconciled on 7 September 2026**
 **Related issue:** [#66827](https://github.com/woocommerce/woocommerce/issues/66827)
 
 Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
@@ -135,18 +135,18 @@ On 7 September 2026, the long-running branch had become non-mergeable against cu
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
-**Repository:** [`mukeshpanchal27/easy-author-avatar-image`](https://github.com/mukeshpanchal27/easy-author-avatar-image)  
-**Pull request:** [#51 — Add WordPress and PHP requirements to readme](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51)  
-**Status:** **Open / upstream review**  
+**Repository:** [`mukeshpanchal27/easy-author-avatar-image`](https://github.com/mukeshpanchal27/easy-author-avatar-image)
+**Pull request:** [#51 — Add WordPress and PHP requirements to readme](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51)
+**Status:** **Open / upstream review**
 **Related issue:** [#42](https://github.com/mukeshpanchal27/easy-author-avatar-image/issues/42)
 
 Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself: `Requires at least: 6.8` and `Requires PHP: 7.4`.
 
 ### Pest Browser — execute Playwright wait commands instead of silently discarding them
 
-**Repository:** [`pestphp/pest-plugin-browser`](https://github.com/pestphp/pest-plugin-browser)  
-**Pull request:** [#256 — Fix Playwright wait methods not executing commands](https://github.com/pestphp/pest-plugin-browser/pull/256)  
-**Status:** **Open / upstream review**  
+**Repository:** [`pestphp/pest-plugin-browser`](https://github.com/pestphp/pest-plugin-browser)
+**Pull request:** [#256 — Fix Playwright wait methods not executing commands](https://github.com/pestphp/pest-plugin-browser/pull/256)
+**Status:** **Open / upstream review**
 **Related issue:** [`pestphp/pest#1892`](https://github.com/pestphp/pest/issues/1892)
 
 Fixes a lazy-execution bug in the browser plugin where three wait methods called `Client::execute()` and discarded the returned `Generator`. Because a PHP generator does not execute its body until it is consumed, `waitForLoadState()`, `waitForFunction()` and `waitForURL()` could read like synchronization guards while sending no Playwright command at all.
@@ -160,9 +160,9 @@ Preparation included PHP 8.4 syntax validation and an independent reproduction s
 
 ### React Native WebView — refresh updated injected JavaScript object on iOS
 
-**Repository:** [`react-native-webview/react-native-webview`](https://github.com/react-native-webview/react-native-webview)  
-**Pull request:** [#4029 — fix(ios): refresh injected JavaScript object](https://github.com/react-native-webview/react-native-webview/pull/4029)  
-**Status:** **Open / upstream review**  
+**Repository:** [`react-native-webview/react-native-webview`](https://github.com/react-native-webview/react-native-webview)
+**Pull request:** [#4029 — fix(ios): refresh injected JavaScript object](https://github.com/react-native-webview/react-native-webview/pull/4029)
+**Status:** **Open / upstream review**
 **Related issue:** [#4028](https://github.com/react-native-webview/react-native-webview/issues/4028)
 
 Fixes an iOS WKWebView lifecycle bug where changing `injectedJavaScriptObject` after mount rebuilt the `WKUserScript` object but did not refresh the scripts registered on the already-created WebView. A later reload could therefore continue exposing the object captured at creation time.
@@ -188,9 +188,9 @@ Fresh verification against the current upstream `main` confirmed that all remain
 
 ### WooCommerce — coupon handling for customerless order types
 
-**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
-**Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)  
-**Status:** **Closed without merge on 31 August 2026**  
+**Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)
+**Pull request:** [#67495 — Fix coupon checks for customerless order types](https://github.com/woocommerce/woocommerce/pull/67495)
+**Status:** **Closed without merge on 31 August 2026**
 **Related issue:** [#30922](https://github.com/woocommerce/woocommerce/issues/30922)
 
 Investigated an assumption in `WC_Abstract_Order::apply_coupon()` that descendants expose customer-specific methods. The work surfaced several useful compatibility details: billing-email usage limits still need to be preserved for guest-like orders, method capability checks must account for visibility/callability, and downstream coupon-usage accounting can make the persistence path part of the regression surface.
@@ -203,8 +203,8 @@ The PR was ultimately closed by the maintainer without merge because the impleme
 
 ### ECU Docs — validated AI-assisted manufacturer content pipeline
 
-**Repository:** [`laravelcompany/ecudocs.com`](https://github.com/laravelcompany/ecudocs.com)  
-**Pull request:** [#4 — Improve manufacturer content with validated AI-assisted enrichment](https://github.com/laravelcompany/ecudocs.com/pull/4)  
+**Repository:** [`laravelcompany/ecudocs.com`](https://github.com/laravelcompany/ecudocs.com)
+**Pull request:** [#4 — Improve manufacturer content with validated AI-assisted enrichment](https://github.com/laravelcompany/ecudocs.com/pull/4)
 **Status:** **Closed without merge**
 
 Explored a safer manufacturer-content workflow for the Astro-based ECU Docs project, separating AI generation from reviewed production data and adding validation, provenance, staged promotion, SEO metadata and safe internal-link checks.
@@ -217,10 +217,10 @@ Maintainer feedback identified that the first implementation introduced a parall
 
 ### Superpowers — Hermes delegation/runtime contract drift
 
-**Repository:** [`obra/superpowers`](https://github.com/obra/superpowers)  
-**Issue:** [#2157 — Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)  
-**Status:** **Upstream investigation; local patch superseded by existing PR #2162; no PR submitted**  
-**Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)  
+**Repository:** [`obra/superpowers`](https://github.com/obra/superpowers)
+**Issue:** [#2157 — Hermes tool mapping uses stale names and an unqualified plugin skill name](https://github.com/obra/superpowers/issues/2157)
+**Status:** **Upstream investigation; local patch superseded by existing PR #2162; no PR submitted**
+**Working branch:** [`asllanmaciel:fix/2157-hermes-tool-mapping`](https://github.com/asllanmaciel/superpowers/tree/fix/2157-hermes-tool-mapping)
 **Overlapping upstream PR:** [#2162 — fix(using-superpowers): correct Hermes tool mapping](https://github.com/obra/superpowers/pull/2162)
 
 Investigated the Hermes-specific tool mapping against both the exact Hermes v0.20.1 commit reported by the issue (`165c889e`) and current Hermes `main`.
