@@ -15,7 +15,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review — approved** |
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
-| PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Open / review** |
+| PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Merged** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
@@ -75,6 +75,22 @@ This is a documentation-only change. Verification included `git diff --check` pl
 **Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
 
 
+### Web Push PHP — remove redundant `ext-json` requirement
+
+**Repository:** [`web-push-libs/web-push-php`](https://github.com/web-push-libs/web-push-php)
+**Pull request:** [#462 — Remove redundant ext-json requirement](https://github.com/web-push-libs/web-push-php/pull/462)
+**Status:** **Merged into `master` on 9 September 2026**
+**Merge commit:** [`af29c4d1`](https://github.com/web-push-libs/web-push-php/commit/af29c4d150835831edc814b7b51f4e3d9590c0ae)
+**Related issue:** [#461](https://github.com/web-push-libs/web-push-php/issues/461)
+
+Removes the obsolete Composer requirement on `ext-json`. The package already requires PHP `>=8.2`, while JSON has been part of PHP core since PHP 8.0 and cannot be disabled, so the extension requirement no longer adds a useful platform constraint.
+
+Fresh verification before submission included `composer validate --strict --no-check-publish`, PHPStan with zero errors, PHP CS Fixer dry runs for source and tests, and `git diff --check`. The offline PHPUnit suite reports one pre-existing data-provider error (`Subscription::__construct()` receiving `false` for the endpoint); the exact same 44 tests / 110 assertions / 1 error / 6 skipped result was reproduced on upstream `master` before the patch, so it is not attributed to this change.
+
+**Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
+
+
+
 ## Contributions under review
 
 ### Dompdf — encrypted embedded-file creation metadata
@@ -124,19 +140,6 @@ On 7 September 2026, the long-running branch had become non-mergeable against cu
 **Related issue:** [#42](https://github.com/mukeshpanchal27/easy-author-avatar-image/issues/42)
 
 Synchronizes the WordPress.org `readme.txt` compatibility headers with the minimum versions already declared by the plugin itself: `Requires at least: 6.8` and `Requires PHP: 7.4`.
-
-### Web Push PHP — remove redundant `ext-json` requirement
-
-**Repository:** [`web-push-libs/web-push-php`](https://github.com/web-push-libs/web-push-php)
-**Pull request:** [#462 — Remove redundant ext-json requirement](https://github.com/web-push-libs/web-push-php/pull/462)
-**Status:** **Open / upstream review**
-**Related issue:** [#461](https://github.com/web-push-libs/web-push-php/issues/461)
-
-Removes the obsolete Composer requirement on `ext-json`. The package already requires PHP `>=8.2`, while JSON has been part of PHP core since PHP 8.0 and cannot be disabled, so the extension requirement no longer adds a useful platform constraint.
-
-Fresh verification before submission included `composer validate --strict --no-check-publish`, PHPStan with zero errors, PHP CS Fixer dry runs for source and tests, and `git diff --check`. The offline PHPUnit suite reports one pre-existing data-provider error (`Subscription::__construct()` receiving `false` for the endpoint); the exact same 44 tests / 110 assertions / 1 error / 6 skipped result was reproduced on upstream `master` before the patch, so it is not attributed to this change.
-
-**Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
 
 ### Pest Browser — execute Playwright wait commands instead of silently discarding them
 
