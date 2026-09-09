@@ -18,6 +18,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Open / review** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Open / review** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
+| PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
 ## Merged contributions
@@ -134,6 +135,21 @@ Clarifies the customization documentation after maintainer feedback that equal-p
 This is a documentation-only change. Verification included `git diff --check` plus consistency checks for the priority anchors, tie guidance and event-listener exception; the submitted branch was one commit ahead and zero behind the maintained `2.10` branch at PR creation.
 
 **Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
+
+### Pest Browser — execute Playwright wait commands instead of silently discarding them
+
+**Repository:** [`pestphp/pest-plugin-browser`](https://github.com/pestphp/pest-plugin-browser)  
+**Pull request:** [#256 — Fix Playwright wait methods not executing commands](https://github.com/pestphp/pest-plugin-browser/pull/256)  
+**Status:** **Open / upstream review**  
+**Related issue:** [`pestphp/pest#1892`](https://github.com/pestphp/pest/issues/1892)
+
+Fixes a lazy-execution bug in the browser plugin where three wait methods called `Client::execute()` and discarded the returned `Generator`. Because a PHP generator does not execute its body until it is consumed, `waitForLoadState()`, `waitForFunction()` and `waitForURL()` could read like synchronization guards while sending no Playwright command at all.
+
+The patch routes those void commands through the existing `processVoidResponse()` path, which consumes the generator, and adds focused regression coverage asserting the expected Playwright messages. The submitted branch is one commit on top of the current `5.x` head and changes only the page wrapper and the new wait-method regression test.
+
+Preparation included PHP 8.4 syntax validation and an independent reproduction showing that constructing the generator has no side effect while consuming it executes the body. A fresh full Composer matrix was attempted after submission; dependency installation is currently blocked by GitHub authentication in the isolated WSL Composer environment, so no full-suite PASS is claimed from that environment. The upstream Actions run was also created as `action_required` with zero executed jobs, which is treated as workflow authorization rather than a test regression.
+
+**Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
 
 ### Microsoft Skills — remove broken API Management reference
 
