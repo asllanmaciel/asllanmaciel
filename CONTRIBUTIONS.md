@@ -194,7 +194,7 @@ The contribution is documentation-only and changes one line. Verification on the
 
 Removes a reference to `references/policies.md` from the Azure API Management .NET skill because that file does not exist in the skill's reference directory. The contribution follows the repository's explicit rule to perform GitHub writes through the `gh` CLI.
 
-Fresh verification against the current upstream `main` confirmed that all remaining relative links in the skill resolve, `git diff --check` passes, and the final patch changes one file by removing one line.
+Fresh verification against the current upstream `main` confirmed that all remaining relative links in the skill resolve, `git diff --check` passes, and the final patch changes one file by removing one line. On 10 September 2026, upstream `main` had advanced and GitHub marked the PR non-mergeable; the branch was rebased onto `2e600b071cc95edcb8b44cee9335d920ceeefbd9`, the relative-link check and `git diff --check` were rerun successfully, and the refreshed head `046ca8996e4c97c9dba83e97fa4a5a14e245f5c7` is mergeable again with the existing human review request preserved.
 
 **Why it matters:** agent skills are operational documentation consumed as context by coding agents; a dead reference wastes context and sends the agent toward a resource it cannot load. The contribution is also aligned with the AIStack/agent tooling surface taught and used across the user's projects.
 
