@@ -16,6 +16,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Merged** |
+| Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Open / review** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
@@ -103,7 +104,7 @@ Fresh verification before submission included `composer validate --strict --no-c
 
 Fixes an undefined-variable warning in the encrypted embedded-file path. The embedded-file creation timestamp is stored in `$created`, but the encryption branch referenced the nonexistent `$creation` variable. The patch encrypts the correct value and adds a focused regression test that captures PHP warnings while rendering an encrypted attachment.
 
-TDD evidence was reproduced against the exact previous upstream `master` head `b14267808b811db092f53830f81f4706f4917c79`: the regression test fails before the fix because `Undefined variable $creation` is emitted, then passes after the one-line correction. The complete PHPUnit suite passed with 1,147 tests and 2,893 assertions, along with PHP syntax, PHPCS and `git diff --check` validation. On 2 September 2026, maintainer Brian Sweeney (`bsweeney`) approved the pull request and the upstream `Unit Tests` workflow completed successfully. The PR remains open and is recorded as awaiting upstream merge rather than as merged.
+TDD evidence was reproduced against the exact previous upstream `master` head `b14267808b811db092f53830f81f4706f4917c79`: the regression test fails before the fix because `Undefined variable $creation` is emitted, then passes after the one-line correction. The complete PHPUnit suite passed with 1,147 tests and 2,893 assertions, along with PHP syntax, PHPCS and `git diff --check` validation. On 2 September 2026, maintainer Brian Sweeney (`bsweeney`) approved the pull request and the upstream `Unit Tests` workflow completed successfully. The PR remains open and is recorded as awaiting upstream merge rather than as merged. On 9 September, after a single follow-up, the maintainer confirmed that nothing else is needed and that the patch is planned for the upcoming 3.1.7 release cycle.
 
 **Why it matters:** even a one-character variable mismatch can become a production warning only on a narrow combination of PDF encryption and embedded-file metadata. The regression locks that edge path instead of relying on the obviousness of the source-level typo.
 
@@ -170,6 +171,19 @@ Fixes an iOS WKWebView lifecycle bug where changing `injectedJavaScriptObject` a
 The focused patch mirrors the refresh path already used by adjacent Apple setters: when `_webView` exists, it calls `resetupScripts` with the current configuration. RED/GREEN source-contract verification proved the missing refresh before the patch and its presence afterward, and `git diff --check` passes. No iOS simulator/device run is claimed from the Windows validation host; the upstream issue contains the runtime reproduction. The upstream CI workflows were created as `action_required` with zero iOS jobs executed, so that state is treated as workflow authorization rather than a code-test failure.
 
 **Why it matters:** AMCursos currently ships `react-native-webview` `13.16.1` in its mobile app for the locked provider-specific media player. Correct WebView script lifecycle behavior is directly relevant to reliable native-content and embedded-media boundaries.
+
+### Web Push Node.js - document Apple VAPID subject interoperability
+
+**Repository:** [`web-push-libs/web-push`](https://github.com/web-push-libs/web-push)
+**Pull request:** [#988 - docs: warn against localhost VAPID subjects](https://github.com/web-push-libs/web-push/pull/988)
+**Status:** **Open / upstream review**
+**Related issue:** [#947](https://github.com/web-push-libs/web-push/issues/947)
+
+Documents a cross-provider VAPID interoperability edge case: a local placeholder such as `mailto:user@localhost` can be syntactically accepted by the library and work with some push services while Apple Push rejects it with `403 BadJwtToken`. The README now tells users to use a real, externally valid `https:` or `mailto:` contact URI.
+
+The contribution is documentation-only and changes one line. Verification on the exact upstream `master` base included `npm ci --ignore-scripts`, `npm run lint`, and `git diff --check`, all passing. The PR includes explicit AI-assistance disclosure and remains open for upstream review.
+
+**Why it matters:** AMCursos uses Web Push/VAPID operationally and teaches PWA/integration workflows. Provider-specific acceptance differences are exactly the kind of deployment failure that is hard to diagnose when a configuration looks standards-compliant locally.
 
 ### Microsoft Skills — remove broken API Management reference
 
