@@ -20,6 +20,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
+| Python / Background jobs | `rq/rq` | [PR #2480](https://github.com/rq/rq/pull/2480) | **Open / review** |
 | Mobile / React Native | `react-native-webview/react-native-webview` | [PR #4029](https://github.com/react-native-webview/react-native-webview/pull/4029) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -157,6 +158,20 @@ The patch routes those void commands through the existing `processVoidResponse()
 Preparation included PHP 8.4 syntax validation and an independent reproduction showing that constructing the generator has no side effect while consuming it executes the body. A fresh full Composer matrix was attempted after submission; dependency installation is currently blocked by GitHub authentication in the isolated WSL Composer environment, so no full-suite PASS is claimed from that environment. The upstream Actions run was also created as `action_required` with zero executed jobs, which is treated as workflow authorization rather than a test regression.
 
 **Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
+
+
+### RQ — document `SimpleWorker` source reload behavior
+
+**Repository:** [`rq/rq`](https://github.com/rq/rq)
+**Pull request:** [#2480 — docs: clarify SimpleWorker code reload behavior](https://github.com/rq/rq/pull/2480)
+**Status:** **Open / upstream review**
+**Related issue:** [#1434](https://github.com/rq/rq/issues/1434)
+
+Documents a development/debugging edge case in `SimpleWorker`: jobs execute in the worker process, so imported Python modules remain cached between jobs. Editing a job module while the worker is running therefore does not make later jobs automatically use the changed source; restarting the worker reloads the code.
+
+The behavior was reproduced on current upstream `master` with `SimpleWorker` and `fakeredis`: the first job returned `v1`; after rewriting the module to return `v2`, the next job on the same worker still returned `v1`, and the module remained present in `sys.modules`. `git diff --check` also passes. The submitted patch is documentation-only: one file, five lines added.
+
+**Why it matters:** RQ is part of the current Python na Prática runtime stack in AMCursos. A worker that intentionally reuses one Python process is useful for tests and debugging, but that same property can make live source edits look ineffective unless the reload boundary is explicit.
 
 
 ### React Native WebView — refresh updated injected JavaScript object on iOS
