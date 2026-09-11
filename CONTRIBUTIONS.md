@@ -20,7 +20,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
-| Python / Background jobs | `rq/rq` | [PR #2480](https://github.com/rq/rq/pull/2480) | **Open / review** |
+| Python / Background jobs | `rq/rq` | [PR #2480](https://github.com/rq/rq/pull/2480) | **Merged** |
 | Mobile / React Native | `react-native-webview/react-native-webview` | [PR #4029](https://github.com/react-native-webview/react-native-webview/pull/4029) | **Open / review** |
 | Web / AI tooling | `laravelcompany/ecudocs.com` | [PR #4](https://github.com/laravelcompany/ecudocs.com/pull/4) | **Closed without merge** |
 
@@ -94,6 +94,22 @@ Fresh verification before submission included `composer validate --strict --no-c
 
 
 
+### RQ — document `SimpleWorker` source reload behavior
+
+**Repository:** [`rq/rq`](https://github.com/rq/rq)
+**Pull request:** [#2480 — docs: clarify SimpleWorker code reload behavior](https://github.com/rq/rq/pull/2480)
+**Status:** **Merged into `master` on 11 September 2026**
+**Merge commit:** [`0e9ffe29`](https://github.com/rq/rq/commit/0e9ffe2901a68b1847721fd0b9c45d872f2887d3)
+**Related issue:** [#1434](https://github.com/rq/rq/issues/1434)
+
+Documents a development/debugging edge case in `SimpleWorker`: jobs execute in the worker process, so imported Python modules remain cached between jobs. Editing a job module while the worker is running therefore does not make later jobs automatically use the changed source; restarting the worker reloads the code.
+
+The behavior was reproduced on current upstream `master` with `SimpleWorker` and `fakeredis`: the first job returned `v1`; after rewriting the module to return `v2`, the next job on the same worker still returned `v1`, and the module remained present in `sys.modules`. `git diff --check` also passes. The submitted patch is documentation-only: one file, five lines added.
+
+**Why it matters:** RQ is part of the current Python na Prática runtime stack in AMCursos. A worker that intentionally reuses one Python process is useful for tests and debugging, but that same property can make live source edits look ineffective unless the reload boundary is explicit.
+
+
+
 ## Contributions under review
 
 ### Dompdf — encrypted embedded-file creation metadata
@@ -126,14 +142,14 @@ The focused regression passes after the fix, and the complete local PHPUnit suit
 
 **Repository:** [`woocommerce/woocommerce`](https://github.com/woocommerce/woocommerce)  
 **Pull request:** [#67645 — Add bulk actions for webhook status](https://github.com/woocommerce/woocommerce/pull/67645)  
-**Status:** **Open / upstream review — merge conflict reconciled on 7 September 2026**  
+**Status:** **Open / upstream review — rebased onto current `trunk` on 11 September 2026**
 **Related issue:** [#66827](https://github.com/woocommerce/woocommerce/issues/66827)
 
 Adds bulk **Activate**, **Pause**, and **Deactivate** actions to WooCommerce webhook administration, including persistence through the existing webhook model, preservation of the current filter, result notices, initial-ping behavior for eligible activations and end-to-end coverage for `disabled → active → paused → disabled`.
 
 Automated review feedback about the activation path was addressed in the branch. A maintainer review about the E2E migration tag was also addressed by removing the tag while keeping the end-to-end coverage; both review threads are resolved.
 
-On 7 September 2026, the long-running branch had become non-mergeable against current `trunk`. The conflicting upstream change was isolated to WooCommerce's repository-wide replacement of legacy WPCS suppression comments in `class-wc-admin-webhooks-table-list.php`; the other three files touched by this PR had not changed on `trunk` since its merge base. The branch was reconciled by preserving the bulk-status implementation while adopting the current upstream PHPCS suppression form. Head `d5d84a9f58c75c12593ef2915b6517b58dec48d5` is mergeable again. Newly created upstream workflows are currently `action_required` with zero CI jobs, so no CI pass or failure is claimed for this reconciled head yet.
+On 7 September 2026, the long-running branch had become non-mergeable against current `trunk`. The conflicting upstream change was isolated to WooCommerce's repository-wide replacement of legacy WPCS suppression comments in `class-wc-admin-webhooks-table-list.php`; the other three files touched by this PR had not changed on `trunk` since its merge base. The branch was reconciled by preserving the bulk-status implementation while adopting the current upstream PHPCS suppression form. On 11 September, upstream `trunk` had advanced again and GitHub marked the PR non-mergeable. The branch was rebased onto current `trunk` `e9ec926a017dcec3d4b2e0a61e90bb95d88e24a9`; Git dropped one now-redundant reconciliation commit because its patch was already upstream. The refreshed head `6c01b796c9a5633318d440445fd1405d62b49d73` is mergeable again. The final diff remains four files (135 additions, 3 deletions); `git diff --check` and PHP syntax checks for both changed PHP files pass.
 
 ### Easy Author Avatar Image — publish minimum platform requirements
 
@@ -158,20 +174,6 @@ The patch routes those void commands through the existing `processVoidResponse()
 Preparation included PHP 8.4 syntax validation and an independent reproduction showing that constructing the generator has no side effect while consuming it executes the body. A fresh full Composer matrix was attempted after submission; dependency installation is currently blocked by GitHub authentication in the isolated WSL Composer environment, so no full-suite PASS is claimed from that environment. The upstream Actions run was also created as `action_required` with zero executed jobs, which is treated as workflow authorization rather than a test regression.
 
 **Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
-
-
-### RQ — document `SimpleWorker` source reload behavior
-
-**Repository:** [`rq/rq`](https://github.com/rq/rq)
-**Pull request:** [#2480 — docs: clarify SimpleWorker code reload behavior](https://github.com/rq/rq/pull/2480)
-**Status:** **Open / upstream review**
-**Related issue:** [#1434](https://github.com/rq/rq/issues/1434)
-
-Documents a development/debugging edge case in `SimpleWorker`: jobs execute in the worker process, so imported Python modules remain cached between jobs. Editing a job module while the worker is running therefore does not make later jobs automatically use the changed source; restarting the worker reloads the code.
-
-The behavior was reproduced on current upstream `master` with `SimpleWorker` and `fakeredis`: the first job returned `v1`; after rewriting the module to return `v2`, the next job on the same worker still returned `v1`, and the module remained present in `sys.modules`. `git diff --check` also passes. The submitted patch is documentation-only: one file, five lines added.
-
-**Why it matters:** RQ is part of the current Python na Prática runtime stack in AMCursos. A worker that intentionally reuses one Python process is useful for tests and debugging, but that same property can make live source edits look ineffective unless the reload boundary is explicit.
 
 
 ### React Native WebView — refresh updated injected JavaScript object on iOS
