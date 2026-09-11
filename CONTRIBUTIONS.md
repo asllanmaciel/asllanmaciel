@@ -16,7 +16,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Merged** |
-| Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Open / review** |
+| Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Merged** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
@@ -93,6 +93,21 @@ Fresh verification before submission included `composer validate --strict --no-c
 **Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
 
 
+
+
+### Web Push Node.js - document Apple VAPID subject interoperability
+
+**Repository:** [`web-push-libs/web-push`](https://github.com/web-push-libs/web-push)
+**Pull request:** [#988 - docs: warn against localhost VAPID subjects](https://github.com/web-push-libs/web-push/pull/988)
+**Status:** **Merged into `master` on 11 September 2026**
+**Merge commit:** [`87de1fd3`](https://github.com/web-push-libs/web-push/commit/87de1fd35c0ee7fdcc8a2b8f76d961b8bb7fc9bf)
+**Related issue:** [#947](https://github.com/web-push-libs/web-push/issues/947)
+
+Documents a cross-provider VAPID interoperability edge case: a local placeholder such as `mailto:user@localhost` can be syntactically accepted by the library and work with some push services while Apple Push rejects it with `403 BadJwtToken`. The README now tells users to use a real, externally valid `https:` or `mailto:` contact URI.
+
+The contribution is documentation-only and changes one line. Verification on the exact upstream `master` base included `npm ci --ignore-scripts`, `npm run lint`, and `git diff --check`, all passing. The PR includes explicit AI-assistance disclosure. Upstream merged the one-line documentation patch on 11 September 2026.
+
+**Why it matters:** AMCursos uses Web Push/VAPID operationally and teaches PWA/integration workflows. Provider-specific acceptance differences are exactly the kind of deployment failure that is hard to diagnose when a configuration looks standards-compliant locally.
 
 ### RQ — document `SimpleWorker` source reload behavior
 
@@ -188,19 +203,6 @@ Fixes an iOS WKWebView lifecycle bug where changing `injectedJavaScriptObject` a
 The focused patch mirrors the refresh path already used by adjacent Apple setters: when `_webView` exists, it calls `resetupScripts` with the current configuration. RED/GREEN source-contract verification proved the missing refresh before the patch and its presence afterward, and `git diff --check` passes. No iOS simulator/device run is claimed from the Windows validation host; the upstream issue contains the runtime reproduction. The upstream CI workflows were created as `action_required` with zero iOS jobs executed, so that state is treated as workflow authorization rather than a code-test failure.
 
 **Why it matters:** AMCursos currently ships `react-native-webview` `13.16.1` in its mobile app for the locked provider-specific media player. Correct WebView script lifecycle behavior is directly relevant to reliable native-content and embedded-media boundaries.
-
-### Web Push Node.js - document Apple VAPID subject interoperability
-
-**Repository:** [`web-push-libs/web-push`](https://github.com/web-push-libs/web-push)
-**Pull request:** [#988 - docs: warn against localhost VAPID subjects](https://github.com/web-push-libs/web-push/pull/988)
-**Status:** **Open / upstream review**
-**Related issue:** [#947](https://github.com/web-push-libs/web-push/issues/947)
-
-Documents a cross-provider VAPID interoperability edge case: a local placeholder such as `mailto:user@localhost` can be syntactically accepted by the library and work with some push services while Apple Push rejects it with `403 BadJwtToken`. The README now tells users to use a real, externally valid `https:` or `mailto:` contact URI.
-
-The contribution is documentation-only and changes one line. Verification on the exact upstream `master` base included `npm ci --ignore-scripts`, `npm run lint`, and `git diff --check`, all passing. The PR includes explicit AI-assistance disclosure and remains open for upstream review.
-
-**Why it matters:** AMCursos uses Web Push/VAPID operationally and teaches PWA/integration workflows. Provider-specific acceptance differences are exactly the kind of deployment failure that is hard to diagnose when a configuration looks standards-compliant locally.
 
 ### Microsoft Skills — remove broken API Management reference
 
