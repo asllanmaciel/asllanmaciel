@@ -18,7 +18,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Merged** |
 | Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Merged** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
-| PHP / HTTP / PSR-7 | `guzzle/psr7` | [PR #884](https://github.com/guzzle/psr7/pull/884) | **Open / review** |
+| PHP / HTTP / PSR-7 | `guzzle/psr7` | [PR #884](https://github.com/guzzle/psr7/pull/884) | **Closed without merge** |
 | AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
 | Python / Background jobs | `rq/rq` | [PR #2480](https://github.com/rq/rq/pull/2480) | **Merged** |
@@ -128,19 +128,6 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 
 ## Contributions under review
 
-### Guzzle PSR-7 — extract domain-specific operations from `Utils`
-
-**Repository:** [`guzzle/psr7`](https://github.com/guzzle/psr7)  
-**Pull request:** [#884 — Extract domain-specific operations from Utils](https://github.com/guzzle/psr7/pull/884)  
-**Status:** **Open / upstream review**  
-**Related issue:** [#858](https://github.com/guzzle/psr7/issues/858)
-
-Implements the maintainer-defined extraction ahead of the next API evolution: stream creation/copy/hash/read helpers move to `Streams`, request mutation moves to `RequestModifier::apply()`, and userinfo redaction moves to `UriRedactor`. The existing `Utils` methods remain behavior-compatible PHPDoc-deprecated delegates without runtime deprecation warnings, while package-internal callers and documentation use the new domain-specific entry points.
-
-Validation on the submitted branch includes the complete PHPUnit suite with 3,041 tests and 6,962 assertions passing, plus one existing skipped and one existing incomplete test; focused coverage for the new public classes; focused `UtilsTest` compatibility coverage; PHP syntax checks; and `git diff --check`. PHPStan and PHP-CS-Fixer were deliberately not run locally because the repository's `AGENTS.md` requires those tools to run only under PHP 7.4.x and the validation environment has PHP 8.4.24 without a PHP 7.4 runtime.
-
-**Why it matters:** AMCursos directly uses Guzzle and teaches HTTP/API boundaries. Replacing a growing catch-all utility surface with cohesive domain APIs improves discoverability and gives consumers a gradual migration path without changing behavior or emitting runtime deprecations.
-
 ### Dompdf — encrypted embedded-file creation metadata
 
 **Repository:** [`dompdf/dompdf`](https://github.com/dompdf/dompdf)  
@@ -232,6 +219,19 @@ Fresh verification against the current upstream `main` confirmed that all remain
 **Why it matters:** agent skills are operational documentation consumed as context by coding agents; a dead reference wastes context and sends the agent toward a resource it cannot load. The contribution is also aligned with the AIStack/agent tooling surface taught and used across the user's projects.
 
 ## Closed without merge
+
+### Guzzle PSR-7 — extract domain-specific operations from `Utils`
+
+**Repository:** [`guzzle/psr7`](https://github.com/guzzle/psr7)
+**Pull request:** [#884 — Extract domain-specific operations from Utils](https://github.com/guzzle/psr7/pull/884)
+**Status:** **Closed without merge on 14 September 2026**
+**Related issue:** [#858](https://github.com/guzzle/psr7/issues/858)
+
+The submission proposed extracting stream, request-mutation and URI-redaction operations from the broad `Utils` surface while preserving compatibility delegates. The branch had substantial local PHPUnit coverage and focused compatibility checks, but upstream process and scope alignment are authoritative for whether a contribution is useful.
+
+A maintainer closed the PR without merge and explicitly asked that unsolicited AI-assisted PRs not be submitted to this repository, also stating that this proposal was incorrect. That feedback is now a hard project-specific gate: no further unsolicited contribution should be submitted to `guzzle/psr7` unless a maintainer explicitly invites the work and the intended scope is aligned before implementation.
+
+**Why it matters:** technical validation alone does not make an upstream contribution appropriate. Maintainer consent, project direction and scope alignment are part of correctness, especially for API-surface changes.
 
 ### WooCommerce — coupon handling for customerless order types
 
