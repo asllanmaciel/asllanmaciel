@@ -16,6 +16,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | PHP / PDF | `dompdf/dompdf` | [PR #3750](https://github.com/dompdf/dompdf/pull/3750) | **Open / review — approved** |
 | PHP / PDF | `dompdf/dompdf` | [PR #3757](https://github.com/dompdf/dompdf/pull/3757) | **Open / review** |
 | WordPress plugin | `mukeshpanchal27/easy-author-avatar-image` | [PR #51](https://github.com/mukeshpanchal27/easy-author-avatar-image/pull/51) | **Open / review** |
+| PHP / Web Push | `web-push-libs/web-push-php` | [PR #463](https://github.com/web-push-libs/web-push-php/pull/463) | **Open / review** |
 | PHP / Web Push | `web-push-libs/web-push-php` | [PR #462](https://github.com/web-push-libs/web-push-php/pull/462) | **Merged** |
 | Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Merged** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
@@ -128,6 +129,19 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 
 
 ## Contributions under review
+
+### Web Push PHP - document supported content encoding discovery
+
+**Repository:** [`web-push-libs/web-push-php`](https://github.com/web-push-libs/web-push-php)
+**Pull request:** [#463 - docs: document supported content encodings](https://github.com/web-push-libs/web-push-php/pull/463)
+**Status:** **Open / upstream review**
+**Related issue:** [#381](https://github.com/web-push-libs/web-push-php/issues/381)
+
+Documents the public `ContentEncoding` backed enum as the canonical way for applications to discover which Web Push content encodings the library supports. This lets callers compare browser-provided `PushManager.supportedContentEncodings` with `ContentEncoding::cases()` instead of duplicating a private or hard-coded list. The change also clarifies that a subscription encoding should be supported by both sides.
+
+The patch is documentation-only and intentionally does not introduce automatic negotiation, which remains a separate API/design decision from issue #381. Validation included `git diff --check` and executing the documented enum mapping against the current source, which returned `aesgcm` and `aes128gcm`. The PR was opened from upstream `master` at `af29c4d1`, is one commit and one README change, and was mergeable at submission.
+
+**Why it matters:** AMCursos uses `minishlink/web-push` directly for Web Push/VAPID flows. Discovering capabilities from the library's own public enum avoids configuration drift when supported encodings evolve and makes browser/library compatibility explicit.
 
 ### WordPress Requests — RFC 6265 cookie whitespace hardening
 
