@@ -9,6 +9,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | Ecosystem | Repository | Contribution | Status |
 |---|---|---|---|
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
+| PHP / HTTP | `WordPress/Requests` | [PR #1086](https://github.com/WordPress/Requests/pull/1086) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67495](https://github.com/woocommerce/woocommerce/pull/67495) | **Closed without merge** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67764](https://github.com/woocommerce/woocommerce/pull/67764) | **Merged** |
@@ -127,6 +128,21 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 
 
 ## Contributions under review
+
+### WordPress Requests — RFC 6265 cookie whitespace hardening
+
+**Repository:** [`WordPress/Requests`](https://github.com/WordPress/Requests)
+**Pull request:** [#1086 — Harden RFC 6265 cookie whitespace trimming](https://github.com/WordPress/Requests/pull/1086)
+**Status:** **Open / upstream review**
+**Related issue:** [#1084](https://github.com/WordPress/Requests/issues/1084)
+
+After a maintainer-requested audit of the 14 trim call sites introduced for PHP 8.6 compatibility, this focused follow-up hardens the five cookie-parsing sites where the protocol rule is explicit. RFC 6265 requires trimming WSP around cookie name/value data, and RFC 5234 defines WSP as only SP or HTAB. The patch adds an internal `WHITESPACE_CHARS_RFC6265` constant and stops silently treating LF, VT and other control characters as cookie whitespace.
+
+TDD reproduced the behavior before implementation: three new assertions failed because the historical PHP trim set sanitized LF/VT around cookie names and values. After the patch, the focused cookie suite passes with 133 tests and 375 assertions. `composer lint`, `composer checkcs` and `git diff --check` also pass. The full PHPUnit 10 run has the same 51 integration/environment failures and six warnings on clean `develop` and on the branch; the branch adds four tests without introducing an additional failure.
+
+The contribution was submitted after the maintainer explicitly invited a follow-up PR and suggested RFC-specific trim constants. The PR is one commit, three files, and is currently mergeable.
+
+**Why it matters:** protocol parsers should distinguish specification-defined whitespace from generic language-level whitespace. Silent normalization of invalid control characters can turn malformed input into apparently valid data, while a narrow RFC-specific character set preserves valid SP/HTAB handling and lets existing validation reject invalid cookie names.
 
 ### Dompdf — encrypted embedded-file creation metadata
 
