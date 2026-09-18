@@ -21,7 +21,8 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 | Web Push / Node.js | `web-push-libs/web-push` | [PR #988](https://github.com/web-push-libs/web-push/pull/988) | **Merged** |
 | PHP / Markdown | `thephpleague/commonmark` | [PR #1152](https://github.com/thephpleague/commonmark/pull/1152) | **Merged** |
 | PHP / HTTP / PSR-7 | `guzzle/psr7` | [PR #884](https://github.com/guzzle/psr7/pull/884) | **Closed without merge** |
-| AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Open / review** |
+| AI / Developer tooling | `microsoft/skills` | [PR #448](https://github.com/microsoft/skills/pull/448) | **Open / review** |
+| AI / Developer tooling | `microsoft/skills` | [PR #430](https://github.com/microsoft/skills/pull/430) | **Closed without merge** |
 | PHP / Testing | `pestphp/pest-plugin-browser` | [PR #256](https://github.com/pestphp/pest-plugin-browser/pull/256) | **Open / review** |
 | Python / Background jobs | `rq/rq` | [PR #2480](https://github.com/rq/rq/pull/2480) | **Merged** |
 | Mobile / React Native | `react-native-webview/react-native-webview` | [PR #4029](https://github.com/react-native-webview/react-native-webview/pull/4029) | **Open / review** |
@@ -240,17 +241,27 @@ The focused patch mirrors the refresh path already used by adjacent Apple setter
 ### Microsoft Skills — remove broken API Management reference
 
 **Repository:** [`microsoft/skills`](https://github.com/microsoft/skills)
-**Pull request:** [#430 — fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/430)
+**Pull request:** [#448 — fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/448)
 **Status:** **Open / upstream review**
 **Related issue:** [#422](https://github.com/microsoft/skills/issues/422)
 
 Removes a reference to `references/policies.md` from the Azure API Management .NET skill because that file does not exist in the skill's reference directory. The contribution follows the repository's explicit rule to perform GitHub writes through the `gh` CLI.
 
-Fresh verification against the current upstream `main` confirmed that all remaining relative links in the skill resolve, `git diff --check` passes, and the final patch changes one file by removing one line. On 10 September 2026, upstream `main` had advanced and GitHub marked the PR non-mergeable; the branch was rebased onto `2e600b071cc95edcb8b44cee9335d920ceeefbd9`, the relative-link check and `git diff --check` were rerun successfully, and the refreshed head `046ca8996e4c97c9dba83e97fa4a5a14e245f5c7` is mergeable again with the existing human review request preserved.
+Fresh verification on 18 September 2026 confirmed the broken `references/policies.md` row still existed on upstream `main` `14655200e871a89c013803b3aa4d88202cb03fc1`, while the reference directory still contained only `service-management.md`, `apis-operations.md`, and `products-subscriptions.md`. During conflict recovery, the original PR #430 closed without merge when its head was temporarily aligned exactly with the current upstream base. The same one-line fix was then rebuilt as commit `6484962c11697d7e45ee8a0e3dc9c5be18a716dd`, exactly one commit ahead and zero behind current `main`, and resubmitted as PR #448. The final diff remains one file with one line removed.
 
 **Why it matters:** agent skills are operational documentation consumed as context by coding agents; a dead reference wastes context and sends the agent toward a resource it cannot load. The contribution is also aligned with the AIStack/agent tooling surface taught and used across the user's projects.
 
 ## Closed without merge
+
+### Microsoft Skills — superseded conflict-refresh PR
+
+**Repository:** [`microsoft/skills`](https://github.com/microsoft/skills)
+**Pull request:** [#430 — fix: remove broken API Management policy reference](https://github.com/microsoft/skills/pull/430)
+**Status:** **Closed without merge on 18 September 2026; superseded by #448**
+
+PR #430 carried the same one-line removal now submitted as #448. While refreshing its fork branch after upstream `main` advanced again, the branch was temporarily pointed exactly at the new upstream base; GitHub consequently closed the zero-diff PR. The current upstream still contained the broken reference, so the patch was rebuilt immediately as one commit on top of the fresh base and resubmitted without expanding scope.
+
+**Why it matters:** this closure is not counted as upstream impact or acceptance. The replacement remains under review, preserving an explicit audit trail instead of presenting the superseded PR as a success.
 
 ### Guzzle PSR-7 — extract domain-specific operations from `Utils`
 
