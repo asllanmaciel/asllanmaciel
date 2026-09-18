@@ -143,20 +143,22 @@ The patch is documentation-only and intentionally does not introduce automatic n
 
 **Why it matters:** AMCursos uses `minishlink/web-push` directly for Web Push/VAPID flows. Discovering capabilities from the library's own public enum avoids configuration drift when supported encodings evolve and makes browser/library compatibility explicit.
 
-### WordPress Requests — RFC 6265 cookie whitespace hardening
+### WordPress Requests — RFC 10025 cookie parsing hardening
 
 **Repository:** [`WordPress/Requests`](https://github.com/WordPress/Requests)
-**Pull request:** [#1086 — Harden RFC 6265 cookie whitespace trimming](https://github.com/WordPress/Requests/pull/1086)
+**Pull request:** [#1086 — Harden RFC 10025 cookie parsing](https://github.com/WordPress/Requests/pull/1086)
 **Status:** **Open / upstream review**
 **Related issue:** [#1084](https://github.com/WordPress/Requests/issues/1084)
 
-After a maintainer-requested audit of the 14 trim call sites introduced for PHP 8.6 compatibility, this focused follow-up hardens the five cookie-parsing sites where the protocol rule is explicit. RFC 6265 requires trimming WSP around cookie name/value data, and RFC 5234 defines WSP as only SP or HTAB. The patch adds an internal `WHITESPACE_CHARS_RFC6265` constant and stops silently treating LF, VT and other control characters as cookie whitespace.
+After a maintainer-requested audit of the 14 trim call sites introduced for PHP 8.6 compatibility, this follow-up first narrowed cookie normalization to protocol WSP. Review then surfaced that RFC 10025, published in July 2026, obsoletes RFC 6265 and adds a stricter first step: a `Set-Cookie` string containing `%x00-08 / %x0A-1F / %x7F` must be ignored.
 
-TDD reproduced the behavior before implementation: three new assertions failed because the historical PHP trim set sanitized LF/VT around cookie names and values. After the patch, the focused cookie suite passes with 133 tests and 375 assertions. `composer lint`, `composer checkcs` and `git diff --check` also pass. The full PHPUnit 10 run has the same 51 integration/environment failures and six warnings on clean `develop` and on the branch; the branch adds four tests without introducing an additional failure.
+The updated patch separates validation from normalization. Direct `Cookie::parse()` rejects those disallowed control characters with `InvalidArgument`; `Cookie::parse_from_headers()` ignores only the malformed response cookie and continues processing the other headers. Valid WSP remains limited to SP/HTAB via the internal `WHITESPACE_CHARS_RFC10025` constant.
 
-The contribution was submitted after the maintainer explicitly invited a follow-up PR and suggested RFC-specific trim constants. The PR is one commit, three files, and is currently mergeable.
+TDD made the correction explicit: all 33 new cases were RED before the control-character validation (32 forbidden code points plus a mixed valid/invalid response-header case). After the change, the focused cookie suite passes with 165 tests and 440 assertions. `composer lint` passes across 176 files, PHPCS passes on the three changed files, and `git diff --check` passes. The full PHPUnit 10 run on the branch reports 3,238 tests / 5,486 assertions with 50 failures and six warnings; clean `develop` at `6200ba9a` reports 3,202 tests / 5,410 assertions with the same 50 failures and six warnings, so no additional full-suite regression is attributed to the patch.
 
-**Why it matters:** protocol parsers should distinguish specification-defined whitespace from generic language-level whitespace. Silent normalization of invalid control characters can turn malformed input into apparently valid data, while a narrow RFC-specific character set preserves valid SP/HTAB handling and lets existing validation reject invalid cookie names.
+The contribution was submitted after the maintainer explicitly invited a follow-up PR and suggested RFC-specific trim constants. A subsequent review observation about RFC 10025 was incorporated in commit `9bdaa17b`, and the PR remains mergeable.
+
+**Why it matters:** protocol parsers should reject invalid control bytes before normalization, while trimming only the whitespace the protocol actually defines. That avoids silently converting malformed input into apparently valid state and prevents one bad response cookie from poisoning otherwise valid cookies.
 
 ### Dompdf — encrypted embedded-file creation metadata
 
