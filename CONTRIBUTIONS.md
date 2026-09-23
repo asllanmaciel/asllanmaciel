@@ -8,6 +8,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 
 | Ecosystem | Repository | Contribution | Status |
 |---|---|---|---|
+| PHP / Dependency management | `composer/composer` | [PR #13083](https://github.com/composer/composer/pull/13083) | **Open / review** |
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | PHP / HTTP | `WordPress/Requests` | [PR #1086](https://github.com/WordPress/Requests/pull/1086) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / review** |
@@ -81,7 +82,6 @@ This is a documentation-only change. Verification included `git diff --check` pl
 
 **Why it matters:** lazy extension initialization can change which same-priority renderer is registered first, so relying on insertion order creates fragile extensions. Explicit priority guidance makes customization behavior easier to reason about and is directly relevant to AMCursos, which uses `league/commonmark`.
 
-
 ### Web Push PHP — remove redundant `ext-json` requirement
 
 **Repository:** [`web-push-libs/web-push-php`](https://github.com/web-push-libs/web-push-php)
@@ -95,9 +95,6 @@ Removes the obsolete Composer requirement on `ext-json`. The package already req
 Fresh verification before submission included `composer validate --strict --no-check-publish`, PHPStan with zero errors, PHP CS Fixer dry runs for source and tests, and `git diff --check`. The offline PHPUnit suite reports one pre-existing data-provider error (`Subscription::__construct()` receiving `false` for the endpoint); the exact same 44 tests / 110 assertions / 1 error / 6 skipped result was reproduced on upstream `master` before the patch, so it is not attributed to this change.
 
 **Why it matters:** stale platform requirements make dependency metadata noisier and can mislead consumers about what PHP actually requires. This is also a direct dependency used by AMCursos for Web Push/VAPID flows.
-
-
-
 
 ### Web Push Node.js - document Apple VAPID subject interoperability
 
@@ -127,9 +124,20 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 
 **Why it matters:** RQ is part of the current Python na Prática runtime stack in AMCursos. A worker that intentionally reuses one Python process is useful for tests and debugging, but that same property can make live source edits look ineffective unless the reload boundary is explicit.
 
-
-
 ## Contributions under review
+
+### Composer — document CI and container caching best practices
+
+**Repository:** [`composer/composer`](https://github.com/composer/composer)
+**Pull request:** [#13083 — docs: add Composer caching best practices](https://github.com/composer/composer/pull/13083)
+**Status:** **Open / upstream review**
+**Related issue:** [#12927](https://github.com/composer/composer/issues/12927)
+
+Adds a dedicated caching best-practices article for Composer usage in GitHub Actions, GitLab CI/CD, Bitbucket Pipelines, CircleCI and Docker/BuildKit. The guide distinguishes Composer's download cache from caching `vendor/`, explains dependency-aware cache keys and `COMPOSER_CACHE_DIR`, and calls out cache-poisoning considerations for untrusted builds.
+
+The contribution is documentation-only and is one commit on top of the current upstream `main`. Validation recorded on the PR includes `git diff --check`, a successful `composer install --no-interaction --prefer-dist --no-progress`, and a full PHPUnit attempt on PHP 8.3.33 / Composer 2.9.7. PHPUnit reached 3,332 tests; the remaining one error and eight failures were traced to host constraints unrelated to this documentation patch (`allow_url_fopen=0`, `/tmp` mounted `noexec`, missing Git identity and cPanel safelock warnings on stderr). No clean full-suite PASS is claimed.
+
+**Why it matters:** AMCursos runs Composer across a growing set of PHP, Laravel, CI and engineering labs. Clear cache boundaries reduce CI time without making reproducibility depend on stale `vendor/` state, and the upstream issue was opened by a Composer maintainer specifically requesting this guide.
 
 ### Web Push PHP - document supported content encoding discovery
 
@@ -138,7 +146,7 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 **Status:** **Open / upstream review**
 **Related issue:** [#381](https://github.com/web-push-libs/web-push-php/issues/381)
 
-Documents the public `ContentEncoding` backed enum as the canonical way for applications to discover which Web Push content encodings the library supports. This lets callers compare browser-provided `PushManager.supportedContentEncodings` with `ContentEncoding::cases()` instead of duplicating a private or hard-coded list. The change also clarifies that a subscription encoding should be supported by both sides.
+Documents the public `ContentEncoding` backed enum as the canonical way for applications to discover which Web Push content encodings the library supports. This lets callers compare browser-provided `PushManager.supportedContentEncodings` with `ContentEncoding::cases()` instead of duplicating a private or hard-coded list. The change also clarifies that a selected `contentEncoding` should be supported by both the browser and this library.
 
 The patch is documentation-only and intentionally does not introduce automatic negotiation, which remains a separate API/design decision from issue #381. Validation included `git diff --check` and executing the documented enum mapping against the current source, which returned `aesgcm` and `aes128gcm`. The PR was opened from upstream `master` at `af29c4d1`, is one commit and one README change, and was mergeable at submission.
 
@@ -153,7 +161,7 @@ The patch is documentation-only and intentionally does not introduce automatic n
 
 After a maintainer-requested audit of the 14 trim call sites introduced for PHP 8.6 compatibility, this follow-up first narrowed cookie normalization to protocol WSP. Review then surfaced that RFC 10025, published in July 2026, obsoletes RFC 6265 and adds a stricter first step: a `Set-Cookie` string containing `%x00-08 / %x0A-1F / %x7F` must be ignored.
 
-The updated patch separates validation from normalization. Direct `Cookie::parse()` rejects those disallowed control characters with `InvalidArgument`; `Cookie::parse_from_headers()` ignores only the malformed response cookie and continues processing the other headers. Valid WSP remains limited to SP/HTAB via the internal `WHITESPACE_CHARS_RFC10025` constant.
+The updated patch separates validation from normalization. Direct `Cookie::parse()` rejects those disallowed control characters with `InvalidArgument`; `Cookie::parse_from_headers()` ignores only the malformed response cookie and continues processing the other response cookies. Valid WSP remains limited to SP/HTAB via the internal `WHITESPACE_CHARS_RFC10025` constant.
 
 TDD made the correction explicit: all 33 new cases were RED before the control-character validation (32 forbidden code points plus a mixed valid/invalid response-header case). After the change, the focused cookie suite passes with 165 tests and 440 assertions. `composer lint` passes across 176 files, PHPCS passes on the three changed files, and `git diff --check` passes. The full PHPUnit 10 run on the branch reports 3,238 tests / 5,486 assertions with 50 failures and six warnings; clean `develop` at `6200ba9a` reports 3,202 tests / 5,410 assertions with the same 50 failures and six warnings, so no additional full-suite regression is attributed to the patch.
 
@@ -223,7 +231,6 @@ The patch routes those void commands through the existing `processVoidResponse()
 Preparation included PHP 8.4 syntax validation and an independent reproduction showing that constructing the generator has no side effect while consuming it executes the body. A fresh full Composer matrix was attempted after submission; dependency installation is currently blocked by GitHub authentication in the isolated WSL Composer environment, so no full-suite PASS is claimed from that environment. The upstream Actions run was also created as `action_required` with zero executed jobs, which is treated as workflow authorization rather than a test regression.
 
 **Why it matters:** a synchronization API that silently becomes a no-op creates misleading tests and race conditions that are disproportionately visible in CI. The investigation is directly relevant to browser automation and test reliability taught across AMCursos Labs and DevTools work.
-
 
 ### React Native WebView — refresh updated injected JavaScript object on iOS
 
