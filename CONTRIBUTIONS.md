@@ -8,7 +8,7 @@ This page intentionally excludes repositories I own or maintain. It focuses on u
 
 | Ecosystem | Repository | Contribution | Status |
 |---|---|---|---|
-| PHP / Dependency management | `composer/composer` | [PR #13083](https://github.com/composer/composer/pull/13083) | **Open / review** |
+| PHP / Dependency management | `composer/composer` | [PR #13083](https://github.com/composer/composer/pull/13083) | **Open / review — maintainer feedback** |
 | WordPress | `WordPress/presence-api` | [PR #193](https://github.com/WordPress/presence-api/pull/193) | **Merged** |
 | PHP / HTTP | `WordPress/Requests` | [PR #1086](https://github.com/WordPress/Requests/pull/1086) | **Open / review** |
 | WooCommerce | `woocommerce/woocommerce` | [PR #67645](https://github.com/woocommerce/woocommerce/pull/67645) | **Open / changes requested** |
@@ -130,7 +130,7 @@ The behavior was reproduced on current upstream `master` with `SimpleWorker` and
 
 **Repository:** [`composer/composer`](https://github.com/composer/composer)
 **Pull request:** [#13083 — docs: add Composer caching best practices](https://github.com/composer/composer/pull/13083)
-**Status:** **Open / upstream review**
+**Status:** **Open / upstream review — maintainer feedback on 25 September 2026**
 **Related issue:** [#12927](https://github.com/composer/composer/issues/12927)
 
 Adds a dedicated caching best-practices article for Composer usage in GitHub Actions, GitLab CI/CD, Bitbucket Pipelines, CircleCI and Docker/BuildKit. The guide distinguishes Composer's download cache from caching `vendor/`, explains dependency-aware cache keys and `COMPOSER_CACHE_DIR`, and calls out cache-poisoning considerations for untrusted builds.
