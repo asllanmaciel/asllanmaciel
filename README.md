@@ -1,129 +1,142 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="Asllan Maciel — Senior PHP, Laravel, WordPress and AI Engineer">
+  <img src="./assets/profile-banner.svg" width="100%" alt="Asllan Maciel — Tecnologia, IA e Negócios">
 </p>
 
 <p align="center">
-  <a href="https://asllanmaciel.com.br/software-consulting/"><img src="https://img.shields.io/badge/International_Portfolio-0284c7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="International portfolio"></a>
-  <a href="https://asllanmaciel.com.br/start-a-project/"><img src="https://img.shields.io/badge/Start_a_Project-0f766e?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Start a project"></a>
+  <a href="https://asllanmaciel.com.br"><img src="https://img.shields.io/badge/Site-0284c7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Site pessoal"></a>
+  <a href="https://cursos.asllanmaciel.com.br"><img src="https://img.shields.io/badge/Cursos-7c3aed?style=for-the-badge&logo=bookstack&logoColor=white" alt="Asllan Maciel Cursos"></a>
   <a href="https://linkedin.com/in/asllanmaciel"><img src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:contato@asllanmaciel.com.br"><img src="https://img.shields.io/badge/Contato-0f766e?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Contato"></a>
 </p>
 
-<h2 align="center">Senior PHP, Laravel & WordPress Engineer · AI Engineering</h2>
-
 <p align="center">
-  I build and modernize business-critical software, developer tooling and AI-assisted systems.<br>
-  Senior judgment, pragmatic delivery, open-source contribution and async-friendly collaboration.
+  Construo sistemas próprios e para clientes, aplico IA e automação a problemas reais<br>
+  e transformo experiência prática em produtos, mentoria, cursos e ferramentas.
 </p>
 
 <table align="center">
   <tr>
-    <td align="center"><strong>25+</strong><br>years in software</td>
-    <td align="center"><strong>15+</strong><br>years with WordPress</td>
-    <td align="center"><strong>100+</strong><br>projects delivered</td>
-    <td align="center"><strong>OSS</strong><br>WordPress & WooCommerce</td>
+    <td align="center"><strong>25+</strong><br>anos construindo</td>
+    <td align="center"><strong>Sistemas</strong><br>próprios e para clientes</td>
+    <td align="center"><strong>IA</strong><br>aplicada à execução</td>
+    <td align="center"><strong>Conhecimento</strong><br>prático e compartilhado</td>
   </tr>
 </table>
 
-## What I work on
+## O que eu construo
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>PHP & Laravel applications</h3>
-      <p>Architecture, legacy modernization, APIs, integrations, performance, security and maintainability for business-critical products.</p>
+      <h3>Produtos e sistemas próprios</h3>
+      <p>SaaS, APIs, plataformas, ferramentas e operações digitais que evoluem com uso real.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>WordPress & WooCommerce engineering</h3>
-      <p>Custom plugins, complex integrations, performance, developer tooling and contributions to the wider ecosystem.</p>
+      <h3>Sistemas para clientes</h3>
+      <p>Arquitetura, desenvolvimento, modernização, integrações e automações para necessidades concretas.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>SaaS & product architecture</h3>
-      <p>Multi-tenant platforms, billing, queues, webhooks, observability, CRM workflows and operational tooling.</p>
+      <h3>IA e automação</h3>
+      <p>Agentes, MCPs, workflows e integrações que ampliam capacidade sem abrir mão de segurança e supervisão.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>AI engineering & automation</h3>
-      <p>LLM integrations, agent orchestration, AI-assisted development workflows, automation and developer infrastructure.</p>
+      <h3>Cursos e mentoria</h3>
+      <p>Experiência de mercado transformada em projetos, formação prática e direção para carreira, produto e negócio.</p>
     </td>
   </tr>
 </table>
 
-> Most client and commercial product code is private by design. Public repositories focus on reusable tools, architecture references, educational projects and community contributions.
+> Grande parte do código de clientes e dos produtos comerciais é privada por design. Os repositórios públicos concentram ferramentas, exemplos testados, referências de arquitetura e contribuições para a comunidade.
 
-## Current focus
+## Projetos e produtos selecionados
 
-- AI-assisted software engineering and agent orchestration.
-- Developer tooling for PHP, WordPress and GitHub workflows.
-- Practical SaaS architecture: tenancy, billing, queues, webhooks and observability.
-- Open-source contributions to WordPress and WooCommerce.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://ghdevlog.com">GHDevLog</a></h3>
+      <p>Developer intelligence para receber, validar e investigar webhooks do GitHub com segurança e rastreabilidade.</p>
+      <p><code>GitHub</code> <code>Webhooks</code> <code>Segurança</code> <code>IA</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://bibliaapi.com.br">BIBLIAAPI</a></h3>
+      <p>Infraestrutura para aplicações bíblicas, combinando APIs, integrações WordPress, aplicativos e recursos SaaS.</p>
+      <p><code>API REST</code> <code>Integrações</code> <code>WordPress</code> <code>Mobile</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://claridados.com.br">ClariDados</a></h3>
+      <p>Analytics orientado a decisões para acompanhar audiência, aquisição, páginas e conversões com menos complexidade.</p>
+      <p><code>Analytics</code> <code>Privacidade</code> <code>Relatórios</code> <code>APIs</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://crescanafe.com">Cresça na Fé</a></h3>
+      <p>Plataforma de conteúdo com estudos, devocionais e recursos apoiados por um ecossistema editorial de longa duração.</p>
+      <p><code>Conteúdo</code> <code>Comunidade</code> <code>WordPress</code> <code>SEO</code></p>
+    </td>
+  </tr>
+</table>
 
-## Open-source highlights
+## Projetos públicos e ferramentas para desenvolvedores
 
-I also maintain **[WP24Horas Open Source](https://github.com/WP24Horas)**, a developer-focused home for WordPress tooling, architecture references and practical examples.
+Também mantenho o **[WP24Horas Open Source](https://github.com/WP24Horas)**, espaço dedicado a ferramentas para WordPress, referências de arquitetura e exemplos práticos.
 
-**[View the dedicated open-source portfolio →](OPEN_SOURCE.md)**
+**[Ver o portfólio público completo →](OPEN_SOURCE.md)**
 
-- **[WP24H Plugin Boilerplate v1.0.0](https://github.com/WP24Horas/wp24h-plugin-boilerplate/releases/tag/v1.0.0):** validated stable WordPress plugin starter with safe scaffolding, module generation, REST examples, tests, static analysis and verified release tooling.
-- **[WP Plugin README Validator v1.0.0](https://github.com/asllanmaciel/wp-plugin-readme-validator/releases/tag/v1.0.0):** stable dependency-free CLI and GitHub Action for WordPress plugin metadata validation, with `@v1` consumer alias, PHP 8.1–8.4 validation and WordPress-compatible raw 8192-byte header parsing.
-- **[WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer):** Markdown + front matter importer with taxonomy, SEO metadata, featured images and optional authenticated REST automation.
-- **[Laravel SaaS Blueprint](https://github.com/asllanmaciel/laravel-saas-blueprint):** practical architecture guidance for tenancy, billing, security, jobs, webhooks and observability.
-- **[GitHub Webhook Security Guide](https://github.com/asllanmaciel/github-webhook-security-guide):** tested PHP and Node.js examples for validating webhook signatures with HMAC SHA-256.
-- **[BIBLIAAPI Examples](https://github.com/asllanmaciel/bibliaapi-examples):** secure cURL, PHP and JavaScript integration examples using tokens and environment variables.
+- **[WP24H Plugin Boilerplate](https://github.com/WP24Horas/wp24h-plugin-boilerplate):** base modular para plugins com scaffolding, REST, testes, análise estática e release verificável.
+- **[WP Plugin README Validator](https://github.com/asllanmaciel/wp-plugin-readme-validator):** CLI e GitHub Action para validar versões, requisitos, tags e metadados de plugins WordPress.
+- **[WP24H MD Importer](https://github.com/asllanmaciel/wp24h-md-importer):** importação de Markdown e front matter com taxonomias, SEO, imagens e automação via REST.
+- **[Laravel SaaS Blueprint](https://github.com/asllanmaciel/laravel-saas-blueprint):** referência prática para tenancy, billing, segurança, jobs, webhooks e observabilidade.
+- **[GitHub Webhook Security Guide](https://github.com/asllanmaciel/github-webhook-security-guide):** exemplos testados de validação HMAC SHA-256 em PHP e Node.js.
+- **[BIBLIAAPI Examples](https://github.com/asllanmaciel/bibliaapi-examples):** integrações seguras usando cURL, PHP e JavaScript.
 
-## Upstream open-source contributions
+### Contribuições em outros projetos
 
-**Merged contributor to WordPress projects · active WooCommerce contributor.**
+**[Ver o histórico completo de contribuições upstream →](CONTRIBUTIONS.md)**
 
-**[View the full upstream contribution record →](CONTRIBUTIONS.md)**
+- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** contribuição incorporada para melhorar portabilidade de banco de dados e preservar o comportamento com cobertura de regressão.
+- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** contribuição para ações em massa de webhooks, persistência de estado, notices e cobertura end-to-end.
 
-- **[WordPress Presence API — PR #193](https://github.com/WordPress/presence-api/pull/193):** merged contribution improving database portability by removing MySQL session mutations and replacing `GROUP_CONCAT` aggregation with deterministic PHP aggregation and regression coverage.
-- **[WooCommerce — PR #67645](https://github.com/woocommerce/woocommerce/pull/67645):** active contribution adding bulk Activate, Pause and Deactivate webhook actions with status persistence, notices, initial-ping parity and end-to-end coverage.
+## For international work & collaboration
 
-## Selected products
+I build and modernize web systems, SaaS platforms, APIs, developer tools and AI-assisted workflows.
 
-### [GHDevLog](https://ghdevlog.com)
-Developer intelligence for receiving, validating and investigating GitHub webhooks with security and traceability.  
-`GitHub` `Webhooks` `Security` `AI`
+I'm open to selected opportunities involving:
 
-### [BIBLIAAPI](https://bibliaapi.com.br)
-API-first infrastructure for Bible applications, including REST APIs, WordPress integrations, mobile clients and SaaS capabilities.  
-`Laravel` `REST API` `WordPress` `Mobile`
+- Remote consulting and scoped engineering engagements
+- Architecture reviews and technical advisory
+- SaaS, API, integration and automation projects
+- Developer tools and technical product collaboration
 
-### [ClariDados](https://claridados.com.br)
-Privacy-conscious analytics for tracking visits, acquisition sources, pages and conversions without unnecessary complexity.  
-`Analytics` `Privacy` `Reporting` `APIs`
+I work from Brazil (UTC−3), primarily through clear written communication, documented decisions and asynchronous collaboration.
 
-### [Cresça na Fé](https://crescanafe.com)
-A content platform with studies, devotionals and resources supported by a long-running WordPress publishing ecosystem.  
-`WordPress` `Content Platform` `SEO`
+**[View the international portfolio](https://asllanmaciel.com.br/software-consulting/)** · **[Discuss a project](https://asllanmaciel.com.br/start-a-project/)** · **[Connect on LinkedIn](https://linkedin.com/in/asllanmaciel)**
 
-## Core stack
+## Cursos, mentoria e comunidade
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
-  <img src="https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress">
-  <img src="https://img.shields.io/badge/WooCommerce-96588A?style=for-the-badge&logo=woocommerce&logoColor=white" alt="WooCommerce">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/AI_Engineering-111827?style=for-the-badge&logo=openai&logoColor=white" alt="AI Engineering">
-</p>
+Na **[Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br)**, tecnologia, produto e negócio fazem parte do mesmo caminho: construir uma habilidade real, gerar evidência e transformá-la em carreira, serviço ou produto.
 
-## How I work
+O catálogo reúne programação, engenharia de software, backend e dados, WordPress, IA e automação, carreira e negócios — de conteúdos introdutórios a formações e especializações baseadas em projetos.
 
-- **Business context first:** understand the operational problem before choosing a tool.
-- **Incremental delivery:** reduce risk through focused, observable improvements.
-- **Production-minded engineering:** security, tests, documentation, observability and recovery matter.
-- **Clear written communication:** decisions, tradeoffs and next steps are documented.
-- **Async by default:** we can start by email and only schedule a call when it is genuinely useful.
+Também compartilho artigos, séries, ferramentas gratuitas e bastidores do que estou construindo no **[site pessoal](https://asllanmaciel.com.br)**.
+
+## Como eu trabalho
+
+- **Problema antes da ferramenta:** tecnologia precisa resolver algo concreto.
+- **Construção iterativa:** colocar no ar, observar, aprender e melhorar.
+- **Qualidade operacional:** testes, documentação, segurança, privacidade, observabilidade e recuperação.
+- **Visão de produto:** engenharia, experiência, monetização e evolução precisam conversar.
+- **Conhecimento aplicado:** ensino a partir do que construo, opero, testo e aprendo na prática.
+- **Comunicação clara:** decisões, riscos e próximos passos ficam documentados.
 
 ---
 
 <p align="center">
-  <strong>Need senior help with a PHP, Laravel, WordPress or AI-enabled product?</strong><br><br>
-  <a href="https://asllanmaciel.com.br/start-a-project/"><strong>Send your project details</strong></a>
-  ·
-  <a href="https://asllanmaciel.com.br/software-consulting/">View the international portfolio</a>
+  <strong>Tecnologia, IA e negócios aplicados a problemas reais.</strong><br><br>
+  <a href="https://asllanmaciel.com.br">Site pessoal</a> ·
+  <a href="https://cursos.asllanmaciel.com.br">Cursos</a> ·
+  <a href="https://linkedin.com/in/asllanmaciel">LinkedIn</a> ·
+  <a href="mailto:contato@asllanmaciel.com.br">Contato</a>
 </p>
