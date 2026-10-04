@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 470" role="img">
+  <title>Ecossistema de atuação de Asllan Maciel</title>
+  <desc>Tecnologia, inteligência artificial e negócios conectam estratégia à construção de sistemas, produtos, educação e comunidade.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07121f"/><stop offset=".55" stop-color="#0b1e35"/><stop offset="1" stop-color="#19164a"/></linearGradient>
+    <linearGradient id="brand" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset=".5" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect x="1" y="1" width="1278" height="468" rx="28" fill="url(#bg)" stroke="#334155"/>
+  <text x="640" y="55" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">DA ESTRATÉGIA À ENTREGA</text>
+  <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle" font-weight="800">
+    <rect x="396" y="80" width="488" height="92" rx="46" fill="#0f2742" stroke="url(#brand)" stroke-width="2"/>
+    <text x="640" y="136" fill="#f8fafc" font-size="30">Tecnologia · IA · Negócios</text>
+  </g>
+  <g fill="none" stroke="url(#brand)" stroke-width="3" stroke-opacity=".65">
+    <path d="M640 172v54M640 226H180v52M640 226H490v52M640 226h150v52M640 226h460v52"/>
+  </g>
+  <g fill="#38bdf8" filter="url(#glow)"><circle cx="640" cy="226" r="6"/><circle cx="180" cy="278" r="5"/><circle cx="490" cy="278" r="5"/><circle cx="790" cy="278" r="5"/><circle cx="1100" cy="278" r="5"/></g>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <g transform="translate(45 278)"><rect width="270" height="142" rx="20" fill="#0b2638" stroke="#0891b2"/><circle cx="38" cy="40" r="18" fill="#164e63"/><path d="M29 40l7 7 13-16" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round"/><text x="68" y="46" fill="#f8fafc" font-size="20" font-weight="800">Sistemas próprios</text><text x="25" y="83" fill="#cbd5e1" font-size="14">Ideia, produto, operação</text><text x="25" y="106" fill="#cbd5e1" font-size="14">e evolução contínua.</text></g>
+    <g transform="translate(355 278)"><rect width="270" height="142" rx="20" fill="#101f3b" stroke="#3b82f6"/><circle cx="38" cy="40" r="18" fill="#1e3a8a"/><path d="M27 46h22M30 46V34h16v12M35 34v-5h6v5" fill="none" stroke="#bfdbfe" stroke-width="3" stroke-linejoin="round"/><text x="68" y="46" fill="#f8fafc" font-size="20" font-weight="800">Sistemas de clientes</text><text x="25" y="83" fill="#cbd5e1" font-size="14">Arquitetura, modernização,</text><text x="25" y="106" fill="#cbd5e1" font-size="14">integrações e automação.</text></g>
+    <g transform="translate(655 278)"><rect width="270" height="142" rx="20" fill="#171d42" stroke="#6366f1"/><circle cx="38" cy="40" r="18" fill="#312e81"/><path d="M27 35h22v16H27zM31 39h14M31 44h10" fill="none" stroke="#c7d2fe" stroke-width="3" stroke-linejoin="round"/><text x="68" y="46" fill="#f8fafc" font-size="20" font-weight="800">Cursos e mentoria</text><text x="25" y="83" fill="#cbd5e1" font-size="14">Experiência convertida em</text><text x="25" y="106" fill="#cbd5e1" font-size="14">formação e direção prática.</text></g>
+    <g transform="translate(965 278)"><rect width="270" height="142" rx="20" fill="#24183e" stroke="#8b5cf6"/><circle cx="38" cy="40" r="18" fill="#4c1d95"/><path d="M29 45c3-7 15-7 18 0M34 34a5 5 0 1010 0 5 5 0 00-10 0z" fill="none" stroke="#ddd6fe" stroke-width="3" stroke-linecap="round"/><text x="68" y="46" fill="#f8fafc" font-size="20" font-weight="800">Comunidade</text><text x="25" y="83" fill="#cbd5e1" font-size="14">Conteúdo, ferramentas e</text><text x="25" y="106" fill="#cbd5e1" font-size="14">conhecimento compartilhado.</text></g>
+  </g>
+</svg>

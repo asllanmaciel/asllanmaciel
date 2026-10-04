@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 180" role="img">
+  <title>Experiência e atuação</title>
+  <desc>Mais de 25 anos construindo, sistemas em produção, inteligência artificial aplicada e conhecimento compartilhado.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#071827"/><stop offset=".5" stop-color="#102340"/><stop offset="1" stop-color="#23174a"/></linearGradient><linearGradient id="a" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+  <rect x="1" y="1" width="1278" height="178" rx="24" fill="url(#bg)" stroke="#334155"/>
+  <path d="M320 35v110M640 35v110M960 35v110" stroke="#334155"/>
+  <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(160)"><text y="76" fill="url(#a)" font-size="38" font-weight="900">25+</text><text y="106" fill="#f8fafc" font-size="17" font-weight="700">anos construindo</text><text y="130" fill="#94a3b8" font-size="13">e colocando sistemas no ar</text></g>
+    <g transform="translate(480)"><text y="76" fill="#60a5fa" font-size="29" font-weight="900">PRODUÇÃO</text><text y="106" fill="#f8fafc" font-size="17" font-weight="700">sistemas próprios e de clientes</text><text y="130" fill="#94a3b8" font-size="13">produto, arquitetura e operação</text></g>
+    <g transform="translate(800)"><text y="76" fill="#818cf8" font-size="31" font-weight="900">IA APLICADA</text><text y="106" fill="#f8fafc" font-size="17" font-weight="700">à execução e à automação</text><text y="130" fill="#94a3b8" font-size="13">com supervisão e propósito</text></g>
+    <g transform="translate(1120)"><text y="76" fill="#a78bfa" font-size="28" font-weight="900">COMPARTILHAR</text><text y="106" fill="#f8fafc" font-size="17" font-weight="700">cursos, mentoria e comunidade</text><text y="130" fill="#94a3b8" font-size="13">prática convertida em conhecimento</text></g>
+  </g>
+</svg>
