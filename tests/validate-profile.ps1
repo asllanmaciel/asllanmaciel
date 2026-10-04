@@ -12,7 +12,7 @@ $courses = @(
 )
 
 foreach ($course in $courses) {
-    $assetRef = "./assets/courses/$($course.Slug)-card.png"
+    $assetRef = "./assets/courses/$($course.Slug)-card.svg"
     $assetPath = Join-Path $repoRoot ($assetRef -replace '^\./', '')
 
     if (-not (Test-Path -LiteralPath $assetPath)) {
@@ -24,6 +24,10 @@ foreach ($course in $courses) {
     if (-not $readme.Contains($course.Url)) {
         throw "README does not link course: $($course.Url)"
     }
+}
+
+if ($readme -match 'assets/courses/[^"'']+-card\.png') {
+    throw 'README still references a generated raster course card'
 }
 
 if (-not $readme.Contains('Explorar todos os cursos, formações e labs')) {

@@ -127,13 +127,13 @@ Na **[Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br)**, tecnologia, p
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery"><img src="./assets/courses/n8n-ai-mastery-card.png" width="100%" alt="n8n AI Mastery — IA, automação e sistemas agentic"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery"><img src="./assets/courses/n8n-ai-mastery-card.svg" width="100%" alt="n8n AI Mastery — IA, automação e sistemas agentic"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery">n8n AI Mastery</a></h3>
       <p>Construa e opere sistemas agentic com limites, evidência, observabilidade e supervisão humana.</p>
       <p><code>IA</code> <code>Automação</code> <code>Agents</code> <code>Produção</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro"><img src="./assets/courses/supabase-pro-card.png" width="100%" alt="Supabase Pro — engenharia de backend para SaaS e aplicações com IA"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro"><img src="./assets/courses/supabase-pro-card.svg" width="100%" alt="Supabase Pro — engenharia de backend para SaaS e aplicações com IA"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro">Supabase Pro</a></h3>
       <p>Projete, proteja, teste e opere backends multi-tenant para SaaS e aplicações com IA.</p>
       <p><code>Backend</code> <code>SaaS</code> <code>Segurança</code> <code>Dados</code></p>
@@ -141,13 +141,13 @@ Na **[Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br)**, tecnologia, p
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/wpan"><img src="./assets/courses/wpan-card.png" width="100%" alt="WPAN — engenharia de plugins WordPress como produtos"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/wpan"><img src="./assets/courses/wpan-card.svg" width="100%" alt="WPAN — engenharia de plugins WordPress como produtos"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/wpan">WPAN</a></h3>
       <p>Transforme um plugin em produto com arquitetura modular, REST, permissões e experiência administrativa.</p>
       <p><code>WordPress</code> <code>Produto</code> <code>REST API</code> <code>Segurança</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/"><img src="./assets/courses/primeiro-cliente-card.png" width="100%" alt="Primeiro Cliente — tecnologia, oferta e negócio"></a>
+      <a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/"><img src="./assets/courses/primeiro-cliente-card.svg" width="100%" alt="Primeiro Cliente — tecnologia, oferta e negócio"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/">Primeiro Cliente</a></h3>
       <p>Conecte habilidade técnica, um CRM construído por você e uma oferta clara para conquistar o primeiro projeto.</p>
       <p><code>PHP</code> <code>CRM</code> <code>Oferta</code> <code>Negócios</code></p>
