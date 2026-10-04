@@ -5,3 +5,6 @@ assets/*-preview.png
 assets/projects/bibliaapi-app.png
 assets/projects/crescanafe-feature.webp
 assets/projects/ghdevlog-flow.webp
+
+# High-resolution sources used to compose optimized course cards
+assets/courses/source/
