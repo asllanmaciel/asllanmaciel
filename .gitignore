@@ -1,0 +1,7 @@
+# Local visual-review renders
+assets/*-preview.png
+
+# Reference media used to compose the optimized project cards
+assets/projects/bibliaapi-app.png
+assets/projects/crescanafe-feature.webp
+assets/projects/ghdevlog-flow.webp
