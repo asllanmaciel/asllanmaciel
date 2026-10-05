@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="Asllan Maciel — Tecnologia, IA e Negócios">
+  <img src="./assets/profile-banner.webp" width="100%" alt="Asllan Maciel — Tecnologia, IA e Negócios">
 </p>
 
 <p align="center">
@@ -16,21 +16,21 @@
 
 <table>
   <tr>
-    <td width="33.33%" align="center"><a href="#projetos-e-produtos-selecionados"><img src="./assets/paths/projects.svg" width="100%" alt="Explore projetos e produtos"></a></td>
-    <td width="33.33%" align="center"><a href="#cursos-mentoria-e-comunidade"><img src="./assets/paths/learn.svg" width="100%" alt="Conheça cursos e mentoria"></a></td>
-    <td width="33.33%" align="center"><a href="#for-international-work--collaboration"><img src="./assets/paths/collaborate.svg" width="100%" alt="Trabalhe ou colabore comigo"></a></td>
+    <td width="33.33%" align="center"><a href="#projetos-e-produtos-selecionados"><img src="./assets/paths/projects.webp" width="100%" alt="Explore projetos e produtos"></a></td>
+    <td width="33.33%" align="center"><a href="#cursos-mentoria-e-comunidade"><img src="./assets/paths/learn.webp" width="100%" alt="Conheça cursos e mentoria"></a></td>
+    <td width="33.33%" align="center"><a href="#for-international-work--collaboration"><img src="./assets/paths/collaborate.webp" width="100%" alt="Trabalhe ou colabore comigo"></a></td>
   </tr>
 </table>
 
 <p align="center"><em>Escolha um caminho — ou continue para conhecer o ecossistema completo.</em></p>
 
-<img src="./assets/proof-strip.svg" width="100%" alt="25+ anos construindo; sistemas em produção; IA aplicada; cursos, mentoria e comunidade">
+<img src="./assets/proof-strip.webp" width="100%" alt="25+ anos construindo; sistemas em produção; IA aplicada; cursos, mentoria e comunidade">
 
 ## Uma atuação conectada
 
 Não separo tecnologia, IA e negócios em caixas. Eles se encontram na prática: da estratégia à arquitetura, da construção à operação, do aprendizado ao compartilhamento.
 
-<img src="./assets/ecosystem-map.svg" width="100%" alt="Tecnologia, IA e Negócios conectados a sistemas próprios, sistemas de clientes, cursos e mentoria e comunidade">
+<img src="./assets/ecosystem-map.webp" width="100%" alt="Tecnologia, IA e Negócios conectados a sistemas próprios, sistemas de clientes, cursos e mentoria e comunidade">
 
 ## O que isso vira na prática
 
@@ -64,13 +64,13 @@ Não separo tecnologia, IA e negócios em caixas. Eles se encontram na prática:
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://ghdevlog.com"><img src="./assets/projects/ghdevlog-card.png" width="100%" alt="GHDevLog — developer intelligence para webhooks do GitHub"></a>
+      <a href="https://ghdevlog.com"><img src="./assets/projects/ghdevlog-card.webp" width="100%" alt="GHDevLog — developer intelligence para webhooks do GitHub"></a>
       <h3><a href="https://ghdevlog.com">GHDevLog</a></h3>
       <p>Developer intelligence para receber, validar e investigar webhooks do GitHub com segurança e rastreabilidade.</p>
       <p><code>GitHub</code> <code>Webhooks</code> <code>Segurança</code> <code>IA</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://bibliaapi.com.br"><img src="./assets/projects/bibliaapi-card.png" width="100%" alt="BIBLIAAPI — infraestrutura para experiências bíblicas digitais"></a>
+      <a href="https://bibliaapi.com.br"><img src="./assets/projects/bibliaapi-card.webp" width="100%" alt="BIBLIAAPI — infraestrutura para experiências bíblicas digitais"></a>
       <h3><a href="https://bibliaapi.com.br">BIBLIAAPI</a></h3>
       <p>Infraestrutura para aplicações bíblicas, combinando APIs, integrações WordPress, aplicativos e recursos SaaS.</p>
       <p><code>API REST</code> <code>Integrações</code> <code>WordPress</code> <code>Mobile</code></p>
@@ -78,13 +78,13 @@ Não separo tecnologia, IA e negócios em caixas. Eles se encontram na prática:
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://claridados.com.br"><img src="./assets/projects/claridados-card.png" width="100%" alt="ClariDados — analytics orientado a decisões e privacidade"></a>
+      <a href="https://claridados.com.br"><img src="./assets/projects/claridados-card.webp" width="100%" alt="ClariDados — analytics orientado a decisões e privacidade"></a>
       <h3><a href="https://claridados.com.br">ClariDados</a></h3>
       <p>Analytics orientado a decisões para acompanhar audiência, aquisição, páginas e conversões com menos complexidade.</p>
       <p><code>Analytics</code> <code>Privacidade</code> <code>Relatórios</code> <code>APIs</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://crescanafe.com"><img src="./assets/projects/crescanafe-card.png" width="100%" alt="Cresça na Fé — conteúdo, estudos e comunidade"></a>
+      <a href="https://crescanafe.com"><img src="./assets/projects/crescanafe-card.webp" width="100%" alt="Cresça na Fé — conteúdo, estudos e comunidade"></a>
       <h3><a href="https://crescanafe.com">Cresça na Fé</a></h3>
       <p>Plataforma de conteúdo com estudos, devocionais e recursos apoiados por um ecossistema editorial de longa duração.</p>
       <p><code>Conteúdo</code> <code>Comunidade</code> <code>WordPress</code> <code>SEO</code></p>
@@ -127,13 +127,13 @@ Na **[Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br)**, tecnologia, p
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery"><img src="./assets/courses/n8n-ai-mastery-card.svg" width="100%" alt="n8n AI Mastery — IA, automação e sistemas agentic"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery"><img src="./assets/courses/n8n-ai-mastery-card.webp" width="100%" alt="n8n AI Mastery — IA, automação e sistemas agentic"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/n8n-ai-mastery">n8n AI Mastery</a></h3>
       <p>Construa e opere sistemas agentic com limites, evidência, observabilidade e supervisão humana.</p>
       <p><code>IA</code> <code>Automação</code> <code>Agents</code> <code>Produção</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro"><img src="./assets/courses/supabase-pro-card.svg" width="100%" alt="Supabase Pro — engenharia de backend para SaaS e aplicações com IA"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro"><img src="./assets/courses/supabase-pro-card.webp" width="100%" alt="Supabase Pro — engenharia de backend para SaaS e aplicações com IA"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/supabase-pro">Supabase Pro</a></h3>
       <p>Projete, proteja, teste e opere backends multi-tenant para SaaS e aplicações com IA.</p>
       <p><code>Backend</code> <code>SaaS</code> <code>Segurança</code> <code>Dados</code></p>
@@ -141,13 +141,13 @@ Na **[Asllan Maciel Cursos](https://cursos.asllanmaciel.com.br)**, tecnologia, p
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/curso/wpan"><img src="./assets/courses/wpan-card.svg" width="100%" alt="WPAN — engenharia de plugins WordPress como produtos"></a>
+      <a href="https://cursos.asllanmaciel.com.br/curso/wpan"><img src="./assets/courses/wpan-card.webp" width="100%" alt="WPAN — engenharia de plugins WordPress como produtos"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/curso/wpan">WPAN</a></h3>
       <p>Transforme um plugin em produto com arquitetura modular, REST, permissões e experiência administrativa.</p>
       <p><code>WordPress</code> <code>Produto</code> <code>REST API</code> <code>Segurança</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/"><img src="./assets/courses/primeiro-cliente-card.svg" width="100%" alt="Primeiro Cliente — tecnologia, oferta e negócio"></a>
+      <a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/"><img src="./assets/courses/primeiro-cliente-card.webp" width="100%" alt="Primeiro Cliente — tecnologia, oferta e negócio"></a>
       <h3><a href="https://cursos.asllanmaciel.com.br/cursos/kit-freela/">Primeiro Cliente</a></h3>
       <p>Conecte habilidade técnica, um CRM construído por você e uma oferta clara para conquistar o primeiro projeto.</p>
       <p><code>PHP</code> <code>CRM</code> <code>Oferta</code> <code>Negócios</code></p>

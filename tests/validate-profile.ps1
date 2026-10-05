@@ -12,7 +12,7 @@ $courses = @(
 )
 
 foreach ($course in $courses) {
-    $assetRef = "./assets/courses/$($course.Slug)-card.svg"
+    $assetRef = "./assets/courses/$($course.Slug)-card.webp"
     $assetPath = Join-Path $repoRoot ($assetRef -replace '^\./', '')
 
     if (-not (Test-Path -LiteralPath $assetPath)) {
@@ -26,12 +26,35 @@ foreach ($course in $courses) {
     }
 }
 
-if ($readme -match 'assets/courses/[^"'']+-card\.png') {
-    throw 'README still references a generated raster course card'
+if ($readme -match 'assets/courses/[^"'']+-card\.(svg|png)') {
+    throw 'README still references a legacy course card'
+}
+
+$profileAssets = @(
+    './assets/profile-banner.webp',
+    './assets/paths/projects.webp',
+    './assets/paths/learn.webp',
+    './assets/paths/collaborate.webp',
+    './assets/proof-strip.webp',
+    './assets/ecosystem-map.webp',
+    './assets/projects/ghdevlog-card.webp',
+    './assets/projects/bibliaapi-card.webp',
+    './assets/projects/claridados-card.webp',
+    './assets/projects/crescanafe-card.webp'
+)
+
+foreach ($assetRef in $profileAssets) {
+    $assetPath = Join-Path $repoRoot ($assetRef -replace '^\./', '')
+    if (-not (Test-Path -LiteralPath $assetPath)) {
+        throw "Missing profile image: $assetRef"
+    }
+    if (-not $readme.Contains($assetRef)) {
+        throw "README does not reference profile image: $assetRef"
+    }
 }
 
 if (-not $readme.Contains('Explorar todos os cursos, formações e labs')) {
     throw 'README is missing the complete-catalog call to action'
 }
 
-Write-Output 'PROFILE_COURSES_OK=4'
+Write-Output 'PROFILE_IMAGES_OK=14'
