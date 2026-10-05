@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Primeiro Cliente — da habilidade à proposta defendável</title>
+  <desc id="desc">Jornada que conecta a construção de um Mini CRM, uma oferta clara, uma conversa comercial e o primeiro cliente.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07151b"/><stop offset=".58" stop-color="#0b2034"/><stop offset="1" stop-color="#1b173d"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#34d399"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#5eead4" stroke-opacity=".05"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="640" height="360" rx="18" fill="url(#bg)"/><rect width="640" height="360" rx="18" fill="url(#grid)"/><rect x="1" y="1" width="638" height="358" rx="17" fill="none" stroke="#334155"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="28" y="36" fill="#6ee7b7" font-size="11" font-weight="800" letter-spacing="2">TECNOLOGIA · OFERTA · NEGÓCIOS</text>
+    <text x="28" y="74" fill="#f8fafc" font-size="32" font-weight="900">Primeiro Cliente</text>
+    <text x="28" y="99" fill="#cbd5e1" font-size="14">Um projeto que dá para mostrar. Uma oferta que dá para defender.</text>
+    <g transform="translate(566 18)"><circle cx="25" cy="25" r="22" fill="#0b2a31" stroke="#a7f3d0"/><text x="25" y="30" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="900">AM</text></g>
+
+    <path d="M89 202H226M262 202H398M434 202H568" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+    <g font-size="10" font-weight="800" text-anchor="middle">
+      <g transform="translate(28 151)"><rect width="122" height="102" rx="14" fill="#0b2935" stroke="#22d3ee"/><circle cx="61" cy="32" r="13" fill="#164e63"/><path d="M54 32h14M61 25v14" stroke="#67e8f9" stroke-width="2"/><text x="61" y="62" fill="#a5f3fc">MINI CRM</text><text x="61" y="79" fill="#94a3b8">PHP · MVC · API</text></g>
+      <g transform="translate(178 151)"><rect width="122" height="102" rx="14" fill="#0c302f" stroke="#34d399"/><circle cx="61" cy="32" r="13" fill="#065f46"/><path d="M54 28h14M54 33h10M54 38h7" stroke="#a7f3d0" stroke-width="2"/><text x="61" y="62" fill="#a7f3d0">OFERTA</text><text x="61" y="79" fill="#94a3b8">ESCOPO · PREÇO</text></g>
+      <g transform="translate(328 151)"><rect width="122" height="102" rx="14" fill="#132641" stroke="#60a5fa"/><circle cx="61" cy="32" r="13" fill="#1e3a8a"/><path d="M53 28h16v9H60l-5 4v-4h-2z" fill="none" stroke="#bfdbfe" stroke-width="2"/><text x="61" y="62" fill="#bfdbfe">CONVERSA</text><text x="61" y="79" fill="#94a3b8">DIAGNÓSTICO</text></g>
+      <g transform="translate(478 151)"><rect width="134" height="102" rx="14" fill="#211c43" stroke="#a78bfa"/><circle cx="67" cy="32" r="13" fill="#4c1d95"/><path d="M58 34l6 6 12-15" fill="none" stroke="#ddd6fe" stroke-width="2.5" stroke-linecap="round"/><text x="67" y="62" fill="#ddd6fe">CLIENTE</text><text x="67" y="79" fill="#94a3b8">PROJETO REAL</text></g>
+    </g>
+    <g transform="translate(75 280)" font-size="10" font-weight="800"><rect width="206" height="30" rx="15" fill="#0d2a3a" stroke="#0891b2"/><text x="103" y="20" text-anchor="middle" fill="#67e8f9">PHPAN · PRODUTO COBRÁVEL</text><rect x="220" width="206" height="30" rx="15" fill="#1d2142" stroke="#6366f1"/><text x="323" y="20" text-anchor="middle" fill="#c7d2fe">OFERTA · CLARA E DEFENDÁVEL</text></g>
+    <text x="320" y="326" text-anchor="middle" fill="#94a3b8" font-size="10" letter-spacing="1.2">CONSTRUIR → COMPROVAR → APRESENTAR → FECHAR</text>
+    <rect x="28" y="340" width="584" height="3" rx="2" fill="url(#accent)"/>
+  </g>
+</svg>

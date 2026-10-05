@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">WPAN — anatomia de um plugin WordPress de produto</title>
+  <desc id="desc">Arquitetura modular ligando interface administrativa, domínio, tipos de conteúdo, API REST, permissões e persistência.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07121f"/><stop offset=".58" stop-color="#0c1e38"/><stop offset="1" stop-color="#21163f"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#38bdf8"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#93c5fd" stroke-opacity=".055"/></pattern>
+  </defs>
+  <rect width="640" height="360" rx="18" fill="url(#bg)"/><rect width="640" height="360" rx="18" fill="url(#grid)"/><rect x="1" y="1" width="638" height="358" rx="17" fill="none" stroke="#334155"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="28" y="36" fill="#7dd3fc" font-size="11" font-weight="800" letter-spacing="2">WORDPRESS · ENGENHARIA DE PRODUTO</text>
+    <text x="28" y="74" fill="#f8fafc" font-size="32" font-weight="900">WPAN</text>
+    <text x="28" y="99" fill="#cbd5e1" font-size="14">Plugin de produto: CPT, REST, capabilities e admin.</text>
+    <g transform="translate(566 18)"><circle cx="25" cy="25" r="22" fill="#102544" stroke="#bfdbfe"/><text x="25" y="30" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="900">AM</text></g>
+
+    <rect x="28" y="124" width="210" height="176" rx="14" fill="#07131f" stroke="#1e3a5f"/>
+    <g font-family="Consolas,monospace" font-size="9"><text x="44" y="150" fill="#64748b">// wp-content/plugins/leadkit</text><text x="44" y="172" fill="#60a5fa">register_post_type</text><text x="156" y="172" fill="#cbd5e1">('service');</text><text x="44" y="194" fill="#60a5fa">register_rest_route</text><text x="170" y="194" fill="#cbd5e1">(...);</text><text x="44" y="216" fill="#a78bfa">permission_callback</text><text x="166" y="216" fill="#cbd5e1">(...);</text><text x="44" y="238" fill="#22d3ee">sanitize_callback</text><text x="156" y="238" fill="#cbd5e1">(...);</text></g>
+    <rect x="44" y="260" width="176" height="24" rx="7" fill="#10243a" stroke="#2563eb"/><text x="132" y="276" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="800">TEST · CI · RELEASE</text>
+
+    <g font-size="10" font-weight="800" text-anchor="middle">
+      <g transform="translate(270 126)"><rect width="142" height="48" rx="10" fill="#13213b" stroke="#60a5fa"/><text x="71" y="21" fill="#bfdbfe">ADMIN EXPERIENCE</text><text x="71" y="36" fill="#64748b">FIELDS · NOTICES</text></g>
+      <path d="M341 174v24" stroke="#60a5fa" stroke-width="3"/>
+      <g transform="translate(270 198)"><rect width="142" height="54" rx="10" fill="#182044" stroke="#818cf8"/><text x="71" y="23" fill="#c7d2fe">DOMAIN CORE</text><text x="71" y="39" fill="#94a3b8">SERVICES · RULES</text></g>
+      <path d="M341 252v24" stroke="#8b5cf6" stroke-width="3"/>
+      <g transform="translate(270 276)"><rect width="142" height="42" rx="10" fill="#231a43" stroke="#a78bfa"/><text x="71" y="26" fill="#ddd6fe">PERSISTENCE</text></g>
+
+      <g transform="translate(452 126)"><rect width="142" height="48" rx="10" fill="#0f2a3d" stroke="#22d3ee"/><text x="71" y="21" fill="#a5f3fc">CONTENT MODEL</text><text x="71" y="36" fill="#64748b">CPT · META · TERMS</text></g>
+      <g transform="translate(452 198)"><rect width="142" height="48" rx="10" fill="#112841" stroke="#38bdf8"/><text x="71" y="21" fill="#bae6fd">REST API</text><text x="71" y="36" fill="#64748b">ROUTES · SCHEMA</text></g>
+      <g transform="translate(452 270)"><rect width="142" height="48" rx="10" fill="#1b2044" stroke="#6366f1"/><text x="71" y="21" fill="#c7d2fe">CAPABILITIES</text><text x="71" y="36" fill="#64748b">AUTHZ · NONCES</text></g>
+    </g>
+    <path d="M412 225h40M412 297h40M412 150h40" stroke="url(#accent)" stroke-width="3"/>
+    <rect x="28" y="340" width="584" height="3" rx="2" fill="url(#accent)"/>
+  </g>
+</svg>
